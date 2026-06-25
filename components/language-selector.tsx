@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 const localeLabels: Record<string, string> = {
   en: 'EN',
   es: 'ES',
+  fr: 'FR',
 };
 
 export function LanguageSelector({ className }: { className?: string }) {

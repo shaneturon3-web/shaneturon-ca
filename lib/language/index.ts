@@ -16,3 +16,4 @@ export { LanguageProvider, useLanguage } from './language-provider';
 
 export { en, type EnglishLanguage } from './en';
 export { es } from './es';
+export { fr } from './fr';

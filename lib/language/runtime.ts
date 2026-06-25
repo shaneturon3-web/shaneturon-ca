@@ -1,9 +1,10 @@
 import { en, type EnglishLanguage } from './en';
 import { es } from './es';
+import { fr } from './fr';
 
 export const DEFAULT_LOCALE = 'en' as const;
 
-export const SUPPORTED_LOCALES = ['en', 'es'] as const;
+export const SUPPORTED_LOCALES = ['en', 'es', 'fr'] as const;
 
 export const LANGUAGE_STORAGE_KEY = 'shaneturon.locale';
 
@@ -14,6 +15,7 @@ type LanguageDictionary = EnglishLanguage;
 const dictionaries: Record<SupportedLocale, LanguageDictionary> = {
   en,
   es,
+  fr,
 };
 
 function isSupportedLocale(value: string): value is SupportedLocale {
