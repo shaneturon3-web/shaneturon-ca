@@ -1,8 +1,11 @@
+import { getLanguage } from '@/lib/language';
 import { ArchitectureClient } from './architecture-client';
 
+const language = getLanguage();
+
 export const metadata = {
-  title: 'Architecture — Shane Turon',
-  description: 'System maps, technical infrastructure overview, and deployment topology.',
+  title: language.pages.architecture.metadata.title,
+  description: language.pages.architecture.metadata.description,
 };
 
 export default function ArchitecturePage() {
