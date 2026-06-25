@@ -8,6 +8,7 @@ import {
   Shield, BookOpen, Cpu, Clock, ChevronRight, Zap
 } from 'lucide-react';
 import { StatusStrip } from '@/components/status-strip';
+import { useLanguage } from '@/lib/language';
 
 const iconMap: Record<string, any> = {
   'Operational Platform': Layers,
@@ -15,6 +16,8 @@ const iconMap: Record<string, any> = {
   'Knowledge Architecture': Brain,
   'AI Governance': Cpu,
 };
+
+const valuePropIcons = [Shield, Network, Cpu];
 
 function CountUp({ target, suffix }: { target: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -48,6 +51,8 @@ export function HomepageClient({
   caseFiles: any[];
   nowItems: any[];
 }) {
+  const { language } = useLanguage();
+  const copy = language.pages.home;
   const safeS = systems ?? [];
   const safeCF = caseFiles ?? [];
   const safeNow = nowItems ?? [];
@@ -65,31 +70,32 @@ export function HomepageClient({
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border/50 bg-card/50 mb-8">
               <span className="h-2 w-2 rounded-full bg-primary status-pulse" />
-              <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">Systems Operational</span>
+              <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">{copy.hero.badge}</span>
             </div>
 
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-              Operational Systems{' '}
-              <span className="text-primary">Architect</span>
+              {copy.hero.titlePrefix}{' '}
+              <span className="text-primary">{copy.hero.titleAccent}</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              Designing AI-assisted execution environments, workflow intelligence systems,
-              and operational architectures for complex organizations.
+              {copy.hero.intro}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <Link
                 href="/systems"
+                prefetch={false}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors"
               >
-                Explore Systems <ArrowRight className="h-4 w-4" />
+                {copy.hero.exploreSystems} <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/case-files"
+                prefetch={false}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-card border border-border text-foreground font-medium rounded-lg hover:bg-accent transition-colors"
               >
-                View Case Files
+                {copy.hero.viewCaseFiles}
               </Link>
             </div>
 
@@ -107,35 +113,13 @@ export function HomepageClient({
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-display text-3xl font-bold tracking-tight mb-4">Structured Execution Under Complexity</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Evidence-driven infrastructure that recovers lost operational capacity.</p>
+            <h2 className="font-display text-3xl font-bold tracking-tight mb-4">{copy.valueProps.title}</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">{copy.valueProps.intro}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Shield,
-                title: 'Operational Recovery',
-                desc: 'Professionals lose ~6 hours per week to administrative fragmentation. Infrastructure that gives it back.',
-                metric: '6',
-                metricLabel: 'hours/week recovered',
-              },
-              {
-                icon: Network,
-                title: 'Structured Execution',
-                desc: 'Complex projects fail from coordination collapse, not lack of talent. Execution architectures with built-in governance.',
-                metric: '10',
-                metricLabel: 'orchestration subsystems',
-              },
-              {
-                icon: Cpu,
-                title: 'AI-Augmented Operations',
-                desc: 'AI without architecture is noise. Orchestration systems where AI agents have defined roles, boundaries, and accountability.',
-                metric: '14',
-                metricLabel: 'coordinated AI agents',
-              },
-            ].map((item: any, i: number) => {
-              const Icon = item?.icon ?? Zap;
+            {copy.valueProps.items.map((item, i) => {
+              const Icon = valuePropIcons[i] ?? Zap;
               return (
                 <motion.div
                   key={i}
@@ -169,14 +153,14 @@ export function HomepageClient({
             className="flex items-center justify-between mb-12"
           >
             <div>
-              <h2 className="font-display text-3xl font-bold tracking-tight mb-2">Active Systems</h2>
-              <p className="text-muted-foreground">Operational infrastructure currently running.</p>
+              <h2 className="font-display text-3xl font-bold tracking-tight mb-2">{copy.systems.title}</h2>
+              <p className="text-muted-foreground">{copy.systems.intro}</p>
             </div>
             <Link
               href="/systems"
               className="hidden sm:inline-flex items-center gap-1 text-sm text-primary hover:underline"
             >
-              View all <ChevronRight className="h-4 w-4" />
+              {copy.systems.viewAll} <ChevronRight className="h-4 w-4" />
             </Link>
           </motion.div>
 
@@ -194,6 +178,7 @@ export function HomepageClient({
                   >
                     <Link
                       href="/systems#psynova"
+                      prefetch={false}
                       className="block bg-card rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 group overflow-hidden"
                     >
                       <div className="p-8 sm:p-10">
@@ -216,7 +201,7 @@ export function HomepageClient({
                         </div>
                         <p className="text-base text-muted-foreground mb-6 max-w-2xl">{psynova?.tagline}</p>
                         <div className="flex flex-wrap gap-2 mb-5">
-                          {['CoreSpine', 'Compliance Wrapper', 'Operator Interface'].map((layer) => (
+                          {copy.systems.psynovaFeatureTags.map((layer) => (
                             <span key={layer} className="px-3 py-1.5 rounded text-xs font-mono bg-primary/8 text-primary/80 border border-primary/15">
                               {layer}
                             </span>
@@ -224,7 +209,7 @@ export function HomepageClient({
                         </div>
                         <p className="text-xs text-muted-foreground/70 line-clamp-2">{psynova?.description}</p>
                         <div className="flex items-center gap-1.5 mt-5 text-sm text-primary font-medium">
-                          <span>Explore architecture</span>
+                          <span>{copy.systems.exploreArchitecture}</span>
                           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </div>
@@ -246,6 +231,7 @@ export function HomepageClient({
                       >
                         <Link
                           href={`/systems#${sys?.slug ?? ''}`}
+                          prefetch={false}
                           className="block bg-card rounded-lg p-6 border border-border/30 hover:border-primary/30 hover:bg-accent/30 transition-all duration-300 group"
                         >
                           <div className="flex items-start justify-between mb-4">
@@ -271,7 +257,7 @@ export function HomepageClient({
         </div>
       </section>
 
-      {/* Case Files Preview */}
+      {/* {copy.caseFiles.title} Preview */}
       {safeCF.length > 0 && (
         <section className="py-24 px-4">
           <div className="max-w-6xl mx-auto">
@@ -282,14 +268,15 @@ export function HomepageClient({
               className="flex items-center justify-between mb-12"
             >
               <div>
-                <h2 className="font-display text-3xl font-bold tracking-tight mb-2">Case Files</h2>
-                <p className="text-muted-foreground">Structured operational analysis. Problem → Design → Results.</p>
+                <h2 className="font-display text-3xl font-bold tracking-tight mb-2">{copy.caseFiles.title}</h2>
+                <p className="text-muted-foreground">{copy.caseFiles.intro}</p>
               </div>
               <Link
                 href="/case-files"
+                prefetch={false}
                 className="hidden sm:inline-flex items-center gap-1 text-sm text-primary hover:underline"
               >
-                View all <ChevronRight className="h-4 w-4" />
+                {copy.systems.viewAll} <ChevronRight className="h-4 w-4" />
               </Link>
             </motion.div>
 
@@ -308,14 +295,14 @@ export function HomepageClient({
                   >
                     <div className="flex items-center gap-2 mb-3">
                       <BookOpen className="h-4 w-4 text-primary" />
-                      <span className="text-xs font-mono text-muted-foreground uppercase">{cf?.category ?? 'Case File'}</span>
+                      <span className="text-xs font-mono text-muted-foreground uppercase">{cf?.category ?? copy.caseFiles.defaultCategory}</span>
                     </div>
                     <h3 className="font-display text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
                       {cf?.title}
                     </h3>
                     <p className="text-sm text-muted-foreground mb-3">{cf?.subtitle}</p>
                     <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground/60">
-                      <span>Problem → Analysis → Design → Results</span>
+                      <span>{copy.caseFiles.process}</span>
                     </div>
                   </Link>
                 </motion.div>
@@ -336,8 +323,8 @@ export function HomepageClient({
             >
               <div className="flex items-center gap-2 mb-6">
                 <Clock className="h-5 w-5 text-primary" />
-                <h2 className="font-display text-xl font-bold tracking-tight">Current Focus</h2>
-                <Link href="/now" className="ml-auto text-xs text-primary hover:underline">View /now →</Link>
+                <h2 className="font-display text-xl font-bold tracking-tight">{copy.now.title}</h2>
+                <Link href="/now" prefetch={false} className="ml-auto text-xs text-primary hover:underline">{copy.now.viewNow}</Link>
               </div>
               <div className="grid sm:grid-cols-2 gap-3">
                 {safeNow.map((item: any, i: number) => (
@@ -364,17 +351,17 @@ export function HomepageClient({
             viewport={{ once: true }}
           >
             <h2 className="font-display text-3xl font-bold tracking-tight mb-4">
-              Structured Operational Intelligence
+              {copy.cta.title}
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Infrastructure that translates operational reality into deployable workflows.
-              Not theoretical — grounded in how work actually happens.
+              {copy.cta.body}
             </p>
             <Link
               href="/contact"
+              prefetch={false}
               className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors"
             >
-              Engagement Inquiry <ArrowRight className="h-4 w-4" />
+              {copy.cta.action} <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
         </div>

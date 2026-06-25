@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { useLanguage } from '@/lib/language';
 import { Menu, X, Hexagon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { LanguageSelector } from '@/components/language-selector';
 
 export function PublicNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -40,10 +41,11 @@ export function PublicNav() {
                 {link.label}
               </Link>
             ))}
+            <LanguageSelector className="ml-2" />
             <Link
               href={contactLink.href}
               prefetch={false}
-              className="ml-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+              className="ml-1 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
             >
               {contactLink.label}
             </Link>
@@ -83,6 +85,9 @@ export function PublicNav() {
                   {link.label}
                 </Link>
               ))}
+              <div className="px-3 py-2">
+                <LanguageSelector />
+              </div>
               <Link
                 href={contactLink.href}
                 prefetch={false}

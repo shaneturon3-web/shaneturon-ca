@@ -5,11 +5,11 @@ import { LanguageProvider } from '@/lib/language';
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <LanguageProvider>
       <PublicNav />
       <AnalyticsTracker />
-      <main className="min-h-screen pt-16"><LanguageProvider>{children}</LanguageProvider></main>
+      <main className="min-h-screen pt-16">{children}</main>
       <PublicFooter />
-    </>
+    </LanguageProvider>
   );
 }
