@@ -118,6 +118,6 @@ export const en = {
       },
     },
   },
-} as const;
+};
 
 export type EnglishLanguage = typeof en;

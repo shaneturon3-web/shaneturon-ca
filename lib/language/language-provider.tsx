@@ -12,6 +12,7 @@ import {
   DEFAULT_LOCALE,
   getLanguage,
   getLanguageRuntime,
+  normalizeLocale,
   resolveLocale,
   setStoredLocale,
   type SupportedLocale,
@@ -55,7 +56,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         const nextLocale = setStoredLocale(value);
         setLocaleState(nextLocale);
         setRequestedLocale(value);
-        setUsedFallback(resolveLocale(value) !== nextLocale);
+        setUsedFallback(normalizeLocale(value) === null);
         document.documentElement.lang = nextLocale;
       },
     };

@@ -8,3 +8,4 @@ dist/
 .env.*
 tsconfig.tsbuildinfo
 prisma/schema.prisma.before-local-output-fix
+.local-backups/
