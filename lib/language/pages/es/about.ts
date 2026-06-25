@@ -1,59 +1,83 @@
 export const esAbout = {
-      metadata: {
-        title: 'Acerca de — Shane Turon',
-        description:
-          'Arquitecto de Sistemas Operacionales. Diseñando infraestructura de ejecución para profesionales, clínicas y organizaciones complejas.',
+  metadata: {
+    title: 'Acerca de — Shane Turon',
+    description:
+      'Arquitecto de sistemas operativos. Flujos de trabajo asistidos por IA, sistemas de ejecución e infraestructura operativa para trabajo complejo.',
+  },
+
+  hero: {
+    eyebrow: 'Acerca de',
+    title: 'Arquitecto de sistemas operativos',
+    intro:
+      'Construyo la capa de sistemas entre herramientas dispersas y trabajo que corre con claridad.',
+  },
+
+  how: {
+    title: 'Cómo trabajo',
+    paragraphs: [
+      'Cada proyecto se mapea por capas, fases, autoridades y límites: qué va dónde, qué ocurre cuándo, quién decide y qué no debe cruzarse.',
+      'Esto no es “uso IA”. Es ejecución estructurada con roles definidos, puntos de revisión y responsabilidad operativa.',
+      'Las afirmaciones se separan por madurez: AHORA, PILOTO o FUTURO. El sistema debe mostrar qué existe, qué se está probando y qué sigue planeado.',
+    ],
+  },
+
+  build: {
+    title: 'Qué construyo',
+    intro: 'Dominios prácticos donde el trabajo se vuelve estructurado.',
+    items: [
+      {
+        title: 'Arquitectura operativa',
+        desc: 'Sistemas por capas que conectan herramientas, roles, datos y ejecución.',
       },
-      hero: {
-        eyebrow: 'Acerca de',
-        titlePrefix: 'Arquitecto de Sistemas',
-        titleAccent: 'Operacionales',
-        intro:
-          'Construyendo la infraestructura operacional que los profesionales necesitan pero no siempre pueden articular: la capa de sistemas entre “tengo herramientas” y “mi práctica funciona con fluidez.”',
+      {
+        title: 'Gobernanza de IA',
+        desc: 'Flujos multiagente con roles definidos, entregas, puntos de revisión y responsabilidad.',
       },
-      cognitive: {
-        title: 'Enfoque Cognitivo',
-        paragraphs: [
-          'Cada problema se descompone en capas, fases, autoridades y límites.',
-          'Esto no es “uso IA”; es “arquitecto sistemas donde la IA tiene gobernanza.” No es teoría. Está basado en realidad operacional. Cada afirmación se marca como NOW, PILOT o FUTURE. Cada despliegue requiere verificación por demo. Anti-vaporware por diseño.',
-          'Los sistemas construidos para claridad cognitiva producen mejores resultados para todos. Alta relación señal-ruido. Densidad de información por encima del relleno decorativo. Indicadores de estado por encima de explicaciones narrativas.',
-        ],
+      {
+        title: 'Diseño consciente del cumplimiento',
+        desc: 'Sistemas diseñados alrededor de privacidad, registros, permisos y límites profesionales.',
       },
-      capabilities: {
-        title: 'Dominios de Capacidad',
-        intro: 'Lo que los sistemas realmente hacen.',
-        items: [
-          { title: 'Arquitectura de Sistemas', desc: 'Sistemas modulares multicapa (Spine → Wrapper → Interface) que habilitan infraestructura escalable en verticales profesionales.' },
-          { title: 'Orquestación de IA', desc: 'Protocolos formales para coordinación multi-IA con roles, límites y estructuras de responsabilidad definidos.' },
-          { title: 'Diseño con Cumplimiento Integrado', desc: 'Navegación regulatoria en salud, legal y finanzas integrada en la arquitectura, no agregada después.' },
-          { title: 'Ingeniería de Ejecución', desc: 'Frameworks de orquestación tipo PMO con secuenciación de agentes, phase gates y verificación obligatoria.' },
-          { title: 'Arquitectura de Conocimiento', desc: 'Metodologías de compresión semántica que extraen unidades de conocimiento reutilizables y citables desde datos operacionales crudos.' },
-          { title: 'Sistemas Multilingües', desc: 'Superficies operacionales EN/FR/ES diseñadas a nivel de arquitectura, no solo en la capa de traducción.' },
-        ],
+      {
+        title: 'Ingeniería de ejecución',
+        desc: 'Estructuras de proyecto, puntos de control y rutas de entrega que hacen el trabajo más fácil de operar.',
       },
-      principles: {
-        title: 'Principios Operacionales',
-        items: [
-          'Coherencia operacional por encima de expansión de funcionalidades.',
-          'El crecimiento que colapsa al operador no es infraestructura escalable.',
-          'El juicio clínico siempre permanece con el profesional licenciado.',
-          'El público nunca debería tener que descifrar la ontología interna.',
-          'Infraestructura que traduce la realidad operacional en flujos de trabajo desplegables.',
-          'Compra lo commodity, construye el diferenciador.',
-        ],
+      {
+        title: 'Arquitectura de conocimiento',
+        desc: 'Captura de decisiones, registros y referencias reutilizables sin perder contexto.',
       },
-      differentiators: {
-        title: 'Lo Que Hace Esto Diferente',
-        items: [
-          { title: 'Primero sistemas, no primero funciones', desc: 'Resuelve problemas estructurales, no síntomas superficiales.' },
-          { title: 'Gobernanza integrada', desc: 'Maneja entornos regulados sin agregar cumplimiento después.' },
-          { title: 'IA como arquitectura', desc: 'No “usa IA”; diseña protocolos formales para coordinación multi-IA.' },
-          { title: 'Realismo operacional', desc: 'Honestidad NOW/PILOT/FUTURE. Gates obligatorios de demo. Anti-vaporware.' },
-        ],
+      {
+        title: 'Sistemas multilingües',
+        desc: 'Superficies operativas en inglés, francés y español adaptadas al usuario, no traducidas mecánicamente.',
       },
-      cta: {
-        body:
-          'Los sistemas usados para gestionar este trabajo son del mismo calibre que los sistemas ofrecidos a clientes. El portafolio ES la prueba.',
-        action: 'Explorar los Sistemas',
+    ],
+  },
+
+
+  differentiators: {
+    title: 'Qué hace esto diferente',
+    items: [
+      {
+        title: 'Sistemas primero, no funciones primero',
+        desc: 'Resuelve problemas estructurales antes de agregar herramientas.',
       },
-    };
+      {
+        title: 'Gobernanza integrada',
+        desc: 'Diseña límites, registros y responsabilidad desde el inicio.',
+      },
+      {
+        title: 'IA como arquitectura',
+        desc: 'Usa IA mediante roles definidos, puntos de revisión y reglas de entrega.',
+      },
+      {
+        title: 'Realismo operativo',
+        desc: 'Separa lo que existe, lo que se está probando y lo que está planeado.',
+      },
+    ],
+  },
+
+  cta: {
+    title: 'El portafolio muestra el estándar operativo.',
+    body: 'La misma estructura usada en el trabajo público se usa en el trabajo para clientes.',
+    action: 'Ver sistemas',
+  },
+};

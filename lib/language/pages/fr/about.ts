@@ -2,58 +2,82 @@ export const frAbout = {
   metadata: {
     title: 'À propos — Shane Turon',
     description:
-      'Architecte de Systèmes Opérationnels. Conception d’infrastructure d’exécution pour professionnels, cliniques et organisations complexes.',
+      'Architecte de systèmes opérationnels. Flux de travail assistés par IA, systèmes d’exécution et infrastructure opérationnelle pour le travail complexe.',
   },
+
   hero: {
     eyebrow: 'À propos',
-    titlePrefix: 'Architecte de Systèmes',
-    titleAccent: 'Opérationnels',
+    title: 'Architecte de systèmes opérationnels',
     intro:
-      'Construction de l’infrastructure opérationnelle dont les professionnels ont besoin mais qu’ils ne peuvent pas toujours formuler — la couche système entre « j’ai des outils » et « ma pratique fonctionne vraiment avec fluidité ».',
+      'Je construis la couche de systèmes entre des outils dispersés et un travail qui fonctionne clairement.',
   },
-  cognitive: {
-    title: 'Approche Cognitive',
+
+  how: {
+    title: 'Comment je travaille',
     paragraphs: [
-      'Chaque problème se décompose en couches, phases, autorités et limites.',
-      'Ce n’est pas « j’utilise l’IA » — c’est « j’architecture des systèmes où l’IA a une gouvernance ». Pas théorique. Ancré dans la réalité opérationnelle. Chaque affirmation est marquée NOW, PILOT ou FUTURE. Chaque déploiement exige une vérification par démonstration. Anti-vaporware par conception.',
-      'Les systèmes conçus pour la clarté cognitive produisent de meilleurs résultats pour tous. Rapport signal-bruit élevé. Densité d’information plutôt que remplissage décoratif. Indicateurs de statut plutôt qu’explications narratives.',
+      'Chaque projet est cartographié par couches, phases, autorités et limites : ce qui va où, ce qui se passe quand, qui décide et ce qui ne doit pas être franchi.',
+      'Ce n’est pas « j’utilise l’IA ». C’est une exécution structurée avec des rôles définis, des points de révision et une responsabilité opérationnelle.',
+      'Les affirmations sont séparées par maturité : MAINTENANT, PILOTE ou FUTUR. Le système doit montrer ce qui existe, ce qui est testé et ce qui reste prévu.',
     ],
   },
-  capabilities: {
-    title: 'Domaines de Capacité',
-    intro: 'Ce que les systèmes font réellement.',
+
+  build: {
+    title: 'Ce que je construis',
+    intro: 'Domaines pratiques où le travail devient structuré.',
     items: [
-      { title: 'Architecture de Systèmes', desc: 'Systèmes modulaires multicouches (Spine → Wrapper → Interface) permettant une infrastructure évolutive dans plusieurs verticales professionnelles.' },
-      { title: 'Orchestration IA', desc: 'Protocoles formels de coordination multi-IA avec rôles, limites et structures de responsabilité définis.' },
-      { title: 'Conception avec Conformité Intégrée', desc: 'Navigation réglementaire en santé, droit et finance intégrée dans l’architecture, pas ajoutée après coup.' },
-      { title: 'Ingénierie d’Exécution', desc: 'Cadres d’orchestration de niveau PMO avec séquençage d’agents, phase gates et vérification obligatoire.' },
-      { title: 'Architecture de Connaissance', desc: 'Méthodologies de compression sémantique qui extraient des unités de connaissance réutilisables et citables à partir de données opérationnelles brutes.' },
-      { title: 'Systèmes Multilingues', desc: 'Surfaces opérationnelles EN/FR/ES conçues au niveau architectural, pas seulement dans la couche de traduction.' },
+      {
+        title: 'Architecture opérationnelle',
+        desc: 'Systèmes en couches qui relient les outils, les rôles, les données et l’exécution.',
+      },
+      {
+        title: 'Gouvernance IA',
+        desc: 'Flux multiagents avec rôles définis, transferts, points de révision et responsabilité.',
+      },
+      {
+        title: 'Conception sensible à la conformité',
+        desc: 'Systèmes conçus autour de la confidentialité, des dossiers, des permissions et des limites professionnelles.',
+      },
+      {
+        title: 'Ingénierie d’exécution',
+        desc: 'Structures de projet, points de contrôle et chemins de livraison qui rendent le travail plus facile à opérer.',
+      },
+      {
+        title: 'Architecture de connaissance',
+        desc: 'Capture des décisions, dossiers et références réutilisables sans perdre le contexte.',
+      },
+      {
+        title: 'Systèmes multilingues',
+        desc: 'Interfaces opérationnelles en anglais, français et espagnol adaptées à l’utilisateur, non traduites mécaniquement.',
+      },
     ],
   },
-  principles: {
-    title: 'Principes Opérationnels',
-    items: [
-      'Cohérence opérationnelle avant expansion des fonctionnalités.',
-      'Une croissance qui effondre l’opérateur n’est pas une infrastructure évolutive.',
-      'Le jugement clinique demeure toujours chez le professionnel licencié.',
-      'Le public ne devrait jamais avoir à décoder l’ontologie interne.',
-      'Infrastructure qui traduit la réalité opérationnelle en flux de travail déployables.',
-      'Acheter le commoditaire, construire le différenciateur.',
-    ],
-  },
+
+
   differentiators: {
-    title: 'Ce Qui Rend Cela Différent',
+    title: 'Ce qui rend cela différent',
     items: [
-      { title: 'Systèmes d’abord, pas fonctionnalités d’abord', desc: 'Résout les problèmes structurels, pas les symptômes de surface.' },
-      { title: 'Gouvernance intégrée', desc: 'Gère les environnements réglementés sans ajouter la conformité après coup.' },
-      { title: 'IA comme architecture', desc: 'Pas « utilise l’IA » — conçoit des protocoles formels de coordination multi-IA.' },
-      { title: 'Réalisme opérationnel', desc: 'Honnêteté NOW/PILOT/FUTURE. Gates de démonstration obligatoires. Anti-vaporware.' },
+      {
+        title: 'Systèmes d’abord, pas fonctionnalités d’abord',
+        desc: 'Résout les problèmes structurels avant d’ajouter des outils.',
+      },
+      {
+        title: 'Gouvernance intégrée',
+        desc: 'Conçoit les limites, les dossiers et la responsabilité dès le départ.',
+      },
+      {
+        title: 'IA comme architecture',
+        desc: 'Utilise l’IA avec des rôles définis, des points de révision et des règles de transfert.',
+      },
+      {
+        title: 'Réalisme opérationnel',
+        desc: 'Sépare ce qui existe, ce qui est testé et ce qui est prévu.',
+      },
     ],
   },
+
   cta: {
-    body:
-      'Les systèmes utilisés pour gérer ce travail sont du même calibre que les systèmes offerts aux clients. Le portfolio EST la preuve.',
-    action: 'Explorer les Systèmes',
+    title: 'Le portfolio montre le standard opérationnel.',
+    body: 'La même structure utilisée dans le travail public est utilisée dans le travail client.',
+    action: 'Voir les systèmes',
   },
 };
