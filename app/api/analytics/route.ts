@@ -5,7 +5,21 @@ import { prisma } from '@/lib/prisma';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth-options';
 
+function isLocalAnalyticsRequest(request: Request) {
+  const host = request.headers.get('host') ?? '';
+  return (
+    host.startsWith('localhost') ||
+    host.startsWith('127.0.0.1') ||
+    host.startsWith('0.0.0.0') ||
+    process.env.DISABLE_ANALYTICS === 'true'
+  );
+}
+
 export async function POST(request: Request) {
+  if (isLocalAnalyticsRequest(request)) {
+    return NextResponse.json({ skipped: true });
+  }
+
   try {
     const body = await request.json();
     const event = await prisma.analyticsEvent.create({

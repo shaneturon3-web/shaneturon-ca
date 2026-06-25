@@ -8,14 +8,23 @@ export const metadata = {
   description: 'Structured operational analysis. Problem → Constraints → Analysis → Design → Results → Lessons.',
 };
 
+function isPublicDbDisabled() {
+  return process.env.DISABLE_PUBLIC_DB === 'true';
+}
+
 export default async function CaseFilesPage() {
   let caseFiles: any[] = [];
-  try {
-    caseFiles = await prisma.caseFile.findMany({
-      where: { isPublished: true },
-      orderBy: { sortOrder: 'asc' },
-    }) ?? [];
-  } catch { caseFiles = []; }
+
+  if (!isPublicDbDisabled()) {
+    try {
+      caseFiles = await prisma.caseFile.findMany({
+        where: { isPublished: true },
+        orderBy: { sortOrder: 'asc' },
+      }) ?? [];
+    } catch {
+      caseFiles = [];
+    }
+  }
 
   return <CaseFilesClient caseFiles={caseFiles} />;
 }

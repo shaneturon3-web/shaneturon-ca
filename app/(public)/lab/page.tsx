@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma';
+import { isPublicDbDisabled } from '@/lib/public-data-gate';
 import { LabClient } from './lab-client';
 
 export const dynamic = 'force-dynamic';
@@ -10,12 +11,13 @@ export const metadata = {
 
 export default async function LabPage() {
   let projects: any[] = [];
-  try {
-    projects = await prisma.labProject.findMany({
-      where: { isPublished: true },
-      orderBy: { sortOrder: 'asc' },
-    }) ?? [];
-  } catch { projects = []; }
-
+  if (!isPublicDbDisabled()) {
+    try {
+      projects = await prisma.labProject.findMany({
+        where: { isPublished: true },
+        orderBy: { sortOrder: 'asc' },
+      }) ?? [];
+    } catch { projects = []; }
+  }
   return <LabClient projects={projects} />;
 }

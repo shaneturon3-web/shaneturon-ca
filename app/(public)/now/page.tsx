@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma';
+import { isPublicDbDisabled } from '@/lib/public-data-gate';
 import { NowClient } from './now-client';
 
 export const dynamic = 'force-dynamic';
@@ -10,12 +11,13 @@ export const metadata = {
 
 export default async function NowPage() {
   let items: any[] = [];
-  try {
-    items = await prisma.nowItem.findMany({
-      where: { isActive: true },
-      orderBy: { sortOrder: 'asc' },
-    }) ?? [];
-  } catch { items = []; }
-
+  if (!isPublicDbDisabled()) {
+    try {
+      items = await prisma.nowItem.findMany({
+        where: { isActive: true },
+        orderBy: { sortOrder: 'asc' },
+      }) ?? [];
+    } catch { items = []; }
+  }
   return <NowClient items={items} />;
 }
