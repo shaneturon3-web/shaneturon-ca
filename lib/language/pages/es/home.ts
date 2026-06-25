@@ -1,64 +1,86 @@
 export const esHome = {
-      hero: {
-        badge: 'Sistemas Operacionales',
-        titlePrefix: 'Arquitecto de Sistemas',
-        titleAccent: 'Operacionales',
-        intro:
-          'Diseñando entornos de ejecución asistidos por IA, sistemas de inteligencia de flujo de trabajo y arquitecturas operacionales para organizaciones complejas.',
-        exploreSystems: 'Explorar Sistemas',
-        viewCaseFiles: 'Ver Casos',
-      },
+  hero: {
+    badge: 'Sistemas activos',
+    title: 'Arquitecto de sistemas operativos',
+    intro:
+      'Diseño flujos de trabajo asistidos por IA, sistemas de ejecución e infraestructura operativa para trabajo complejo.',
+    primaryCta: 'Ver sistemas',
+    secondaryCta: 'Ver casos',
+  },
 
-      valueProps: {
-        title: 'Ejecución Estructurada Bajo Complejidad',
-        intro: 'Infraestructura basada en evidencia que recupera capacidad operacional perdida.',
-        items: [
-          {
-            title: 'Recuperación Operacional',
-            desc: 'Los profesionales pierden cerca de 6 horas por semana por fragmentación administrativa. Infraestructura que devuelve esa capacidad.',
-            metric: '6',
-            metricLabel: 'horas/semana recuperadas',
-          },
-          {
-            title: 'Ejecución Estructurada',
-            desc: 'Los proyectos complejos fallan por colapso de coordinación, no por falta de talento. Arquitecturas de ejecución con gobernanza integrada.',
-            metric: '10',
-            metricLabel: 'subsistemas de orquestación',
-          },
-          {
-            title: 'Operaciones Aumentadas por IA',
-            desc: 'IA sin arquitectura es ruido. Sistemas de orquestación donde los agentes IA tienen roles, límites y responsabilidad definidos.',
-            metric: '14',
-            metricLabel: 'agentes IA coordinados',
-          },
-        ],
-      },
+  status: {
+    label: 'Áreas activas',
+    items: ['PsyNova', 'Control Tower', 'ShipYard', 'Arquitectura de conocimiento', 'Gobernanza de IA'],
+  },
 
-      systems: {
-        title: 'Sistemas Activos',
-        intro: 'Infraestructura operacional actualmente en ejecución.',
-        viewAll: 'Ver todo',
-        psynovaFeatureTags: ['CoreSpine', 'Capa de Cumplimiento', 'Interfaz del Operador'],
-        exploreArchitecture: 'Explorar arquitectura',
+  map: {
+    title: 'De herramientas dispersas a trabajo claro',
+    intro:
+      'El trabajo empieza mapeando lo que existe hoy: herramientas, roles, decisiones, registros y dónde se rompe el proceso.',
+    items: [
+      {
+        title: 'Qué existe hoy',
+        desc: 'Herramientas, documentos, sistemas, hábitos y soluciones informales actuales.',
       },
+      {
+        title: 'Quién carga el trabajo',
+        desc: 'Las personas, roles, entregas y decisiones que mantienen la operación en movimiento.',
+      },
+      {
+        title: 'Qué se debe construir primero',
+        desc: 'El sistema útil más pequeño que mejora el flujo sin sobrecargar al operador.',
+      },
+    ],
+  },
 
-      caseFiles: {
-        title: 'Casos',
-        intro: 'Análisis operacional estructurado. Problema → Diseño → Resultados.',
-        viewAll: 'Ver todo',
-        defaultCategory: 'Caso',
-        process: 'Problema → Análisis → Diseño → Resultados',
+  organize: {
+    title: 'Qué organizo',
+    intro: 'Áreas prácticas donde el trabajo complejo se vuelve más fácil de operar.',
+    items: [
+      {
+        title: 'Presencia pública',
+        desc: 'Páginas externas, ofertas, caminos de contacto y estructura de credibilidad.',
       },
+      {
+        title: 'Recepción y enrutamiento',
+        desc: 'Formas simples de recibir solicitudes, calificar necesidades y enviar trabajo al lugar correcto.',
+      },
+      {
+        title: 'Flujo de comunicación',
+        desc: 'Mensajes, seguimientos, registros y entregas que no dependen de la memoria.',
+      },
+      {
+        title: 'Trabajo administrativo',
+        desc: 'Agenda, documentos, estado, registros y pasos operativos repetibles.',
+      },
+      {
+        title: 'Ejecución asistida por IA',
+        desc: 'Roles definidos, puntos de revisión, entregas y responsabilidad para trabajo apoyado por IA.',
+      },
+      {
+        title: 'Límites profesionales',
+        desc: 'Sistemas que apoyan privacidad, registros, permisos y autoridad profesional.',
+      },
+    ],
+  },
 
-      now: {
-        title: 'Foco Actual',
-        viewNow: 'Ver /now →',
-      },
+  proof: {
+    title: 'Trabajo de casos estructurado',
+    intro:
+      'Los casos muestran el mismo recorrido cada vez: problema, restricciones, análisis, diseño, resultados y lecciones.',
+    defaultCategory: 'Caso',
+    viewAll: 'Ver todo',
+    emptyTitle: 'Piloto de clínica virtual',
+    emptySubtitle: 'Infraestructura para práctica virtual bajo restricciones de salud.',
+    emptyDesc:
+      'Una práctica de salud en Quebec necesitaba recepción, agenda, comunicación y flujo profesional más claros, manteniendo límites de privacidad y regulación.',
+    tags: ['salud', 'cumplimiento', 'ley-25', 'pipeda', 'bilingüe', 'clínica-virtual'],
+  },
 
-      cta: {
-        title: 'Inteligencia Operacional Estructurada',
-        body:
-          'Infraestructura que traduce la realidad operacional en flujos de trabajo desplegables. No es teoría: está basada en cómo el trabajo realmente ocurre.',
-        action: 'Consulta de Colaboración',
-      },
-    };
+  cta: {
+    title: 'Antes de construir, se mapea la práctica.',
+    body:
+      'Identificamos qué existe hoy, qué se rompe, quién carga el trabajo y qué se debe construir primero.',
+    action: 'Contacto',
+  },
+};

@@ -1,64 +1,86 @@
 export const frHome = {
   hero: {
-    badge: 'Systèmes opérationnels',
-    titlePrefix: 'Architecte de Systèmes',
-    titleAccent: 'Opérationnels',
+    badge: 'Systèmes actifs',
+    title: 'Architecte de systèmes opérationnels',
     intro:
-      'Conception d’environnements d’exécution assistés par IA, de systèmes d’intelligence de flux de travail et d’architectures opérationnelles pour organisations complexes.',
-    exploreSystems: 'Explorer les Systèmes',
-    viewCaseFiles: 'Voir les Cas',
+      'Je conçois des flux de travail assistés par IA, des systèmes d’exécution et de l’infrastructure opérationnelle pour le travail complexe.',
+    primaryCta: 'Voir les systèmes',
+    secondaryCta: 'Voir les cas',
   },
 
-  valueProps: {
-    title: 'Exécution Structurée sous Complexité',
-    intro: 'Infrastructure fondée sur les preuves qui récupère de la capacité opérationnelle perdue.',
+  status: {
+    label: 'Domaines actifs',
+    items: ['PsyNova', 'Control Tower', 'ShipYard', 'Architecture de connaissance', 'Gouvernance IA'],
+  },
+
+  map: {
+    title: 'Des outils dispersés au travail clair',
+    intro:
+      'Le travail commence par cartographier ce qui existe aujourd’hui : outils, rôles, décisions, dossiers et endroits où le processus bloque.',
     items: [
       {
-        title: 'Récupération Opérationnelle',
-        desc: 'Les professionnels perdent environ 6 heures par semaine à cause de la fragmentation administrative. Une infrastructure qui récupère cette capacité.',
-        metric: '6',
-        metricLabel: 'heures/semaine récupérées',
+        title: 'Ce qui existe aujourd’hui',
+        desc: 'Outils, documents, systèmes, habitudes et solutions informelles déjà en place.',
       },
       {
-        title: 'Exécution Structurée',
-        desc: 'Les projets complexes échouent par effondrement de coordination, pas par manque de talent. Architectures d’exécution avec gouvernance intégrée.',
-        metric: '10',
-        metricLabel: 'sous-systèmes d’orchestration',
+        title: 'Qui porte le travail',
+        desc: 'Les personnes, rôles, transferts et décisions qui gardent l’opération en mouvement.',
       },
       {
-        title: 'Opérations Augmentées par IA',
-        desc: 'L’IA sans architecture est du bruit. Des systèmes d’orchestration où les agents IA ont des rôles, limites et responsabilités définis.',
-        metric: '14',
-        metricLabel: 'agents IA coordonnés',
+        title: 'Ce qu’il faut bâtir d’abord',
+        desc: 'Le plus petit système utile qui améliore le flux sans surcharger l’opérateur.',
       },
     ],
   },
 
-  systems: {
-    title: 'Systèmes Actifs',
-    intro: 'Infrastructure opérationnelle actuellement en fonctionnement.',
-    viewAll: 'Voir tout',
-    psynovaFeatureTags: ['CoreSpine', 'Couche de Conformité', 'Interface Opérateur'],
-    exploreArchitecture: 'Explorer l’architecture',
+  organize: {
+    title: 'Ce que j’organise',
+    intro: 'Des zones pratiques où le travail complexe devient plus facile à opérer.',
+    items: [
+      {
+        title: 'Présence publique',
+        desc: 'Pages externes, offres, chemins de contact et structure de crédibilité.',
+      },
+      {
+        title: 'Accueil et orientation',
+        desc: 'Des façons simples de recevoir les demandes, qualifier les besoins et diriger le travail.',
+      },
+      {
+        title: 'Flux de communication',
+        desc: 'Messages, suivis, dossiers et transferts qui ne dépendent pas de la mémoire.',
+      },
+      {
+        title: 'Travail administratif',
+        desc: 'Horaire, documents, statut, dossiers et étapes opérationnelles répétables.',
+      },
+      {
+        title: 'Exécution assistée par IA',
+        desc: 'Rôles définis, points de révision, transferts et responsabilité pour le travail assisté par IA.',
+      },
+      {
+        title: 'Limites professionnelles',
+        desc: 'Systèmes qui soutiennent confidentialité, dossiers, permissions et autorité professionnelle.',
+      },
+    ],
   },
 
-  caseFiles: {
-    title: 'Cas',
-    intro: 'Analyse opérationnelle structurée. Problème → Conception → Résultats.',
-    viewAll: 'Voir tout',
+  proof: {
+    title: 'Travail de cas structuré',
+    intro:
+      'Les cas suivent le même parcours : problème, contraintes, analyse, conception, résultats et leçons.',
     defaultCategory: 'Cas',
-    process: 'Problème → Analyse → Conception → Résultats',
-  },
-
-  now: {
-    title: 'Focus Actuel',
-    viewNow: 'Voir /now →',
+    viewAll: 'Voir tout',
+    emptyTitle: 'Pilote de clinique virtuelle',
+    emptySubtitle: 'Infrastructure de pratique virtuelle sous contraintes de santé.',
+    emptyDesc:
+      'Une pratique de santé basée au Québec avait besoin d’un accueil, d’un horaire, d’une communication et d’un flux professionnel plus clairs, en respectant les limites de confidentialité et de réglementation.',
+    tags: ['santé', 'conformité', 'loi-25', 'pipeda', 'bilingue', 'clinique-virtuelle'],
   },
 
   cta: {
-    title: 'Intelligence Opérationnelle Structurée',
+    title: 'Avant de bâtir, on cartographie la pratique.',
     body:
-      'Infrastructure qui traduit la réalité opérationnelle en flux de travail déployables. Pas théorique — ancrée dans la façon dont le travail se fait réellement.',
-    action: 'Demande de Collaboration',
+      'Nous identifions ce qui existe aujourd’hui, ce qui bloque, qui porte le travail et ce qui doit être bâti d’abord.',
+    action: 'Contact',
   },
 };

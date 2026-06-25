@@ -1,46 +1,22 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
-import {
-  Hexagon, ArrowRight, Activity, Layers, Network, Brain,
-  Shield, BookOpen, Cpu, Clock, ChevronRight, Zap
-} from 'lucide-react';
-import { StatusStrip } from '@/components/status-strip';
+import { ArrowRight, BookOpen, CheckCircle2, ClipboardList, MessageSquare, Route, ShieldCheck, Sparkles, Users } from 'lucide-react';
 import { useLanguage } from '@/lib/language';
+import {
+  PublicButton,
+  PublicCard,
+  PublicCtaBand,
+  PublicPageHero,
+  PublicPageShell,
+  PublicSection,
+  PublicSectionHeader,
+  PublicStatusPill,
+} from '@/components/public';
 
-const iconMap: Record<string, any> = {
-  'Operational Platform': Layers,
-  'Orchestration Framework': Network,
-  'Knowledge Architecture': Brain,
-  'AI Governance': Cpu,
-};
-
-const valuePropIcons = [Shield, Network, Cpu];
-
-function CountUp({ target, suffix }: { target: number; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <motion.span
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : {}}
-      className="font-mono text-4xl font-bold text-primary"
-    >
-      {isInView ? (
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
-          {target}{suffix ?? ''}
-        </motion.span>
-      ) : '0'}
-    </motion.span>
-  );
-}
+const mapIcons = [ClipboardList, Users, CheckCircle2];
+const organizeIcons = [Sparkles, Route, MessageSquare, ClipboardList, CheckCircle2, ShieldCheck];
 
 export function HomepageClient({
   systems,
@@ -53,319 +29,167 @@ export function HomepageClient({
 }) {
   const { language } = useLanguage();
   const copy = language.pages.home;
-  const safeS = systems ?? [];
   const safeCF = caseFiles ?? [];
-  const safeNow = nowItems ?? [];
+  const featuredCase = safeCF[0];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative min-h-[85vh] flex items-center justify-center grid-pattern">
-        <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/50 to-background" />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border/50 bg-card/50 mb-8">
-              <span className="h-2 w-2 rounded-full bg-primary status-pulse" />
-              <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">{copy.hero.badge}</span>
-            </div>
+    <PublicPageShell>
+      <PublicSection tone="grid" className="min-h-[82vh] flex items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65 }}
+        >
+          <PublicPageHero
+            align="center"
+            eyebrow={copy.hero.badge}
+            title={copy.hero.title}
+            description={copy.hero.intro}
+            actions={
+              <>
+                <PublicButton href="/systems">
+                  {copy.hero.primaryCta} <ArrowRight className="ml-2 h-4 w-4" />
+                </PublicButton>
+                <PublicButton href="/case-files" variant="secondary">
+                  {copy.hero.secondaryCta}
+                </PublicButton>
+              </>
+            }
+          />
 
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-              {copy.hero.titlePrefix}{' '}
-              <span className="text-primary">{copy.hero.titleAccent}</span>
-            </h1>
-
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              {copy.hero.intro}
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <Link
-                href="/systems"
-                prefetch={false}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                {copy.hero.exploreSystems} <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/case-files"
-                prefetch={false}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-card border border-border text-foreground font-medium rounded-lg hover:bg-accent transition-colors"
-              >
-                {copy.hero.viewCaseFiles}
-              </Link>
-            </div>
-
-            <StatusStrip />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Value Props */}
-      <section className="py-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-display text-3xl font-bold tracking-tight mb-4">{copy.valueProps.title}</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">{copy.valueProps.intro}</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {copy.valueProps.items.map((item, i) => {
-              const Icon = valuePropIcons[i] ?? Zap;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.15 }}
-                  className="bg-card rounded-lg p-8 hover:bg-accent/50 transition-all duration-300"
-                >
-                  <Icon className="h-8 w-8 text-primary mb-4" />
-                  <div className="mb-4">
-                    <CountUp target={Number(item?.metric ?? 0)} suffix="+" />
-                    <p className="text-xs font-mono text-muted-foreground mt-1">{item?.metricLabel}</p>
-                  </div>
-                  <h3 className="font-display text-lg font-semibold mb-2">{item?.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item?.desc}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Flagship Systems */}
-      <section className="py-24 px-4 bg-card/30">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center justify-between mb-12"
-          >
-            <div>
-              <h2 className="font-display text-3xl font-bold tracking-tight mb-2">{copy.systems.title}</h2>
-              <p className="text-muted-foreground">{copy.systems.intro}</p>
-            </div>
-            <Link
-              href="/systems"
-              className="hidden sm:inline-flex items-center gap-1 text-sm text-primary hover:underline"
-            >
-              {copy.systems.viewAll} <ChevronRight className="h-4 w-4" />
-            </Link>
-          </motion.div>
-
-          {(() => {
-            const psynova = safeS.find((s: any) => s?.slug === 'psynova');
-            const others = safeS.filter((s: any) => s?.slug !== 'psynova');
-            return (
-              <div className="space-y-6">
-                {/* PsyNova — Featured */}
-                {psynova && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                  >
-                    <Link
-                      href="/systems#psynova"
-                      prefetch={false}
-                      className="block bg-card rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 group overflow-hidden"
-                    >
-                      <div className="p-8 sm:p-10">
-                        <div className="flex items-start justify-between mb-5">
-                          <div className="flex items-center gap-3">
-                            <div className="p-2.5 rounded-lg bg-primary/10 border border-primary/20">
-                              <Layers className="h-6 w-6 text-primary" />
-                            </div>
-                            <div>
-                              <h3 className="font-display text-2xl font-bold group-hover:text-primary transition-colors">
-                                {psynova?.name}
-                              </h3>
-                              <p className="text-xs font-mono text-muted-foreground/60 mt-0.5">{psynova?.category}</p>
-                            </div>
-                          </div>
-                          <span className="inline-flex items-center gap-1.5 text-xs font-mono text-primary px-2.5 py-1 rounded-full border border-primary/20 bg-primary/5">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary status-pulse" />
-                            {psynova?.status ?? 'ACTIVE'}
-                          </span>
-                        </div>
-                        <p className="text-base text-muted-foreground mb-6 max-w-2xl">{psynova?.tagline}</p>
-                        <div className="flex flex-wrap gap-2 mb-5">
-                          {copy.systems.psynovaFeatureTags.map((layer) => (
-                            <span key={layer} className="px-3 py-1.5 rounded text-xs font-mono bg-primary/8 text-primary/80 border border-primary/15">
-                              {layer}
-                            </span>
-                          ))}
-                        </div>
-                        <p className="text-xs text-muted-foreground/70 line-clamp-2">{psynova?.description}</p>
-                        <div className="flex items-center gap-1.5 mt-5 text-sm text-primary font-medium">
-                          <span>{copy.systems.exploreArchitecture}</span>
-                          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      </div>
-                    </Link>
-                  </motion.div>
-                )}
-
-                {/* Other Systems */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  {others.map((sys: any, i: number) => {
-                    const Icon = iconMap[sys?.category] ?? Hexagon;
-                    return (
-                      <motion.div
-                        key={sys?.id ?? i}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.1 }}
-                      >
-                        <Link
-                          href={`/systems#${sys?.slug ?? ''}`}
-                          prefetch={false}
-                          className="block bg-card rounded-lg p-6 border border-border/30 hover:border-primary/30 hover:bg-accent/30 transition-all duration-300 group"
-                        >
-                          <div className="flex items-start justify-between mb-4">
-                            <Icon className="h-6 w-6 text-primary" />
-                            <span className="inline-flex items-center gap-1.5 text-xs font-mono">
-                              <span className="h-1.5 w-1.5 rounded-full bg-primary status-pulse" />
-                              {sys?.status ?? 'ACTIVE'}
-                            </span>
-                          </div>
-                          <h3 className="font-display text-xl font-semibold mb-1 group-hover:text-primary transition-colors">
-                            {sys?.name}
-                          </h3>
-                          <p className="text-sm text-muted-foreground mb-3">{sys?.tagline}</p>
-                          <p className="text-xs text-muted-foreground/70 line-clamp-2">{sys?.description}</p>
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })()}
-        </div>
-      </section>
-
-      {/* {copy.caseFiles.title} Preview */}
-      {safeCF.length > 0 && (
-        <section className="py-24 px-4">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center justify-between mb-12"
-            >
-              <div>
-                <h2 className="font-display text-3xl font-bold tracking-tight mb-2">{copy.caseFiles.title}</h2>
-                <p className="text-muted-foreground">{copy.caseFiles.intro}</p>
-              </div>
-              <Link
-                href="/case-files"
-                prefetch={false}
-                className="hidden sm:inline-flex items-center gap-1 text-sm text-primary hover:underline"
-              >
-                {copy.systems.viewAll} <ChevronRight className="h-4 w-4" />
-              </Link>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {safeCF.map((cf: any, i: number) => (
-                <motion.div
-                  key={cf?.id ?? i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  <Link
-                    href={`/case-files/${cf?.slug ?? cf?.id}`}
-                    className="block bg-card rounded-lg p-6 border border-border/30 hover:border-primary/30 hover:bg-accent/30 transition-all duration-300 group"
-                  >
-                    <div className="flex items-center gap-2 mb-3">
-                      <BookOpen className="h-4 w-4 text-primary" />
-                      <span className="text-xs font-mono text-muted-foreground uppercase">{cf?.category ?? copy.caseFiles.defaultCategory}</span>
-                    </div>
-                    <h3 className="font-display text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
-                      {cf?.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-3">{cf?.subtitle}</p>
-                    <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground/60">
-                      <span>{copy.caseFiles.process}</span>
-                    </div>
-                  </Link>
-                </motion.div>
+          <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-border/40 bg-background/70 p-4 backdrop-blur">
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <PublicStatusPill>{copy.status.label}</PublicStatusPill>
+              {copy.status.items.map((item) => (
+                <span key={item} className="text-xs text-muted-foreground">
+                  {item}
+                </span>
               ))}
             </div>
           </div>
-        </section>
-      )}
+        </motion.div>
+      </PublicSection>
 
-      {/* Now Strip */}
-      {safeNow.length > 0 && (
-        <section className="py-16 px-4 bg-card/30">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+      <PublicSection>
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <PublicSectionHeader
+            align="center"
+            title={copy.map.title}
+            description={copy.map.intro}
+          />
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {copy.map.items.map((item, index) => {
+              const Icon = mapIcons[index] ?? ClipboardList;
+
+              return (
+                <PublicCard
+                  key={item.title}
+                  icon={Icon}
+                  title={item.title}
+                  description={item.desc}
+                />
+              );
+            })}
+          </div>
+        </motion.div>
+      </PublicSection>
+
+      <PublicSection tone="muted">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <PublicSectionHeader
+            title={copy.organize.title}
+            description={copy.organize.intro}
+          />
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {copy.organize.items.map((item, index) => {
+              const Icon = organizeIcons[index] ?? CheckCircle2;
+
+              return (
+                <PublicCard
+                  key={item.title}
+                  icon={Icon}
+                  title={item.title}
+                  description={item.desc}
+                />
+              );
+            })}
+          </div>
+        </motion.div>
+      </PublicSection>
+
+      <PublicSection>
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <PublicSectionHeader
+            title={copy.proof.title}
+            description={copy.proof.intro}
+            action={
+              <PublicButton href="/case-files" variant="ghost">
+                {copy.proof.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
+              </PublicButton>
+            }
+          />
+
+          <Link
+            href={featuredCase ? `/case-files/${featuredCase?.slug ?? featuredCase?.id}` : '/case-files'}
+            prefetch={false}
+            className="block"
+          >
+            <PublicCard
+              icon={BookOpen}
+              eyebrow={featuredCase?.category ?? copy.proof.defaultCategory}
+              title={featuredCase?.title ?? copy.proof.emptyTitle}
+              description={featuredCase?.subtitle ?? copy.proof.emptySubtitle}
+              className="p-8 sm:p-10"
             >
-              <div className="flex items-center gap-2 mb-6">
-                <Clock className="h-5 w-5 text-primary" />
-                <h2 className="font-display text-xl font-bold tracking-tight">{copy.now.title}</h2>
-                <Link href="/now" prefetch={false} className="ml-auto text-xs text-primary hover:underline">{copy.now.viewNow}</Link>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {safeNow.map((item: any, i: number) => (
-                  <div key={item?.id ?? i} className="flex items-start gap-3 p-3 rounded-md bg-background/50">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <div>
-                      <span className="text-xs font-mono text-primary/70 uppercase">{item?.category}</span>
-                      <p className="text-sm text-muted-foreground">{item?.content}</p>
-                    </div>
-                  </div>
+              <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                {featuredCase?.problem ?? copy.proof.emptyDesc}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {(featuredCase?.tags
+                  ? String(featuredCase.tags).split(',').map((tag) => tag.trim()).filter(Boolean)
+                  : copy.proof.tags
+                ).map((tag) => (
+                  <PublicStatusPill key={tag} tone="muted">
+                    {tag}
+                  </PublicStatusPill>
                 ))}
               </div>
-            </motion.div>
-          </div>
-        </section>
-      )}
+            </PublicCard>
+          </Link>
+        </motion.div>
+      </PublicSection>
 
-      {/* CTA */}
-      <section className="py-24 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="font-display text-3xl font-bold tracking-tight mb-4">
-              {copy.cta.title}
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              {copy.cta.body}
-            </p>
-            <Link
-              href="/contact"
-              prefetch={false}
-              className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              {copy.cta.action} <ArrowRight className="h-4 w-4" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+      <PublicSection container="default">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <PublicCtaBand
+            title={copy.cta.title}
+            description={copy.cta.body}
+            action={
+              <PublicButton href="/contact">
+                {copy.cta.action} <ArrowRight className="ml-2 h-4 w-4" />
+              </PublicButton>
+            }
+          />
+        </motion.div>
+      </PublicSection>
+    </PublicPageShell>
   );
 }
