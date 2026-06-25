@@ -1,8 +1,11 @@
+import { getLanguage } from '@/lib/language';
 import { AboutClient } from './about-client';
 
+const language = getLanguage();
+
 export const metadata = {
-  title: 'About — Shane Turon',
-  description: 'Operational Systems Architect. Designing execution infrastructure for professionals, clinics, and complex organizations.',
+  title: language.pages.about.metadata.title,
+  description: language.pages.about.metadata.description,
 };
 
 export default function AboutPage() {
