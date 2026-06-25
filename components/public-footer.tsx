@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import { Hexagon } from 'lucide-react';
-import { getLanguage } from '@/lib/language';
+import { useLanguage } from '@/lib/language';
 
 export function PublicFooter() {
-  const language = getLanguage();
+  const { language } = useLanguage();
 
   return (
     <footer className="border-t border-border/50 bg-background">

@@ -4,14 +4,14 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { getLanguage } from '@/lib/language';
+import { useLanguage } from '@/lib/language';
 import { Menu, X, Hexagon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function PublicNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname() ?? '/';
-  const language = getLanguage();
+  const { language } = useLanguage();
   const navLinks = language.nav.links;
   const contactLink = language.nav.contact;
 

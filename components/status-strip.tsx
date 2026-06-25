@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { Activity } from 'lucide-react';
-import { getLanguage } from '@/lib/language';
+import { useLanguage } from '@/lib/language';
 
 export function StatusStrip() {
-  const language = getLanguage();
+  const { language } = useLanguage();
   const statusItems = language.statusStrip.items;
 
   return (

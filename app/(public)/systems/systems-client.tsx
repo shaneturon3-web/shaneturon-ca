@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
-import { getLanguage } from '@/lib/language';
+import { useLanguage } from '@/lib/language';
 
 const iconMap: Record<string, any> = {
   'Operational Platform': Layers,
@@ -18,7 +18,7 @@ const iconMap: Record<string, any> = {
 
 /* ── PsyNova Architecture Visual ── */
 function PsyNovaArchitecture() {
-  const language = getLanguage();
+  const { language } = useLanguage();
   const layerVisuals = [
     {
       icon: LayoutDashboard,
@@ -90,7 +90,7 @@ function PsyNovaArchitecture() {
 
 /* ── PsyNova Hero Card ── */
 function PsyNovaHero({ sys }: { sys: any }) {
-  const language = getLanguage();
+  const { language } = useLanguage();
   const copy = language.pages.systems.psynova;
   const deploymentModes = copy.deploymentModes.items;
   const scalePath = copy.scalePath.items;
@@ -196,7 +196,7 @@ function PsyNovaHero({ sys }: { sys: any }) {
 function SystemCard({ sys, index }: { sys: any; index: number }) {
   const [isExpanded, setExpanded] = useState(false);
   const Icon = iconMap[sys?.category] ?? Hexagon;
-  const language = getLanguage();
+  const { language } = useLanguage();
   const copy = language.pages.systems.card;
   let features: string[] = [];
   try {
@@ -284,7 +284,7 @@ function SystemCard({ sys, index }: { sys: any; index: number }) {
 
 /* ── Main Page ── */
 export function SystemsClient({ systems }: { systems: any[] }) {
-  const language = getLanguage();
+  const { language } = useLanguage();
   const copy = language.pages.systems;
   const safe = systems ?? [];
   const psynova = safe.find((s) => s?.slug === 'psynova');
