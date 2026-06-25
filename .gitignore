@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+dist/
+.cache/
+*.log
+.env
+.env.*
+tsconfig.tsbuildinfo
+prisma/schema.prisma.before-local-output-fix

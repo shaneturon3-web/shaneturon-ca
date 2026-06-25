@@ -1,0 +1,175 @@
+generator client {
+    provider = "prisma-client-js"
+    binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  role          String    @default("admin")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  sessions      Session[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model System {
+  id           String   @id @default(cuid())
+  name         String
+  slug         String   @unique
+  tagline      String
+  description  String
+  status       String   @default("ACTIVE")
+  category     String
+  features     String
+  architecture String?
+  imageUrl     String?
+  sortOrder    Int      @default(0)
+  isPublished  Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model CaseFile {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  subtitle    String?
+  problem     String
+  constraints String
+  analysis    String
+  design      String
+  results     String
+  lessons     String
+  status      String   @default("DRAFT")
+  category    String?
+  tags        String?
+  imageUrl    String?
+  isPublished Boolean  @default(false)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ContentItem {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  type        String
+  body        String
+  excerpt     String?
+  category    String?
+  tags        String?
+  imageUrl    String?
+  isPublished Boolean  @default(false)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model NowItem {
+  id        String   @id @default(cuid())
+  content   String
+  category  String
+  isActive  Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model LabProject {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String
+  status      String   @default("EXPERIMENTAL")
+  techStack   String?
+  repoUrl     String?
+  demoUrl     String?
+  imageUrl    String?
+  isPublished Boolean  @default(false)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Upload {
+  id               String   @id @default(cuid())
+  fileName         String
+  fileType         String
+  fileSize         Int
+  cloudStoragePath String
+  isPublic         Boolean  @default(false)
+  category         String?
+  description      String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  eventType String
+  page      String
+  referrer  String?
+  userAgent String?
+  ipHash    String?
+  metadata  String?
+  createdAt DateTime @default(now())
+
+  @@index([eventType, createdAt])
+  @@index([page, createdAt])
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String?
+  message   String
+  status    String   @default("NEW")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
