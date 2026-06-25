@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
+import { getLanguage } from '@/lib/language';
 
 const iconMap: Record<string, any> = {
   'Operational Platform': Layers,
@@ -17,32 +18,33 @@ const iconMap: Record<string, any> = {
 
 /* ── PsyNova Architecture Visual ── */
 function PsyNovaArchitecture() {
-  const layers = [
+  const language = getLanguage();
+  const layerVisuals = [
     {
-      label: 'Operator Interface',
-      sublabel: 'Role-based dashboards',
       icon: LayoutDashboard,
       color: 'from-primary/20 to-primary/5',
       border: 'border-primary/30',
-      items: ['Admin', 'Professional', 'Patient', 'Supervisor'],
     },
     {
-      label: 'Compliance Wrapper',
-      sublabel: 'Sector-specific regulatory shields',
       icon: Shield,
       color: 'from-primary/12 to-primary/3',
       border: 'border-primary/20',
-      items: ['Law 25 / PIPEDA', 'Healthcare', 'Accounting', 'Wellness'],
     },
     {
-      label: 'CoreSpine',
-      sublabel: 'Headless administrative engine',
       icon: Server,
       color: 'from-primary/8 to-primary/2',
       border: 'border-primary/15',
-      items: ['Intake', 'Scheduling', 'Billing', 'CRM / Memory', 'Orchestration'],
     },
-  ];
+  ] as const;
+
+  const layers = language.pages.systems.psynova.architecture.layers.map((layer, index) => {
+    const visual = layerVisuals[index] ?? layerVisuals[0];
+
+    return {
+      ...layer,
+      ...visual,
+    };
+  });
 
   return (
     <div className="space-y-3">
@@ -88,16 +90,10 @@ function PsyNovaArchitecture() {
 
 /* ── PsyNova Hero Card ── */
 function PsyNovaHero({ sys }: { sys: any }) {
-  const deploymentModes = [
-    { label: 'Ghost Mode', desc: 'White-label infrastructure service' },
-    { label: 'Brand Mode', desc: 'Managed platform deployment' },
-  ];
-
-  const scalePath = [
-    { label: 'SoloSpine', desc: 'Solo professional' },
-    { label: 'ClinicSpine', desc: 'Multi-provider clinic' },
-    { label: 'BureauForge', desc: 'Institutional PMO' },
-  ];
+  const language = getLanguage();
+  const copy = language.pages.systems.psynova;
+  const deploymentModes = copy.deploymentModes.items;
+  const scalePath = copy.scalePath.items;
 
   return (
     <motion.section
@@ -106,7 +102,6 @@ function PsyNovaHero({ sys }: { sys: any }) {
       transition={{ duration: 0.6 }}
       className="mb-16"
     >
-      {/* Header */}
       <div className="flex items-center gap-3 mb-2">
         <div className="p-2.5 rounded-lg bg-primary/10 border border-primary/20">
           <Layers className="h-7 w-7 text-primary" />
@@ -127,16 +122,17 @@ function PsyNovaHero({ sys }: { sys: any }) {
         {sys?.tagline}
       </p>
 
-      {/* Two-column layout */}
       <div className="grid lg:grid-cols-2 gap-8">
-        {/* Left: Architecture Diagram */}
         <div>
-          <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-4">Architecture</h3>
+          <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-4">
+            {copy.architecture.heading}
+          </h3>
           <PsyNovaArchitecture />
 
-          {/* Scale Path */}
           <div className="mt-8">
-            <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-4">Scale Path</h3>
+            <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-4">
+              {copy.scalePath.heading}
+            </h3>
             <div className="flex items-center gap-2">
               {scalePath.map((step, i) => (
                 <div key={step.label} className="flex items-center gap-2">
@@ -153,16 +149,18 @@ function PsyNovaHero({ sys }: { sys: any }) {
           </div>
         </div>
 
-        {/* Right: Description + Deployment + Language */}
         <div className="space-y-8">
           <div>
-            <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">Overview</h3>
+            <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">
+              {copy.overview.heading}
+            </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{sys?.description}</p>
           </div>
 
-          {/* Deployment Modes */}
           <div>
-            <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">Deployment Modes</h3>
+            <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">
+              {copy.deploymentModes.heading}
+            </h3>
             <div className="grid grid-cols-2 gap-3">
               {deploymentModes.map((mode) => (
                 <div key={mode.label} className="p-4 rounded-lg bg-card border border-border/30">
@@ -173,11 +171,12 @@ function PsyNovaHero({ sys }: { sys: any }) {
             </div>
           </div>
 
-          {/* Languages */}
           <div>
-            <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">Language Modules</h3>
+            <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">
+              {copy.languageModules.heading}
+            </h3>
             <div className="flex gap-2">
-              {['EN', 'FR', 'ES'].map((lang) => (
+              {copy.languageModules.items.map((lang) => (
                 <span
                   key={lang}
                   className="px-3 py-1.5 rounded text-xs font-mono font-medium bg-primary/10 text-primary border border-primary/20"
@@ -197,6 +196,8 @@ function PsyNovaHero({ sys }: { sys: any }) {
 function SystemCard({ sys, index }: { sys: any; index: number }) {
   const [isExpanded, setExpanded] = useState(false);
   const Icon = iconMap[sys?.category] ?? Hexagon;
+  const language = getLanguage();
+  const copy = language.pages.systems.card;
   let features: string[] = [];
   try {
     features = JSON.parse(sys?.features ?? '[]') ?? [];
@@ -248,13 +249,13 @@ function SystemCard({ sys, index }: { sys: any; index: number }) {
         >
           <div className="pt-6 space-y-6">
             <div>
-              <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">Overview</h3>
+              <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">{copy.overview}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{sys?.description}</p>
             </div>
 
             {features.length > 0 && (
               <div>
-                <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">Capabilities</h3>
+                <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">{copy.capabilities}</h3>
                 <div className="space-y-2">
                   {features.map((f: string, fi: number) => (
                     <div key={fi} className="flex items-start gap-3 p-3 rounded-md bg-background/50">
@@ -268,7 +269,7 @@ function SystemCard({ sys, index }: { sys: any; index: number }) {
 
             {sys?.architecture && (
               <div>
-                <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">Architecture</h3>
+                <h3 className="font-mono text-xs text-primary uppercase tracking-widest mb-3">{copy.architecture}</h3>
                 <div className="p-4 rounded-md bg-background/50 font-mono text-xs text-muted-foreground leading-relaxed">
                   {sys.architecture}
                 </div>
@@ -283,6 +284,8 @@ function SystemCard({ sys, index }: { sys: any; index: number }) {
 
 /* ── Main Page ── */
 export function SystemsClient({ systems }: { systems: any[] }) {
+  const language = getLanguage();
+  const copy = language.pages.systems;
   const safe = systems ?? [];
   const psynova = safe.find((s) => s?.slug === 'psynova');
   const others = safe.filter((s) => s?.slug !== 'psynova');
@@ -295,12 +298,12 @@ export function SystemsClient({ systems }: { systems: any[] }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <p className="text-sm font-mono text-primary uppercase tracking-widest mb-4">Infrastructure</p>
+            <p className="text-sm font-mono text-primary uppercase tracking-widest mb-4">{copy.hero.eyebrow}</p>
             <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-              Active <span className="text-primary">Systems</span>
+              {copy.hero.titlePrefix} <span className="text-primary">{copy.hero.titleAccent}</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-16">
-              Operational infrastructure currently running. Each system solves a distinct architectural problem.
+              {copy.hero.intro}
             </p>
           </motion.div>
 
@@ -315,7 +318,7 @@ export function SystemsClient({ systems }: { systems: any[] }) {
           {others.length > 0 && psynova && (
             <div className="flex items-center gap-4 mb-10">
               <div className="h-px flex-1 bg-border/30" />
-              <span className="text-xs font-mono text-muted-foreground/50 uppercase tracking-widest">Other Systems</span>
+              <span className="text-xs font-mono text-muted-foreground/50 uppercase tracking-widest">{copy.sections.otherSystems}</span>
               <div className="h-px flex-1 bg-border/30" />
             </div>
           )}
