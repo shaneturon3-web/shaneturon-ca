@@ -3,17 +3,13 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowLeft, BookOpen, AlertTriangle, Search, Lightbulb, Hammer, CheckCircle, GraduationCap } from 'lucide-react';
+import { useLanguage } from '@/lib/language';
 
-const sections = [
-  { key: 'problem', label: 'Problem', icon: AlertTriangle },
-  { key: 'constraints', label: 'Constraints', icon: Search },
-  { key: 'analysis', label: 'Systems Analysis', icon: Lightbulb },
-  { key: 'design', label: 'Architecture Design', icon: Hammer },
-  { key: 'results', label: 'Operational Result', icon: CheckCircle },
-  { key: 'lessons', label: 'Lessons Learned', icon: GraduationCap },
-];
+const sectionIcons = [AlertTriangle, Search, Lightbulb, Hammer, CheckCircle, GraduationCap];
 
 export function CaseFileDetailClient({ caseFile }: { caseFile: any }) {
+  const { language } = useLanguage();
+  const copy = language.pages.caseFiles;
   const cf = caseFile ?? {};
 
   return (
@@ -23,14 +19,15 @@ export function CaseFileDetailClient({ caseFile }: { caseFile: any }) {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <Link
               href="/case-files"
+              prefetch={false}
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors"
             >
-              <ArrowLeft className="h-4 w-4" /> Back to Case Files
+              <ArrowLeft className="h-4 w-4" /> {copy.detail.back}
             </Link>
 
             <div className="flex items-center gap-2 mb-4">
               <BookOpen className="h-5 w-5 text-primary" />
-              <span className="text-xs font-mono text-muted-foreground uppercase">{cf?.category ?? 'Case File'}</span>
+              <span className="text-xs font-mono text-muted-foreground uppercase">{cf?.category ?? copy.detail.defaultCategory}</span>
             </div>
 
             <h1 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-2">{cf?.title}</h1>
@@ -48,14 +45,14 @@ export function CaseFileDetailClient({ caseFile }: { caseFile: any }) {
           </motion.div>
 
           <div className="space-y-8">
-            {sections.map((section: any, i: number) => {
-              const Icon = section?.icon ?? BookOpen;
-              const content = cf?.[section?.key];
+            {copy.detail.sections.map((section, i) => {
+              const Icon = sectionIcons[i] ?? BookOpen;
+              const content = cf?.[section.key];
               if (!content) return null;
 
               return (
                 <motion.div
-                  key={section?.key}
+                  key={section.key}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -66,7 +63,7 @@ export function CaseFileDetailClient({ caseFile }: { caseFile: any }) {
                     <div className="p-1.5 rounded-md bg-primary/10">
                       <Icon className="h-4 w-4 text-primary" />
                     </div>
-                    <h2 className="font-mono text-xs text-primary uppercase tracking-widest">{section?.label}</h2>
+                    <h2 className="font-mono text-xs text-primary uppercase tracking-widest">{section.label}</h2>
                     <span className="font-mono text-xs text-muted-foreground/40">{String(i + 1).padStart(2, '0')}</span>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{content}</p>

@@ -3,8 +3,11 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { BookOpen, ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/lib/language';
 
 export function CaseFilesClient({ caseFiles }: { caseFiles: any[] }) {
+  const { language } = useLanguage();
+  const copy = language.pages.caseFiles;
   const safe = caseFiles ?? [];
 
   return (
@@ -15,13 +18,12 @@ export function CaseFilesClient({ caseFiles }: { caseFiles: any[] }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <p className="text-sm font-mono text-primary uppercase tracking-widest mb-4">Analysis</p>
+            <p className="text-sm font-mono text-primary uppercase tracking-widest mb-4">{copy.list.hero.eyebrow}</p>
             <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-              Case <span className="text-primary">Files</span>
+              {copy.list.hero.titlePrefix} <span className="text-primary">{copy.list.hero.titleAccent}</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-16">
-              Structured operational analysis. Each case follows the format:
-              Problem → Constraints → Analysis → Design → Results → Lessons.
+              {copy.list.hero.intro}
             </p>
           </motion.div>
 
@@ -36,13 +38,14 @@ export function CaseFilesClient({ caseFiles }: { caseFiles: any[] }) {
               >
                 <Link
                   href={`/case-files/${cf?.slug ?? cf?.id}`}
+                  prefetch={false}
                   className="block bg-card rounded-lg p-6 sm:p-8 border border-border/30 hover:border-primary/30 hover:bg-accent/20 transition-all duration-300 group"
                 >
                   <div className="flex items-start justify-between">
                     <div>
                       <div className="flex items-center gap-2 mb-3">
                         <BookOpen className="h-4 w-4 text-primary" />
-                        <span className="text-xs font-mono text-muted-foreground uppercase">{cf?.category ?? 'Case File'}</span>
+                        <span className="text-xs font-mono text-muted-foreground uppercase">{cf?.category ?? copy.list.defaultCategory}</span>
                       </div>
                       <h2 className="font-display text-xl font-bold mb-1 group-hover:text-primary transition-colors">
                         {cf?.title}
@@ -70,7 +73,7 @@ export function CaseFilesClient({ caseFiles }: { caseFiles: any[] }) {
           {safe.length === 0 && (
             <div className="text-center py-16 text-muted-foreground">
               <BookOpen className="h-8 w-8 mx-auto mb-4 text-muted-foreground/50" />
-              <p>Case files are being compiled. Check back soon.</p>
+              <p>{copy.list.empty}</p>
             </div>
           )}
         </div>

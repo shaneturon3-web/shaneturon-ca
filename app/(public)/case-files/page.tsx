@@ -1,16 +1,16 @@
+import { getLanguage } from '@/lib/language';
 import { prisma } from '@/lib/prisma';
+import { isPublicDbDisabled } from '@/lib/public-data-gate';
 import { CaseFilesClient } from './case-files-client';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata = {
-  title: 'Case Files — Shane Turon',
-  description: 'Structured operational analysis. Problem → Constraints → Analysis → Design → Results → Lessons.',
-};
+const language = getLanguage();
 
-function isPublicDbDisabled() {
-  return process.env.DISABLE_PUBLIC_DB === 'true';
-}
+export const metadata = {
+  title: language.pages.caseFiles.metadata.title,
+  description: language.pages.caseFiles.metadata.description,
+};
 
 export default async function CaseFilesPage() {
   let caseFiles: any[] = [];
