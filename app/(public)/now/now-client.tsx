@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Clock, Activity } from 'lucide-react';
 import { StatusStrip } from '@/components/status-strip';
+import { useLanguage } from '@/lib/language';
 
 const categoryColors: Record<string, string> = {
   Engineering: 'text-blue-400',
@@ -13,6 +14,8 @@ const categoryColors: Record<string, string> = {
 };
 
 export function NowClient({ items }: { items: any[] }) {
+  const { language } = useLanguage();
+  const copy = language.pages.now;
   const safe = items ?? [];
 
   return (
@@ -22,13 +25,13 @@ export function NowClient({ items }: { items: any[] }) {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <div className="flex items-center gap-2 mb-4">
               <Clock className="h-5 w-5 text-primary" />
-              <p className="text-sm font-mono text-primary uppercase tracking-widest">/now</p>
+              <p className="text-sm font-mono text-primary uppercase tracking-widest">{copy.hero.eyebrow}</p>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-              Current <span className="text-primary">Focus</span>
+              {copy.hero.titlePrefix} <span className="text-primary">{copy.hero.titleAccent}</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              Real-time operational focus. What the systems are doing right now.
+              {copy.hero.intro}
             </p>
 
             <div className="mb-16">
@@ -61,7 +64,7 @@ export function NowClient({ items }: { items: any[] }) {
           {safe.length === 0 && (
             <div className="text-center py-16 text-muted-foreground">
               <Activity className="h-8 w-8 mx-auto mb-4 text-muted-foreground/50" />
-              <p>Status updates loading...</p>
+              <p>{copy.empty.message}</p>
             </div>
           )}
 
@@ -72,7 +75,7 @@ export function NowClient({ items }: { items: any[] }) {
             className="mt-16 p-6 rounded-lg bg-card/50 text-center"
           >
             <p className="text-xs font-mono text-muted-foreground">
-              This page is updated regularly through the private intelligence dashboard.
+              {copy.note.body}
             </p>
           </motion.div>
         </div>
