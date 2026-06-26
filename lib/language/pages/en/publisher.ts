@@ -2,43 +2,36 @@ export const enPublisher = {
   metadata: {
     title: 'Publisher — Shane Turon',
     description:
-      'Publisher is Shane Turon’s public catalogue for essays, books, field notes, manuals, stories, fables, and systems writing.',
+      'Publisher is Shane Turon’s public catalogue for essays, books, manuals, stories, fables, and systems writing.',
   },
 
   hero: {
     eyebrow: 'Publisher',
     title: 'A public catalogue for writing that needs structure.',
     intro:
-      'Essays, books, field notes, manuals, stories, fables, lectures, and systems writing arranged for reading before they become a finished product line.',
+      'Essays, books, manuals, stories, fables, lectures, and systems writing arranged for reading before they become a finished product line.',
   },
 
   console: {
     title: 'Publisher',
     status: 'active',
-    subtitle: 'Editorial catalogue / public surface',
-    languageModules: ['EN', 'FR', 'ES'],
+    subtitle: 'Essays, books, manuals, stories, and systems writing.',
   },
 
   surfaces: {
-    title: 'Catalogue surfaces',
+    title: 'Catalogue',
     items: [
       {
-        id: 'works',
-        eyebrow: 'Current works',
-        title: 'Works',
-        desc: 'Essays, guides, white papers, and public pieces being shaped into durable reading objects.',
+        id: 'books',
+        eyebrow: 'Long form',
+        title: 'Books',
+        desc: 'Longer works that need sequence, restraint, and continuity before release.',
       },
       {
-        id: 'series',
-        eyebrow: 'Long arcs',
-        title: 'Series',
-        desc: 'TOM, Sugar Cubes, and other larger bodies that need sequence, restraint, and continuity before release.',
-      },
-      {
-        id: 'notes',
-        eyebrow: 'Field layer',
-        title: 'Field Notes',
-        desc: 'Shorter pieces, fragments, observations, jokes, and narrative pressure points that can stand outside the private archive.',
+        id: 'essays',
+        eyebrow: 'Essays',
+        title: 'Essays',
+        desc: 'Public arguments and observations shaped into durable reading objects.',
       },
       {
         id: 'manuals',
@@ -47,10 +40,16 @@ export const enPublisher = {
         desc: 'Practical or tactical works meant to help another reader use an idea, not just admire it.',
       },
       {
+        id: 'stories',
+        eyebrow: 'Narrative layer',
+        title: 'Stories / Fables',
+        desc: 'Narrative containers for ideas that work better through encounter than explanation.',
+      },
+      {
         id: 'archive',
         eyebrow: 'Source-aware holding',
         title: 'Archive',
-        desc: 'The visible edge of a deeper source system. Not every source becomes public, and not every public piece exposes its source machinery.',
+        desc: 'The visible edge of a deeper source system. Not every source becomes public.',
       },
     ],
   },
