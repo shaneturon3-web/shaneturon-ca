@@ -2,73 +2,90 @@ export const frPublisher = {
   metadata: {
     title: 'Publisher — Shane Turon',
     description:
-      'Publisher est le catalogue public de Shane Turon pour les œuvres éditoriales, les archives sourcées et les candidats d’écriture publiable.',
+      'Publisher est le catalogue public de Shane Turon pour essais, livres, notes de terrain, manuels, récits, fables et écriture de systèmes.',
   },
 
   hero: {
     eyebrow: 'Publisher',
-    title: 'Travail publié, retenu avant diffusion.',
+    title: 'Un catalogue public pour l’écriture qui a besoin de structure.',
     intro:
-      'Publisher est le catalogue contrôlé pour essais, livres, guides, récits, fables, lectures, livres blancs, notes publiques et travaux en développement avec source identifiée.',
+      'Essais, livres, notes de terrain, manuels, récits, fables, lectures et écriture de systèmes organisés pour la lecture avant de devenir une ligne de produits terminée.',
   },
 
-  catalogue: {
-    title: 'Candidats du catalogue',
-    intro:
-      'Le catalogue montre ce qui existe, ce qui peut devenir public et ce qui doit rester en attente jusqu’à révision. L’existence n’est pas une permission de publication.',
-    empty: 'Aucune entrée du catalogue n’est actuellement activée pour une route publique.',
+  console: {
+    title: 'Publisher',
+    status: 'actif',
+    subtitle: 'Catalogue éditorial / surface publique',
+    languageModules: ['EN', 'FR', 'ES'],
   },
 
-  shelf: {
-    title: 'Logique de Shelf',
-    intro:
-      'Shelf protège le site contre un périmètre trop petit, trop brut ou trop public. Le matériel entre dans Shelf avant Publisher ou Systems, sauf s’il est déjà approuvé.',
-  },
-
-  forms: {
-    title: 'Contenants pris en charge',
-    intro:
-      'Publisher n’est pas un blogue générique. C’est un ensemble de contenants publics avec statut de source, barrières de sécurité publique et préparation aux routes futures.',
+  surfaces: {
+    title: 'Surfaces du catalogue',
     items: [
       {
-        title: 'Livres et manuscrits',
-        desc: 'Œuvres longues comme TOM, matériel companion et manuscrits à colonne fermée qui demandent de l’ordre avant une route publique.',
+        id: 'works',
+        eyebrow: 'Œuvres actuelles',
+        title: 'Œuvres',
+        desc: 'Essais, guides, livres blancs et pièces publiques en cours de transformation en objets de lecture durables.',
       },
       {
-        title: 'Essais et articles',
-        desc: 'Pièces publiques pouvant porter un argument, une observation ou une intuition de système sans exposer toute l’archive.',
+        id: 'series',
+        eyebrow: 'Arcs longs',
+        title: 'Séries',
+        desc: 'TOM, Sugar Cubes et autres ensembles plus vastes qui demandent séquence, retenue et continuité avant diffusion.',
       },
       {
-        title: 'Guides et manuels',
-        desc: 'Matériel pratique pour usage répétable, transfert, enseignement public ou opération de terrain.',
+        id: 'notes',
+        eyebrow: 'Couche de terrain',
+        title: 'Notes de terrain',
+        desc: 'Pièces courtes, fragments, observations, blagues et points de pression narrative pouvant exister hors de l’archive privée.',
       },
       {
-        title: 'Récits et fables',
-        desc: 'Contenants narratifs pour les idées qui fonctionnent mieux par rencontre que par explication.',
+        id: 'manuals',
+        eyebrow: 'Couche de transfert',
+        title: 'Manuels',
+        desc: 'Œuvres pratiques ou tactiques destinées à aider un autre lecteur à utiliser une idée, pas seulement à l’admirer.',
       },
       {
-        title: 'Livres blancs et lectures',
-        desc: 'Matériel structuré pour argument profond, preuve publique, conférences et référence.',
-      },
-      {
-        title: 'Actifs et infographies',
-        desc: 'Contenu visuel ou lié à un projet qui doit rester distinct du projet qu’il décrit.',
+        id: 'archive',
+        eyebrow: 'Conservation sourcée',
+        title: 'Archive',
+        desc: 'Le bord visible d’un système de sources plus profond. Toute source ne devient pas publique, et toute pièce publique n’expose pas sa machinerie.',
       },
     ],
   },
 
-  labels: {
-    routeDisabled: 'Route désactivée',
-    publicSafe: 'Sûr pour le public',
-    source: 'Source',
-    status: 'Statut',
-    audience: 'Audience',
+  operating: {
+    title: 'Ce que fait cette surface',
+    intro:
+      'Publisher montre le catalogue au lecteur, pas les coulisses. Les coulisses existent toujours; elles protègent le travail contre un déversement brut.',
+    items: [
+      {
+        title: 'Tenir le travail',
+        desc: 'Les pièces peuvent être visibles comme travaux en développement sans prétendre être des publications finales.',
+      },
+      {
+        title: 'Garder la discipline des sources',
+        desc: 'Drive, Blogger, Gmail, l’ancien repo et les pièces jointes peuvent informer le catalogue sans contrôler la page publique.',
+      },
+      {
+        title: 'Préparer les routes futures',
+        desc: 'Les pages de lecture individuelles viendront après la sélection et la révision des premières pièces sûres pour le public.',
+      },
+    ],
+  },
+
+  archive: {
+    title: 'Discipline d’archive',
+    intro:
+      'Derrière le catalogue public, un système Shelf retient les sources, doublons, brouillons incomplets, notes internes et actifs liés aux projets.',
+    eyebrow: 'shelf source',
   },
 
   cta: {
-    title: 'Construire depuis le catalogue, pas depuis la carrière.',
+    title: 'Lire le catalogue avant la machinerie.',
     body:
-      'La prochaine étape consiste à classifier les sources, promouvoir seulement les entrées sûres pour le public et garder Blogger, Drive, Gmail et l’ancien repo derrière la barrière Publisher.',
+      'Publisher est la face publique de l’écriture, pas la salle des sources. La prochaine étape est de choisir la première pièce sûre pour le public et de lui donner une vraie route de lecture.',
     action: 'Contacter Shane',
   },
 };
