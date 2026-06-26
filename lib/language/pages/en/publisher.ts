@@ -2,73 +2,90 @@ export const enPublisher = {
   metadata: {
     title: 'Publisher — Shane Turon',
     description:
-      'Publisher is Shane Turon’s public catalogue for editorial works, source-aware archives, and public-safe writing candidates.',
+      'Publisher is Shane Turon’s public catalogue for essays, books, field notes, manuals, stories, fables, and systems writing.',
   },
 
   hero: {
     eyebrow: 'Publisher',
-    title: 'Published work, held before release.',
+    title: 'A public catalogue for writing that needs structure.',
     intro:
-      'Publisher is the controlled catalogue for essays, books, guides, stories, fables, lectures, white papers, public notes, and source-aware work in development.',
+      'Essays, books, field notes, manuals, stories, fables, lectures, and systems writing arranged for reading before they become a finished product line.',
   },
 
-  catalogue: {
-    title: 'Catalogue candidates',
-    intro:
-      'The catalogue shows what exists, what may become public, and what must stay parked until review. Existence is not publication permission.',
-    empty: 'No catalogue entries are currently enabled for public routing.',
+  console: {
+    title: 'Publisher',
+    status: 'active',
+    subtitle: 'Editorial catalogue / public surface',
+    languageModules: ['EN', 'FR', 'ES'],
   },
 
-  shelf: {
-    title: 'Shelf logic',
-    intro:
-      'Shelf protects the site from becoming too small, too raw, or too public. Material enters Shelf before it enters Publisher or Systems unless already approved.',
-  },
-
-  forms: {
-    title: 'Supported containers',
-    intro:
-      'Publisher is not a generic blog. It is a set of public containers with source status, public-safety gates, and future route readiness.',
+  surfaces: {
+    title: 'Catalogue surfaces',
     items: [
       {
-        title: 'Books and manuscripts',
-        desc: 'Long-form works such as TOM, companion material, and closed-spine manuscripts that need order before public routing.',
+        id: 'works',
+        eyebrow: 'Current works',
+        title: 'Works',
+        desc: 'Essays, guides, white papers, and public pieces being shaped into durable reading objects.',
       },
       {
-        title: 'Essays and articles',
-        desc: 'Public pieces that can carry one argument, observation, or system insight without exposing the whole archive.',
+        id: 'series',
+        eyebrow: 'Long arcs',
+        title: 'Series',
+        desc: 'TOM, Sugar Cubes, and other larger bodies that need sequence, restraint, and continuity before release.',
       },
       {
-        title: 'Guides and manuals',
-        desc: 'Practical material for repeatable use, transfer, public teaching, or field operation.',
+        id: 'notes',
+        eyebrow: 'Field layer',
+        title: 'Field Notes',
+        desc: 'Shorter pieces, fragments, observations, jokes, and narrative pressure points that can stand outside the private archive.',
       },
       {
-        title: 'Stories and fables',
-        desc: 'Narrative containers for ideas that work better through encounter than explanation.',
+        id: 'manuals',
+        eyebrow: 'Transfer layer',
+        title: 'Manuals',
+        desc: 'Practical or tactical works meant to help another reader use an idea, not just admire it.',
       },
       {
-        title: 'White papers and lectures',
-        desc: 'Structured material for deeper argument, public proof, talks, and reference.',
-      },
-      {
-        title: 'Assets and infographics',
-        desc: 'Visual or project-linked content that must stay distinct from the project it describes.',
+        id: 'archive',
+        eyebrow: 'Source-aware holding',
+        title: 'Archive',
+        desc: 'The visible edge of a deeper source system. Not every source becomes public, and not every public piece exposes its source machinery.',
       },
     ],
   },
 
-  labels: {
-    routeDisabled: 'Route disabled',
-    publicSafe: 'Public-safe',
-    source: 'Source',
-    status: 'Status',
-    audience: 'Audience',
+  operating: {
+    title: 'What this surface does',
+    intro:
+      'Publisher shows the reader the catalogue, not the backstage. The backstage still exists; it protects the work from becoming a raw dump.',
+    items: [
+      {
+        title: 'Holds the work',
+        desc: 'Pieces can be visible as works in development without pretending they are final releases.',
+      },
+      {
+        title: 'Keeps source discipline',
+        desc: 'Drive, Blogger, Gmail, old repo, and attachments can inform the catalogue without controlling the public page.',
+      },
+      {
+        title: 'Prepares future routes',
+        desc: 'Individual reading pages come later, once the first public-safe items are selected and reviewed.',
+      },
+    ],
+  },
+
+  archive: {
+    title: 'Archive discipline',
+    intro:
+      'Behind the public catalogue is a shelf system for source material, duplicates, unfinished drafts, internal notes, and project-linked assets.',
+    eyebrow: 'source shelf',
   },
 
   cta: {
-    title: 'Build from the catalogue, not the quarry.',
+    title: 'Read the catalogue before the machinery.',
     body:
-      'The next step is to classify source material, promote only public-safe entries, and keep Blogger, Drive, Gmail, and old repo material behind the Publisher gate.',
+      'Publisher is the public face of writing, not the source room. The next step is to choose the first public-safe piece and give it a proper reading route.',
     action: 'Contact Shane',
   },
 };
