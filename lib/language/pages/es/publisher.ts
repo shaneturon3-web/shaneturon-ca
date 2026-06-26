@@ -2,43 +2,36 @@ export const esPublisher = {
   metadata: {
     title: 'Publisher — Shane Turon',
     description:
-      'Publisher es el catálogo público de Shane Turon para ensayos, libros, notas de campo, manuales, historias, fábulas y escritura de sistemas.',
+      'Publisher es el catálogo público de Shane Turon para ensayos, libros, manuales, historias, fábulas y escritura de sistemas.',
   },
 
   hero: {
     eyebrow: 'Publisher',
     title: 'Un catálogo público para escritura que necesita estructura.',
     intro:
-      'Ensayos, libros, notas de campo, manuales, historias, fábulas, lecturas y escritura de sistemas organizados para lectura antes de volverse una línea de producto terminada.',
+      'Ensayos, libros, manuales, historias, fábulas, lecturas y escritura de sistemas organizados para lectura antes de volverse una línea de producto terminada.',
   },
 
   console: {
     title: 'Publisher',
     status: 'activo',
-    subtitle: 'Catálogo editorial / superficie pública',
-    languageModules: ['EN', 'FR', 'ES'],
+    subtitle: 'Ensayos, libros, manuales, historias y escritura de sistemas.',
   },
 
   surfaces: {
-    title: 'Superficies del catálogo',
+    title: 'Catálogo',
     items: [
       {
-        id: 'works',
-        eyebrow: 'Obras actuales',
-        title: 'Obras',
-        desc: 'Ensayos, guías, white papers y piezas públicas que se están convirtiendo en objetos de lectura durables.',
+        id: 'books',
+        eyebrow: 'Formato largo',
+        title: 'Libros',
+        desc: 'Obras largas que necesitan secuencia, contención y continuidad antes de liberarse.',
       },
       {
-        id: 'series',
-        eyebrow: 'Arcos largos',
-        title: 'Series',
-        desc: 'TOM, Sugar Cubes y otros cuerpos mayores que necesitan secuencia, contención y continuidad antes de liberarse.',
-      },
-      {
-        id: 'notes',
-        eyebrow: 'Capa de campo',
-        title: 'Notas de campo',
-        desc: 'Piezas breves, fragmentos, observaciones, chistes y puntos de presión narrativa que pueden vivir fuera del archivo privado.',
+        id: 'essays',
+        eyebrow: 'Ensayos',
+        title: 'Ensayos',
+        desc: 'Argumentos y observaciones públicas convertidas en objetos de lectura durables.',
       },
       {
         id: 'manuals',
@@ -47,10 +40,16 @@ export const esPublisher = {
         desc: 'Obras prácticas o tácticas pensadas para que otro lector use una idea, no solo la admire.',
       },
       {
+        id: 'stories',
+        eyebrow: 'Capa narrativa',
+        title: 'Historias / Fábulas',
+        desc: 'Contenedores narrativos para ideas que funcionan mejor por encuentro que por explicación.',
+      },
+      {
         id: 'archive',
         eyebrow: 'Retención con fuente',
         title: 'Archivo',
-        desc: 'El borde visible de un sistema de fuentes más profundo. No toda fuente se vuelve pública, y no toda pieza pública expone su maquinaria.',
+        desc: 'El borde visible de un sistema de fuentes más profundo. No toda fuente se vuelve pública.',
       },
     ],
   },
