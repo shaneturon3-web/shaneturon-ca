@@ -2,73 +2,90 @@ export const esPublisher = {
   metadata: {
     title: 'Publisher — Shane Turon',
     description:
-      'Publisher es el catálogo público de Shane Turon para obras editoriales, archivos con fuente identificada y candidatos de escritura publicable.',
+      'Publisher es el catálogo público de Shane Turon para ensayos, libros, notas de campo, manuales, historias, fábulas y escritura de sistemas.',
   },
 
   hero: {
     eyebrow: 'Publisher',
-    title: 'Obra publicada, retenida antes de liberarse.',
+    title: 'Un catálogo público para escritura que necesita estructura.',
     intro:
-      'Publisher es el catálogo controlado para ensayos, libros, guías, historias, fábulas, lecturas, white papers, notas públicas y trabajo en desarrollo con fuente identificada.',
+      'Ensayos, libros, notas de campo, manuales, historias, fábulas, lecturas y escritura de sistemas organizados para lectura antes de volverse una línea de producto terminada.',
   },
 
-  catalogue: {
-    title: 'Candidatos del catálogo',
-    intro:
-      'El catálogo muestra qué existe, qué puede volverse público y qué debe permanecer estacionado hasta revisión. Existencia no es permiso de publicación.',
-    empty: 'No hay entradas del catálogo habilitadas para ruta pública.',
+  console: {
+    title: 'Publisher',
+    status: 'activo',
+    subtitle: 'Catálogo editorial / superficie pública',
+    languageModules: ['EN', 'FR', 'ES'],
   },
 
-  shelf: {
-    title: 'Lógica de Shelf',
-    intro:
-      'Shelf protege al sitio de volverse demasiado pequeño, demasiado crudo o demasiado público. El material entra a Shelf antes de entrar a Publisher o Systems salvo que ya esté aprobado.',
-  },
-
-  forms: {
-    title: 'Contenedores soportados',
-    intro:
-      'Publisher no es un blog genérico. Es un conjunto de contenedores públicos con estado de fuente, compuertas de seguridad pública y preparación para rutas futuras.',
+  surfaces: {
+    title: 'Superficies del catálogo',
     items: [
       {
-        title: 'Libros y manuscritos',
-        desc: 'Obras largas como TOM, material companion y manuscritos de columna cerrada que necesitan orden antes de ruta pública.',
+        id: 'works',
+        eyebrow: 'Obras actuales',
+        title: 'Obras',
+        desc: 'Ensayos, guías, white papers y piezas públicas que se están convirtiendo en objetos de lectura durables.',
       },
       {
-        title: 'Ensayos y artículos',
-        desc: 'Piezas públicas que pueden cargar un argumento, observación o insight de sistema sin exponer todo el archivo.',
+        id: 'series',
+        eyebrow: 'Arcos largos',
+        title: 'Series',
+        desc: 'TOM, Sugar Cubes y otros cuerpos mayores que necesitan secuencia, contención y continuidad antes de liberarse.',
       },
       {
-        title: 'Guías y manuales',
-        desc: 'Material práctico para uso repetible, transferencia, enseñanza pública u operación de campo.',
+        id: 'notes',
+        eyebrow: 'Capa de campo',
+        title: 'Notas de campo',
+        desc: 'Piezas breves, fragmentos, observaciones, chistes y puntos de presión narrativa que pueden vivir fuera del archivo privado.',
       },
       {
-        title: 'Historias y fábulas',
-        desc: 'Contenedores narrativos para ideas que funcionan mejor por encuentro que por explicación.',
+        id: 'manuals',
+        eyebrow: 'Capa de transferencia',
+        title: 'Manuales',
+        desc: 'Obras prácticas o tácticas pensadas para que otro lector use una idea, no solo la admire.',
       },
       {
-        title: 'White papers y lecturas',
-        desc: 'Material estructurado para argumento profundo, prueba pública, conferencias y referencia.',
-      },
-      {
-        title: 'Assets e infografías',
-        desc: 'Contenido visual o vinculado a proyectos que debe mantenerse separado del proyecto que describe.',
+        id: 'archive',
+        eyebrow: 'Retención con fuente',
+        title: 'Archivo',
+        desc: 'El borde visible de un sistema de fuentes más profundo. No toda fuente se vuelve pública, y no toda pieza pública expone su maquinaria.',
       },
     ],
   },
 
-  labels: {
-    routeDisabled: 'Ruta deshabilitada',
-    publicSafe: 'Seguro para público',
-    source: 'Fuente',
-    status: 'Estado',
-    audience: 'Audiencia',
+  operating: {
+    title: 'Qué hace esta superficie',
+    intro:
+      'Publisher le muestra al lector el catálogo, no el backstage. El backstage sigue existiendo; protege la obra de volverse un volcado crudo.',
+    items: [
+      {
+        title: 'Sostiene la obra',
+        desc: 'Las piezas pueden mostrarse como obras en desarrollo sin fingir que ya son lanzamientos finales.',
+      },
+      {
+        title: 'Mantiene disciplina de fuente',
+        desc: 'Drive, Blogger, Gmail, el repo viejo y los adjuntos pueden informar el catálogo sin controlar la página pública.',
+      },
+      {
+        title: 'Prepara rutas futuras',
+        desc: 'Las páginas individuales de lectura vienen después, cuando se elijan y revisen las primeras piezas seguras para público.',
+      },
+    ],
+  },
+
+  archive: {
+    title: 'Disciplina de archivo',
+    intro:
+      'Detrás del catálogo público hay un sistema de Shelf para material fuente, duplicados, borradores incompletos, notas internas y assets vinculados a proyectos.',
+    eyebrow: 'shelf fuente',
   },
 
   cta: {
-    title: 'Construir desde el catálogo, no desde la cantera.',
+    title: 'Leer el catálogo antes que la maquinaria.',
     body:
-      'El siguiente paso es clasificar material fuente, promover solo entradas seguras para público y mantener Blogger, Drive, Gmail y el repo viejo detrás de la compuerta Publisher.',
+      'Publisher es la cara pública de la escritura, no el cuarto de fuentes. El siguiente paso es escoger la primera pieza segura para público y darle una ruta de lectura adecuada.',
     action: 'Contactar a Shane',
   },
 };
