@@ -6,7 +6,7 @@ import { frArchitecture } from './architecture';
 import { frHome } from './home';
 import { frAbout } from './about';
 import { frSystems } from './systems';
-import { frWriting } from './writing';
+import { frPublisher } from './publisher';
 
 export const frPages = {
   caseFiles: frCaseFiles,
@@ -17,5 +17,5 @@ export const frPages = {
   home: frHome,
   about: frAbout,
   systems: frSystems,
-  writing: frWriting,
+  publisher: frPublisher,
 };
