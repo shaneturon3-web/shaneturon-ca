@@ -12,7 +12,7 @@ export const en = {
       { href: '/', label: 'Home' },
       { href: '/about', label: 'About' },
       { href: '/systems', label: 'Systems' },
-      { href: '/writing', label: 'Publisher' },
+      { href: '/publisher', label: 'Publisher' },
     ],
     contact: {
       href: '/contact',
@@ -23,7 +23,7 @@ export const en = {
   footer: {
     links: [
       { href: '/systems', label: 'Systems' },
-      { href: '/writing', label: 'Publisher' },
+      { href: '/publisher', label: 'Publisher' },
       { href: '/contact', label: 'Contact' },
     ],
   },
