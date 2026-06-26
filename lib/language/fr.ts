@@ -13,7 +13,7 @@ export const fr: EnglishLanguage = {
       { href: '/', label: 'Accueil' },
       { href: '/about', label: 'À propos' },
       { href: '/systems', label: 'Systèmes' },
-      { href: '/writing', label: 'Publisher' },
+      { href: '/publisher', label: 'Publisher' },
     ],
     contact: {
       href: '/contact',
@@ -24,7 +24,7 @@ export const fr: EnglishLanguage = {
   footer: {
     links: [
       { href: '/systems', label: 'Systèmes' },
-      { href: '/writing', label: 'Publisher' },
+      { href: '/publisher', label: 'Publisher' },
       { href: '/contact', label: 'Contact' },
     ],
   },
