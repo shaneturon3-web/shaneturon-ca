@@ -13,10 +13,7 @@ export const es: EnglishLanguage = {
       { href: '/', label: 'Inicio' },
       { href: '/about', label: 'Acerca de' },
       { href: '/systems', label: 'Sistemas' },
-      { href: '/case-files', label: 'Casos' },
-      { href: '/architecture', label: 'Arquitectura' },
-      { href: '/lab', label: 'Laboratorio' },
-      { href: '/now', label: 'Ahora' },
+      { href: '/writing', label: 'Publisher' },
     ],
     contact: {
       href: '/contact',
@@ -27,8 +24,7 @@ export const es: EnglishLanguage = {
   footer: {
     links: [
       { href: '/systems', label: 'Sistemas' },
-      { href: '/case-files', label: 'Casos' },
-      { href: '/now', label: 'Ahora' },
+      { href: '/writing', label: 'Publisher' },
       { href: '/contact', label: 'Contacto' },
     ],
   },
