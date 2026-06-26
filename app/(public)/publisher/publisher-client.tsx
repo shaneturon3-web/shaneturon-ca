@@ -6,7 +6,6 @@ import {
   Archive,
   ArrowRight,
   BookOpen,
-  ClipboardList,
   FileText,
   PenLine,
   ScrollText,
@@ -29,7 +28,6 @@ import {
 const surfaceIcons = {
   books: BookOpen,
   essays: PenLine,
-  manuals: ClipboardList,
   stories: ScrollText,
   archive: Archive,
 };
@@ -37,8 +35,8 @@ const surfaceIcons = {
 const kindIcons = {
   essay: PenLine,
   article: FileText,
-  guide: ClipboardList,
-  manual: ClipboardList,
+  guide: BookOpen,
+  manual: BookOpen,
   book: BookOpen,
   chapter: BookOpen,
   story: ScrollText,
@@ -52,9 +50,8 @@ const kindIcons = {
 };
 
 const visitorSurfaceSlugs = {
-  books: ['the-order-matters-full'],
-  essays: ['failure-of-folders'],
-  manuals: ['tom-tactical', 'adhd-public-guide-candidate'],
+  books: ['the-order-matters-full', 'tom-tactical', 'adhd-public-guide-candidate'],
+  essays: ['failure-of-folders', 'el-universo-cabe-en-una-servilleta'],
   stories: ['inspector-truffle-crime-syndicate', 'stories-archive'],
   archive: ['stories-archive', 'psynova-infographic'],
 };
