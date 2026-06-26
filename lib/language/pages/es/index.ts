@@ -6,6 +6,7 @@ import { esArchitecture } from './architecture';
 import { esHome } from './home';
 import { esAbout } from './about';
 import { esSystems } from './systems';
+import { esWriting } from './writing';
 
 export const esPages = {
   caseFiles: esCaseFiles,
@@ -16,4 +17,5 @@ export const esPages = {
   home: esHome,
   about: esAbout,
   systems: esSystems,
+  writing: esWriting,
 };
