@@ -8,9 +8,6 @@ import {
   BookOpen,
   ClipboardList,
   FileText,
-  Layers,
-  Library,
-  Newspaper,
   PenLine,
   ScrollText,
   ShieldCheck,
@@ -23,7 +20,6 @@ import {
   PublicButton,
   PublicCard,
   PublicCtaBand,
-  PublicPageHero,
   PublicPageShell,
   PublicSection,
   PublicSectionHeader,
@@ -31,16 +27,16 @@ import {
 } from '@/components/public';
 
 const surfaceIcons = {
-  works: BookOpen,
-  series: Layers,
-  notes: PenLine,
+  books: BookOpen,
+  essays: PenLine,
   manuals: ClipboardList,
+  stories: ScrollText,
   archive: Archive,
 };
 
 const kindIcons = {
   essay: PenLine,
-  article: Newspaper,
+  article: FileText,
   guide: ClipboardList,
   manual: ClipboardList,
   book: BookOpen,
@@ -49,17 +45,17 @@ const kindIcons = {
   fable: ScrollText,
   joke: Sparkles,
   'white-paper': FileText,
-  lecture: Library,
+  lecture: FileText,
   note: FileText,
   infographic: ShieldCheck,
   'project-brief': ShieldCheck,
 };
 
 const visitorSurfaceSlugs = {
-  works: ['failure-of-folders', 'sugar-cubes-white-paper', 'adhd-public-guide-candidate'],
-  series: ['the-order-matters-full', 'tom-tactical', 'sugar-cubes-octonian'],
-  notes: ['failure-of-folders', 'inspector-truffle-crime-syndicate'],
-  manuals: ['tom-tactical', 'sugar-cubes-white-paper', 'adhd-public-guide-candidate'],
+  books: ['the-order-matters-full'],
+  essays: ['failure-of-folders'],
+  manuals: ['tom-tactical', 'adhd-public-guide-candidate'],
+  stories: ['inspector-truffle-crime-syndicate', 'stories-archive'],
   archive: ['stories-archive', 'psynova-infographic'],
 };
 
@@ -85,38 +81,6 @@ function publicBadge(item: PublisherContentItem) {
   return labelize(item.status);
 }
 
-function CatalogueTile({ item }: { item: PublisherContentItem }) {
-  const Icon = kindIcons[item.kind] ?? FileText;
-
-  return (
-    <PublicCard
-      icon={Icon}
-      eyebrow={labelize(item.kind)}
-      title={item.title}
-      description={item.description}
-      href={item.routeEnabled ? item.href : undefined}
-    >
-      <div className="space-y-4">
-        {item.subtitle ? <p className="text-sm text-white/55">{item.subtitle}</p> : null}
-
-        <div className="flex flex-wrap gap-2">
-          <PublicStatusPill tone="muted">{publicBadge(item)}</PublicStatusPill>
-          {item.series ? <PublicStatusPill tone="muted">{item.series}</PublicStatusPill> : null}
-          {!item.routeEnabled ? <PublicStatusPill tone="muted">preview only</PublicStatusPill> : null}
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          {item.tags.slice(0, 4).map((tag) => (
-            <PublicStatusPill key={tag} tone="muted">
-              {tag}
-            </PublicStatusPill>
-          ))}
-        </div>
-      </div>
-    </PublicCard>
-  );
-}
-
 function findItems(surface: SurfaceId) {
   const slugs = visitorSurfaceSlugs[surface];
   return slugs
@@ -124,118 +88,169 @@ function findItems(surface: SurfaceId) {
     .filter((item): item is PublisherContentItem => Boolean(item));
 }
 
+function WorkListItem({
+  item,
+  isActive,
+  onSelect,
+}: {
+  item: PublisherContentItem;
+  isActive: boolean;
+  onSelect: () => void;
+}) {
+  const Icon = kindIcons[item.kind] ?? FileText;
+
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      className={`w-full rounded-2xl border p-4 text-left transition ${
+        isActive
+          ? 'border-primary/45 bg-primary/10 text-white'
+          : 'border-white/10 bg-white/[0.03] text-white/70 hover:border-primary/25 hover:text-white'
+      }`}
+    >
+      <div className="flex items-start gap-3">
+        <Icon className={`mt-1 h-5 w-5 ${isActive ? 'text-primary' : 'text-white/35'}`} />
+        <div className="min-w-0">
+          <div className="font-semibold">{item.title}</div>
+          {item.subtitle ? <div className="mt-1 text-sm text-white/45">{item.subtitle}</div> : null}
+        </div>
+      </div>
+    </button>
+  );
+}
+
+function WorkDetail({ item }: { item: PublisherContentItem }) {
+  const Icon = kindIcons[item.kind] ?? FileText;
+
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 md:p-6">
+      <div className="mb-5 flex items-start gap-3">
+        <div className="rounded-xl border border-primary/25 bg-primary/10 p-2 text-primary">
+          <Icon className="h-5 w-5" />
+        </div>
+        <div>
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">{labelize(item.kind)}</p>
+          <h3 className="mt-2 text-2xl font-semibold text-white">{item.title}</h3>
+          {item.subtitle ? <p className="mt-2 text-sm text-white/55">{item.subtitle}</p> : null}
+        </div>
+      </div>
+
+      <p className="text-sm leading-7 text-white/65">{item.description}</p>
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        <PublicStatusPill tone="muted">{publicBadge(item)}</PublicStatusPill>
+        {item.series ? <PublicStatusPill tone="muted">{item.series}</PublicStatusPill> : null}
+        {!item.routeEnabled ? <PublicStatusPill tone="muted">preview only</PublicStatusPill> : null}
+      </div>
+
+      <div className="mt-4 flex flex-wrap gap-2">
+        {item.tags.slice(0, 5).map((tag) => (
+          <PublicStatusPill key={tag} tone="muted">
+            {tag}
+          </PublicStatusPill>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function PublisherClient() {
   const { language } = useLanguage();
   const copy = language.pages.publisher;
   const surfaces = copy.surfaces.items as SurfaceCopy[];
-  const [activeSurface, setActiveSurface] = useState<SurfaceId>('works');
+  const [activeSurface, setActiveSurface] = useState<SurfaceId>('books');
+  const activeItems = useMemo(() => findItems(activeSurface), [activeSurface]);
+  const [activeSlug, setActiveSlug] = useState<string>('the-order-matters-full');
 
   const activeCopy = surfaces.find((surface) => surface.id === activeSurface) ?? surfaces[0];
-  const activeItems = useMemo(() => findItems(activeSurface), [activeSurface]);
-  const ActiveIcon = surfaceIcons[activeSurface] ?? BookOpen;
+  const activeItem =
+    activeItems.find((item) => item.slug === activeSlug) ?? activeItems[0] ?? publisherCatalogue[0];
+
+  function selectSurface(surface: SurfaceId) {
+    const items = findItems(surface);
+    setActiveSurface(surface);
+    setActiveSlug(items[0]?.slug ?? 'failure-of-folders');
+  }
 
   return (
     <PublicPageShell>
-      <PublicSection>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <PublicPageHero
-            eyebrow={copy.hero.eyebrow}
-            title={copy.hero.title}
-            description={copy.hero.intro}
-          />
-        </motion.div>
-      </PublicSection>
-
       <PublicSection tone="muted">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="space-y-8"
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
           <div className="rounded-3xl border border-primary/20 bg-black/30 p-5 shadow-2xl shadow-black/20 md:p-7">
-            <div className="mb-6 flex flex-col gap-5 border-b border-white/10 pb-6 lg:flex-row lg:items-start lg:justify-between">
-              <div className="flex items-start gap-4">
-                <div className="rounded-2xl border border-primary/25 bg-primary/10 p-3 text-primary">
-                  <Library className="h-7 w-7" />
-                </div>
-                <div>
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h2 className="text-3xl font-semibold text-white md:text-4xl">{copy.console.title}</h2>
-                    <PublicStatusPill>{copy.console.status}</PublicStatusPill>
-                  </div>
-                  <p className="mt-2 font-mono text-sm text-white/40">{copy.console.subtitle}</p>
-                </div>
+            <div className="mb-5 flex items-start gap-4 border-b border-white/10 pb-5">
+              <div className="rounded-2xl border border-primary/25 bg-primary/10 p-3 text-primary">
+                <BookOpen className="h-7 w-7" />
               </div>
-
-              <div className="grid grid-cols-3 gap-2 text-center font-mono text-xs uppercase tracking-[0.16em] text-white/45">
-                {copy.console.languageModules.map((module: string) => (
-                  <div key={module} className="rounded-lg border border-primary/20 bg-primary/10 px-3 py-2 text-primary">
-                    {module}
-                  </div>
-                ))}
+              <div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <h1 className="text-3xl font-semibold text-white md:text-4xl">{copy.console.title}</h1>
+                  <PublicStatusPill>{copy.console.status}</PublicStatusPill>
+                </div>
+                <p className="mt-2 max-w-3xl text-sm leading-6 text-white/55">{copy.console.subtitle}</p>
               </div>
             </div>
 
-            <div className="grid gap-7 lg:grid-cols-[0.95fr_1.4fr]">
+            <div className="grid gap-5 lg:grid-cols-[0.42fr_0.78fr_1.25fr]">
               <div className="space-y-3">
                 <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
                   {copy.surfaces.title}
                 </p>
 
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {surfaces.map((surface) => {
                     const Icon = surfaceIcons[surface.id] ?? FileText;
                     const isActive = surface.id === activeSurface;
+                    const count = visitorSurfaceSlugs[surface.id].length;
 
                     return (
                       <button
                         key={surface.id}
                         type="button"
-                        onClick={() => setActiveSurface(surface.id)}
-                        className={`w-full rounded-2xl border p-4 text-left transition ${
+                        onClick={() => selectSurface(surface.id)}
+                        className={`flex w-full items-center justify-between rounded-xl border px-3 py-3 text-left transition ${
                           isActive
                             ? 'border-primary/45 bg-primary/10 text-white'
                             : 'border-white/10 bg-white/[0.03] text-white/60 hover:border-primary/25 hover:text-white'
                         }`}
                       >
-                        <div className="flex items-start gap-3">
-                          <Icon className={`mt-1 h-5 w-5 ${isActive ? 'text-primary' : 'text-white/35'}`} />
-                          <div>
-                            <div className="font-semibold">{surface.title}</div>
-                            <div className="mt-1 text-sm text-white/45">{surface.desc}</div>
-                          </div>
-                        </div>
+                        <span className="flex items-center gap-2">
+                          <Icon className={`h-4 w-4 ${isActive ? 'text-primary' : 'text-white/35'}`} />
+                          <span className="font-semibold">{surface.title}</span>
+                        </span>
+                        <span className="font-mono text-xs text-white/35">{count}</span>
                       </button>
                     );
                   })}
                 </div>
               </div>
 
-              <div className="space-y-5">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                  <div className="flex items-start gap-3">
-                    <ActiveIcon className="mt-1 h-5 w-5 text-primary" />
-                    <div>
-                      <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
-                        {activeCopy.eyebrow}
-                      </p>
-                      <h3 className="mt-2 text-2xl font-semibold text-white">{activeCopy.title}</h3>
-                      <p className="mt-2 max-w-2xl text-sm leading-7 text-white/60">{activeCopy.desc}</p>
-                    </div>
-                  </div>
+              <div className="space-y-3">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                  <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
+                    {activeCopy.eyebrow}
+                  </p>
+                  <h2 className="mt-2 text-xl font-semibold text-white">{activeCopy.title}</h2>
+                  <p className="mt-2 text-sm leading-6 text-white/55">{activeCopy.desc}</p>
                 </div>
 
-                <div className="grid gap-5 xl:grid-cols-2">
+                <div className="space-y-2">
                   {activeItems.map((item) => (
-                    <CatalogueTile key={item.slug} item={item} />
+                    <WorkListItem
+                      key={item.slug}
+                      item={item}
+                      isActive={item.slug === activeItem.slug}
+                      onSelect={() => setActiveSlug(item.slug)}
+                    />
                   ))}
                 </div>
               </div>
+
+              <WorkDetail item={activeItem} />
             </div>
           </div>
         </motion.div>
