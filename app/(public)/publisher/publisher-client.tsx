@@ -58,12 +58,20 @@ const visitorSurfaceSlugs = {
 
 type SurfaceId = keyof typeof visitorSurfaceSlugs;
 
-type SurfaceCopy = {
-  id: SurfaceId;
+type RawSurfaceCopy = {
+  id: string;
   title: string;
   desc: string;
   eyebrow: string;
 };
+
+type SurfaceCopy = RawSurfaceCopy & {
+  id: SurfaceId;
+};
+
+function isSurfaceId(value: string): value is SurfaceId {
+  return value in visitorSurfaceSlugs;
+}
 
 function labelize(value: string | boolean) {
   if (typeof value === 'boolean') return value ? 'available' : 'held';
@@ -155,7 +163,9 @@ function WorkDetail({ item }: { item: PublisherContentItem }) {
 export function PublisherClient() {
   const { language } = useLanguage();
   const copy = language.pages.publisher;
-  const surfaces = copy.surfaces.items as SurfaceCopy[];
+  const surfaces = (copy.surfaces.items as RawSurfaceCopy[]).filter(
+    (surface): surface is SurfaceCopy => isSurfaceId(surface.id),
+  );
   const [activeSurface, setActiveSurface] = useState<SurfaceId>('books');
   const activeItems = useMemo(() => findItems(activeSurface), [activeSurface]);
   const [activeSlug, setActiveSlug] = useState<string>('the-order-matters-full');
