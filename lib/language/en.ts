@@ -12,10 +12,7 @@ export const en = {
       { href: '/', label: 'Home' },
       { href: '/about', label: 'About' },
       { href: '/systems', label: 'Systems' },
-      { href: '/case-files', label: 'Case Files' },
-      { href: '/architecture', label: 'Architecture' },
-      { href: '/lab', label: 'Lab' },
-      { href: '/now', label: 'Now' },
+      { href: '/writing', label: 'Publisher' },
     ],
     contact: {
       href: '/contact',
@@ -26,8 +23,7 @@ export const en = {
   footer: {
     links: [
       { href: '/systems', label: 'Systems' },
-      { href: '/case-files', label: 'Case Files' },
-      { href: '/now', label: 'Now' },
+      { href: '/writing', label: 'Publisher' },
       { href: '/contact', label: 'Contact' },
     ],
   },
