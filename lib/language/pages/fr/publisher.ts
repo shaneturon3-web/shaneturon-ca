@@ -2,108 +2,73 @@ export const frPublisher = {
   metadata: {
     title: 'Publisher — Shane Turon',
     description:
-      'Publisher est la surface publique de Shane Turon pour les livres, articles, essais, guides, manuels, livres blancs, récits, fables, blagues et notes brèves.',
+      'Publisher est le catalogue public de Shane Turon pour les œuvres éditoriales, les archives sourcées et les candidats d’écriture publiable.',
   },
 
   hero: {
     eyebrow: 'Publisher',
-    title: 'Travail publié, structuré pour circuler.',
+    title: 'Travail publié, retenu avant diffusion.',
     intro:
-      'Publisher rassemble l’écriture publique dans des contenants clairs : livres, articles, guides, manuels, livres blancs, essais, récits, fables, blagues et notes brèves.',
+      'Publisher est le catalogue contrôlé pour essais, livres, guides, récits, fables, lectures, livres blancs, notes publiques et travaux en développement avec source identifiée.',
   },
 
   catalogue: {
-    title: 'Catalogue actif',
+    title: 'Candidats du catalogue',
     intro:
-      'Un index public pour les matériaux qui doivent survivre hors de la conversation, du carnet ou de l’archive privée d’origine.',
-    items: [
-      {
-        kind: 'Essai',
-        title: 'The Failure of Folders',
-        desc: 'Un essai public sur le fait que le stockage n’est pas la continuité, et que les systèmes utiles ont besoin d’une structure transférable.',
-        tags: ['continuité', 'systèmes', 'note publique'],
-      },
-      {
-        kind: 'Article',
-        title: 'Six Hours Per Week',
-        desc: 'Un court article opérationnel sur le temps, l’attention et ce qui peut encore être construit avec une bande passante limitée.',
-        tags: ['attention', 'pratique', 'opérations'],
-      },
-      {
-        kind: 'Récit',
-        title: 'Tunnel at Midnight',
-        desc: 'Un fragment narratif compact conservé dans la surface publique de publication.',
-        tags: ['récit', 'fragment', 'fiction'],
-      },
-      {
-        kind: 'Blague',
-        title: 'Perimeter Lock Joke',
-        desc: 'Une pièce plus légère conservée dans l’étendue que Publisher doit pouvoir porter.',
-        tags: ['blague', 'pièce brève', 'humour'],
-      },
-      {
-        kind: 'Guide',
-        title: 'Publisher Build Notes',
-        desc: 'Notes de mise en œuvre pour transformer des matériaux dispersés en catalogue public navigable.',
-        tags: ['guide', 'catalogue', 'publication'],
-      },
-      {
-        kind: 'Livre blanc',
-        title: 'Transferable Meaning',
-        desc: 'Un contenant provisoire pour des matériaux publics plus longs qui définissent un problème et le rendent utilisable par des inconnus.',
-        tags: ['livre blanc', 'cadre', 'transfert'],
-      },
-    ],
+      'Le catalogue montre ce qui existe, ce qui peut devenir public et ce qui doit rester en attente jusqu’à révision. L’existence n’est pas une permission de publication.',
+    empty: 'Aucune entrée du catalogue n’est actuellement activée pour une route publique.',
   },
 
-  formats: {
-    title: 'Formes prises en charge',
+  shelf: {
+    title: 'Logique de Shelf',
     intro:
-      'Publisher n’est pas un blogue générique. C’est un ensemble de contenants publics pour différents types de matériaux.',
+      'Shelf protège le site contre un périmètre trop petit, trop brut ou trop public. Le matériel entre dans Shelf avant Publisher ou Systems, sauf s’il est déjà approuvé.',
+  },
+
+  forms: {
+    title: 'Contenants pris en charge',
+    intro:
+      'Publisher n’est pas un blogue générique. C’est un ensemble de contenants publics avec statut de source, barrières de sécurité publique et préparation aux routes futures.',
     items: [
       {
-        title: 'Livres',
-        desc: 'Œuvres longues qui demandent une séquence, des chapitres et une structure durable.',
+        title: 'Livres et manuscrits',
+        desc: 'Œuvres longues comme TOM, matériel companion et manuscrits à colonne fermée qui demandent de l’ordre avant une route publique.',
       },
       {
-        title: 'Articles',
-        desc: 'Pièces publiques courtes qui expliquent une idée sans porter tout le système.',
+        title: 'Essais et articles',
+        desc: 'Pièces publiques pouvant porter un argument, une observation ou une intuition de système sans exposer toute l’archive.',
       },
       {
         title: 'Guides et manuels',
-        desc: 'Matériaux pratiques pour un usage répétable, un transfert ou une instruction.',
-      },
-      {
-        title: 'Lectures et livres blancs',
-        desc: 'Matériaux structurés pour un argument plus profond, une preuve publique ou une référence.',
-      },
-      {
-        title: 'Essais',
-        desc: 'Pièces exploratoires qui testent le sens, la forme et la position.',
+        desc: 'Matériel pratique pour usage répétable, transfert, enseignement public ou opération de terrain.',
       },
       {
         title: 'Récits et fables',
         desc: 'Contenants narratifs pour les idées qui fonctionnent mieux par rencontre que par explication.',
       },
       {
-        title: 'Blagues',
-        desc: 'Pièces brèves où la compression, le retournement et le rythme portent le point.',
+        title: 'Livres blancs et lectures',
+        desc: 'Matériel structuré pour argument profond, preuve publique, conférences et référence.',
       },
       {
-        title: 'Pièces courtes',
-        desc: 'Fragments, esquisses et petits objets publics qui n’ont pas encore besoin d’un plus grand contenant.',
-      },
-      {
-        title: 'Notes publiques',
-        desc: 'Notes claires, publiables et utiles hors de l’archive privée.',
+        title: 'Actifs et infographies',
+        desc: 'Contenu visuel ou lié à un projet qui doit rester distinct du projet qu’il décrit.',
       },
     ],
   },
 
+  labels: {
+    routeDisabled: 'Route désactivée',
+    publicSafe: 'Sûr pour le public',
+    source: 'Source',
+    status: 'Statut',
+    audience: 'Audience',
+  },
+
   cta: {
-    title: 'Commencer par le catalogue public.',
+    title: 'Construire depuis le catalogue, pas depuis la carrière.',
     body:
-      'Publisher est la branche pour les matériaux prêts à quitter le stockage privé et à devenir lisibles, réutilisables et traçables.',
+      'La prochaine étape consiste à classifier les sources, promouvoir seulement les entrées sûres pour le public et garder Blogger, Drive, Gmail et l’ancien repo derrière la barrière Publisher.',
     action: 'Contacter Shane',
   },
 };
