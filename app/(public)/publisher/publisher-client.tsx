@@ -68,22 +68,16 @@ function CatalogueCard({ item, labels }: { item: PublisherContentItem; labels: R
         {item.subtitle ? <p className="text-sm text-white/55">{item.subtitle}</p> : null}
 
         <div className="flex flex-wrap gap-2">
-          <PublicStatusPill tone="muted">
-            {labels.status}: {labelize(item.status)}
-          </PublicStatusPill>
-          <PublicStatusPill tone="muted">
-            {labels.publicSafe}: {labelize(item.publicSafe)}
-          </PublicStatusPill>
-          <PublicStatusPill tone="muted">
-            {labels.audience}: {labelize(item.audience)}
-          </PublicStatusPill>
+          <PublicStatusPill tone="muted">{`${labels.status}: ${labelize(item.status)}`}</PublicStatusPill>
+          <PublicStatusPill tone="muted">{`${labels.publicSafe}: ${labelize(item.publicSafe)}`}</PublicStatusPill>
+          <PublicStatusPill tone="muted">{`${labels.audience}: ${labelize(item.audience)}`}</PublicStatusPill>
           {!item.routeEnabled ? (
             <PublicStatusPill tone="muted">{labels.routeDisabled}</PublicStatusPill>
           ) : null}
         </div>
 
         <div className="border-t border-white/10 pt-4 text-xs uppercase tracking-[0.18em] text-white/40">
-          {labels.source}: {labelize(item.sourceType)} · {labelize(item.sourceStatus)}
+          {`${labels.source}: ${labelize(item.sourceType)} · ${labelize(item.sourceStatus)}`}
         </div>
 
         <div className="flex flex-wrap gap-2">
