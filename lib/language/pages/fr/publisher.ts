@@ -2,43 +2,36 @@ export const frPublisher = {
   metadata: {
     title: 'Publisher — Shane Turon',
     description:
-      'Publisher est le catalogue public de Shane Turon pour essais, livres, notes de terrain, manuels, récits, fables et écriture de systèmes.',
+      'Publisher est le catalogue public de Shane Turon pour essais, livres, manuels, récits, fables et écriture de systèmes.',
   },
 
   hero: {
     eyebrow: 'Publisher',
     title: 'Un catalogue public pour l’écriture qui a besoin de structure.',
     intro:
-      'Essais, livres, notes de terrain, manuels, récits, fables, lectures et écriture de systèmes organisés pour la lecture avant de devenir une ligne de produits terminée.',
+      'Essais, livres, manuels, récits, fables, lectures et écriture de systèmes organisés pour la lecture avant de devenir une ligne de produits terminée.',
   },
 
   console: {
     title: 'Publisher',
     status: 'actif',
-    subtitle: 'Catalogue éditorial / surface publique',
-    languageModules: ['EN', 'FR', 'ES'],
+    subtitle: 'Essais, livres, manuels, récits et écriture de systèmes.',
   },
 
   surfaces: {
-    title: 'Surfaces du catalogue',
+    title: 'Catalogue',
     items: [
       {
-        id: 'works',
-        eyebrow: 'Œuvres actuelles',
-        title: 'Œuvres',
-        desc: 'Essais, guides, livres blancs et pièces publiques en cours de transformation en objets de lecture durables.',
+        id: 'books',
+        eyebrow: 'Forme longue',
+        title: 'Livres',
+        desc: 'Œuvres longues qui demandent séquence, retenue et continuité avant diffusion.',
       },
       {
-        id: 'series',
-        eyebrow: 'Arcs longs',
-        title: 'Séries',
-        desc: 'TOM, Sugar Cubes et autres ensembles plus vastes qui demandent séquence, retenue et continuité avant diffusion.',
-      },
-      {
-        id: 'notes',
-        eyebrow: 'Couche de terrain',
-        title: 'Notes de terrain',
-        desc: 'Pièces courtes, fragments, observations, blagues et points de pression narrative pouvant exister hors de l’archive privée.',
+        id: 'essays',
+        eyebrow: 'Essais',
+        title: 'Essais',
+        desc: 'Arguments et observations publics transformés en objets de lecture durables.',
       },
       {
         id: 'manuals',
@@ -47,10 +40,16 @@ export const frPublisher = {
         desc: 'Œuvres pratiques ou tactiques destinées à aider un autre lecteur à utiliser une idée, pas seulement à l’admirer.',
       },
       {
+        id: 'stories',
+        eyebrow: 'Couche narrative',
+        title: 'Récits / Fables',
+        desc: 'Contenants narratifs pour les idées qui fonctionnent mieux par rencontre que par explication.',
+      },
+      {
         id: 'archive',
         eyebrow: 'Conservation sourcée',
         title: 'Archive',
-        desc: 'Le bord visible d’un système de sources plus profond. Toute source ne devient pas publique, et toute pièce publique n’expose pas sa machinerie.',
+        desc: 'Le bord visible d’un système de sources plus profond. Toute source ne devient pas publique.',
       },
     ],
   },
