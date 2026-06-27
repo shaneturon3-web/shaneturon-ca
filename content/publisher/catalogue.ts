@@ -4,6 +4,11 @@ import type {
   PublisherSurface,
   PublisherSurfaceId,
 } from '@/lib/publisher/types';
+import {
+  failureOfFoldersContent,
+  handReachingForFootContent,
+  universeNapkinContent,
+} from './full-texts';
 
 export const publisherSurfaces: PublisherSurface[] = [
   {
@@ -33,75 +38,6 @@ export const publisherSurfaces: PublisherSurface[] = [
 ];
 
 export const publisherCatalogue: PublisherContentItem[] = [
-  {
-    slug: 'failure-of-folders',
-    title: 'The Failure of Folders',
-    subtitle: 'Storage is not continuity.',
-    kind: 'essay',
-    workType: 'standalone',
-    status: 'public',
-    publicStatus: 'public',
-    audience: 'public',
-    publicSafe: true,
-    sourceType: 'github-old-repo',
-    sourceLabel: 'corporate-identity / src/content/writing/failure-of-folders.md',
-    sourceStatus: 'reviewed',
-    surface: ['essays'],
-    publicLabel: 'Essay',
-    order: 10,
-    language: 'en',
-    tags: ['continuity', 'systems', 'public note'],
-    description:
-      'A public essay about why storage alone cannot preserve meaning, relation, or operational continuity.',
-    editorialContent: [
-      {
-        type: 'paragraph',
-        text: 'Storage can hold material without preserving the relations that made it useful. The failure is not the folder; the failure is treating location as continuity.',
-      },
-      {
-        type: 'paragraph',
-        text: 'This piece frames the problem that runs through the larger catalogue: a work needs structure, sequence, and usable context before it can survive transfer.',
-      },
-    ],
-    routeEnabled: true,
-    href: '/publisher/failure-of-folders',
-  },
-  {
-    slug: 'el-universo-cabe-en-una-servilleta',
-    title: 'El Universo cabe en una servilleta',
-    subtitle: 'Ensayo para fingir que el universo cabe en una servilleta manchada de salsa A1.',
-    kind: 'essay',
-    workType: 'standalone',
-    status: 'public',
-    publicStatus: 'public',
-    audience: 'public',
-    publicSafe: true,
-    sourceType: 'drive',
-    sourceLabel:
-      'The Order Matters Ensayo para fingir que el universo cabe en una servilleta manchada de salsa A1',
-    sourceStatus: 'reviewed',
-    surface: ['essays'],
-    publicLabel: 'Essay',
-    series: 'The Order Matters',
-    parentWork: 'TOM Full',
-    order: 20,
-    language: 'es',
-    tags: ['tom', 'ensayo', 'universo', 'servilleta'],
-    description:
-      'Un ensayo TOM sobre modelos, selección, coincidencia y la tentación de fingir que el universo cabe en una servilleta.',
-    editorialContent: [
-      {
-        type: 'paragraph',
-        text: 'Esto es un ensayo porque conviene decirlo al principio. Su forma juega con la historia, el modelo y la broma para entrenar lectura, no para explicar el universo.',
-      },
-      {
-        type: 'paragraph',
-        text: 'La servilleta funciona como escenario mínimo: una superficie suficientemente pequeña para obligar al lector a ver qué se está comprimiendo, qué se está seleccionando y qué queda fuera.',
-      },
-    ],
-    routeEnabled: true,
-    href: '/publisher/el-universo-cabe-en-una-servilleta',
-  },
   {
     slug: 'the-order-matters-full',
     title: 'The Order Matters',
@@ -208,6 +144,83 @@ export const publisherCatalogue: PublisherContentItem[] = [
     routeEnabled: false,
   },
   {
+    slug: 'failure-of-folders',
+    title: 'The Failure of Folders',
+    subtitle: 'Storage is not continuity.',
+    kind: 'essay',
+    workType: 'standalone',
+    status: 'public',
+    publicStatus: 'public',
+    audience: 'public',
+    publicSafe: true,
+    sourceType: 'drive',
+    sourceLabel: 'The Failure of Folders v3.txt',
+    sourceStatus: 'reviewed',
+    surface: ['essays'],
+    publicLabel: 'Essay',
+    order: 10,
+    language: 'en',
+    tags: ['continuity', 'systems', 'transfer'],
+    description:
+      'A public essay about why storage alone cannot preserve meaning, relation, or operational continuity.',
+    editorialContent: failureOfFoldersContent,
+    routeEnabled: true,
+    href: '/publisher/failure-of-folders',
+  },
+  {
+    slug: 'el-universo-cabe-en-una-servilleta',
+    title: 'El Universo cabe en una servilleta',
+    subtitle: 'Ensayo para fingir que el universo cabe en una servilleta manchada de salsa A1.',
+    kind: 'essay',
+    workType: 'standalone',
+    status: 'public',
+    publicStatus: 'public',
+    audience: 'public',
+    publicSafe: true,
+    sourceType: 'drive',
+    sourceLabel:
+      'The Order Matters Ensayo para fingir que el universo cabe en una servilleta manchada de salsa A1',
+    sourceStatus: 'reviewed',
+    surface: ['essays'],
+    publicLabel: 'Essay',
+    series: 'The Order Matters',
+    parentWork: 'TOM Full',
+    order: 20,
+    language: 'es',
+    tags: ['tom', 'ensayo', 'universo', 'servilleta'],
+    description:
+      'Un ensayo TOM sobre modelos, selección, coincidencia y la tentación de fingir que el universo cabe en una servilleta.',
+    editorialContent: universeNapkinContent,
+    routeEnabled: true,
+    href: '/publisher/el-universo-cabe-en-una-servilleta',
+  },
+  {
+    slug: 'hand-reaching-for-foot',
+    title: 'Hand Reaching for Foot',
+    subtitle: '08 from Polish Ones.',
+    kind: 'story',
+    workType: 'standalone',
+    status: 'public',
+    publicStatus: 'public',
+    audience: 'public',
+    publicSafe: true,
+    sourceType: 'drive',
+    sourceLabel: '08 HAND REACHING FOR FOOT',
+    sourceStatus: 'reviewed',
+    surface: ['stories'],
+    publicLabel: 'Story',
+    series: 'Polish Ones',
+    parentWork: 'Polish Ones',
+    order: 5,
+    language: 'en',
+    tags: ['polish ones', 'story', 'domestic calibration'],
+    description:
+      'A quiet closing story from Polish Ones, built around contact, maintenance, restraint, and what remains after reaching has already happened.',
+    editorialContent: handReachingForFootContent,
+    routeEnabled: true,
+    href: '/publisher/hand-reaching-for-foot',
+  },
+  {
     slug: 'readerror-universe',
     title: 'READERROR UNIVERSE',
     subtitle: 'Reverse Sugar Cube / universe kernel.',
@@ -251,8 +264,8 @@ export const publisherCatalogue: PublisherContentItem[] = [
     publicStatus: 'candidate',
     audience: 'public-candidate',
     publicSafe: 'partial',
-    sourceType: 'blogger',
-    sourceLabel: 'battikers.shane@blogspot.com / Gmail sent trail',
+    sourceType: 'unknown',
+    sourceLabel: 'older story path',
     sourceStatus: 'raw',
     surface: ['stories'],
     publicLabel: 'Story',
@@ -311,38 +324,7 @@ export const publisherCatalogue: PublisherContentItem[] = [
   },
 ];
 
-export const publisherShelfBuckets: PublisherShelfBucket[] = [
-  {
-    id: 'public-safe-candidates',
-    title: 'Public-safe candidates',
-    description: 'Material likely to become public after review, extraction, or light editing.',
-    target: 'publisher',
-  },
-  {
-    id: 'works-in-development',
-    title: 'Works in development',
-    description: 'Large works, manuscripts, series, and project-linked texts that need structure before routing.',
-    target: 'publisher',
-  },
-  {
-    id: 'internal-or-restricted',
-    title: 'Internal or restricted',
-    description: 'Material that can inform architecture but should not be copied into public pages.',
-    target: 'internal-only',
-  },
-  {
-    id: 'systems-linked',
-    title: 'Systems-linked material',
-    description: 'Project and systems material that may belong under Systems rather than Publisher.',
-    target: 'systems',
-  },
-  {
-    id: 'quarry',
-    title: 'Quarry and duplicates',
-    description: 'Drive, Gmail, old repo, and attachment sources that require classification first.',
-    target: 'parked',
-  },
-];
+export const publisherShelfBuckets: PublisherShelfBucket[] = [];
 
 export function getPublisherSurfaceItems(surface: PublisherSurfaceId) {
   return publisherCatalogue
