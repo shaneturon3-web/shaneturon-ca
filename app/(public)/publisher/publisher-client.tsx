@@ -56,7 +56,7 @@ function labelize(value: string | boolean) {
 }
 
 function publicBadge(item: PublisherContentItem) {
-  if (item.publicStatus === 'public') return 'available';
+  if (item.publicStatus === 'public') return 'readable';
   if (item.publicStatus === 'candidate') return 'in progress';
   if (item.publicStatus === 'parked') return 'listed';
   return labelize(item.publicStatus);
@@ -71,62 +71,60 @@ function WorkButton({
   isActive: boolean;
   onSelect: () => void;
 }) {
-  const Icon = kindIcons[item.kind] ?? FileText;
-
   return (
     <button
       type="button"
       onClick={onSelect}
-      className={`w-full rounded-2xl border p-4 text-left transition ${
+      className={`w-full rounded-xl border px-3 py-3 text-left transition ${
         isActive
-          ? 'border-primary/45 bg-primary/10 text-white'
-          : 'border-white/10 bg-white/[0.03] text-white/70 hover:border-primary/25 hover:text-white'
+          ? 'border-white/20 bg-white/[0.06] text-white'
+          : 'border-white/10 bg-transparent text-white/45 hover:border-white/15 hover:text-white/75'
       }`}
     >
-      <div className="flex items-start gap-3">
-        <Icon className={`mt-1 h-5 w-5 ${isActive ? 'text-primary' : 'text-white/35'}`} />
-        <div className="min-w-0">
-          <div className="font-semibold">{item.title}</div>
-          {item.subtitle ? <div className="mt-1 line-clamp-2 text-sm text-white/45">{item.subtitle}</div> : null}
+      <div className="text-sm font-semibold leading-5">{item.title}</div>
+      {item.publicLabel ? (
+        <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/28">
+          {item.publicLabel}
         </div>
-      </div>
+      ) : null}
     </button>
   );
 }
 
 function EditorialStage({ item }: { item: PublisherContentItem }) {
   const Icon = kindIcons[item.kind] ?? FileText;
+  const preview = item.editorialContent?.slice(0, 4) ?? [];
 
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 md:p-8">
-      <div className="mb-6 flex items-start gap-4">
-        <div className="rounded-2xl border border-primary/25 bg-primary/10 p-3 text-primary">
-          <Icon className="h-6 w-6" />
-        </div>
-        <div>
-          <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
-            {item.publicLabel ?? labelize(item.kind)}
-          </p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-semibold text-white md:text-5xl">
-            {item.title}
-          </h2>
-          {item.subtitle ? <p className="mt-4 max-w-2xl text-base leading-7 text-white/58">{item.subtitle}</p> : null}
-        </div>
+    <article className="min-h-[68vh] rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-2xl shadow-black/20 md:p-10 lg:p-12">
+      <div className="mb-8 flex items-center gap-3 text-primary">
+        <Icon className="h-5 w-5" />
+        <p className="font-mono text-xs uppercase tracking-[0.24em]">
+          {item.publicLabel ?? labelize(item.kind)}
+        </p>
       </div>
 
-      <p className="max-w-3xl text-base leading-8 text-white/70">{item.description}</p>
+      <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.04em] text-white md:text-6xl lg:text-7xl">
+        {item.title}
+      </h2>
 
-      {item.editorialContent?.length ? (
-        <div className="mt-8 space-y-5 border-t border-white/10 pt-6">
-          {item.editorialContent.map((block) => (
-            <p key={block.text} className="max-w-3xl text-sm leading-8 text-white/65">
+      {item.subtitle ? (
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-white/58 md:text-xl">{item.subtitle}</p>
+      ) : null}
+
+      <p className="mt-8 max-w-3xl text-base leading-8 text-white/72">{item.description}</p>
+
+      {preview.length ? (
+        <div className="mt-10 max-w-3xl space-y-5 border-t border-white/10 pt-7">
+          {preview.map((block) => (
+            <p key={block.text} className="text-[15px] leading-8 text-white/68">
               {block.text}
             </p>
           ))}
         </div>
       ) : null}
 
-      <div className="mt-7 flex flex-wrap gap-2">
+      <div className="mt-8 flex flex-wrap gap-2">
         <PublicStatusPill tone="muted">{publicBadge(item)}</PublicStatusPill>
         {item.series ? <PublicStatusPill tone="muted">{item.series}</PublicStatusPill> : null}
         {item.tags.slice(0, 3).map((tag) => (
@@ -137,31 +135,30 @@ function EditorialStage({ item }: { item: PublisherContentItem }) {
       </div>
 
       {item.routeEnabled && item.href ? (
-        <div className="mt-8">
+        <div className="mt-9">
           <PublicButton href={item.href}>
             Read <ArrowRight className="ml-2 h-4 w-4" />
           </PublicButton>
         </div>
       ) : null}
-    </div>
+    </article>
   );
 }
 
 export function PublisherClient() {
   const { language } = useLanguage();
   const copy = language.pages.publisher;
-  const [activeSurface, setActiveSurface] = useState<PublisherSurfaceId>('books');
+  const [activeSurface, setActiveSurface] = useState<PublisherSurfaceId>('stories');
   const activeItems = useMemo(() => getPublisherSurfaceItems(activeSurface), [activeSurface]);
-  const [activeSlug, setActiveSlug] = useState<string>('the-order-matters-full');
+  const [activeSlug, setActiveSlug] = useState<string>('');
 
-  const activeSurfaceCopy = publisherSurfaces.find((surface) => surface.id === activeSurface) ?? publisherSurfaces[0];
   const activeItem =
     activeItems.find((item) => item.slug === activeSlug) ?? activeItems[0] ?? publisherCatalogue[0];
 
   function selectSurface(surface: PublisherSurfaceId) {
     const items = getPublisherSurfaceItems(surface);
     setActiveSurface(surface);
-    setActiveSlug(items[0]?.slug ?? 'failure-of-folders');
+    setActiveSlug(items[0]?.slug ?? '');
   }
 
   return (
@@ -172,19 +169,20 @@ export function PublisherClient() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="rounded-3xl border border-primary/20 bg-black/30 p-5 shadow-2xl shadow-black/20 md:p-7">
-            <div className="mb-6 border-b border-white/10 pb-5">
+          <div className="mb-6 flex flex-col gap-2 border-b border-white/10 pb-5 md:flex-row md:items-end md:justify-between">
+            <div>
               <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">{copy.console.status}</p>
-              <h1 className="mt-3 text-4xl font-semibold text-white md:text-6xl">{copy.console.title}</h1>
-              <p className="mt-4 max-w-3xl text-base leading-7 text-white/58">{copy.console.subtitle}</p>
+              <h1 className="mt-2 text-2xl font-semibold text-white md:text-3xl">{copy.console.title}</h1>
             </div>
+            <p className="max-w-xl text-sm leading-6 text-white/48">{copy.console.subtitle}</p>
+          </div>
 
-            <div className="grid gap-6 lg:grid-cols-[0.36fr_1.64fr]">
-              <aside className="space-y-4">
-                <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
+          <div className="grid gap-6 lg:grid-cols-[0.34fr_1.66fr]">
+            <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
+              <div>
+                <p className="mb-3 font-mono text-xs uppercase tracking-[0.22em] text-primary">
                   {copy.surfaces.title}
                 </p>
-
                 <div className="space-y-2">
                   {publisherSurfaces.map((surface) => {
                     const Icon = surfaceIcons[surface.id] ?? FileText;
@@ -199,47 +197,36 @@ export function PublisherClient() {
                         className={`flex w-full items-center justify-between rounded-xl border px-3 py-3 text-left transition ${
                           isActive
                             ? 'border-primary/45 bg-primary/10 text-white'
-                            : 'border-white/10 bg-white/[0.03] text-white/60 hover:border-primary/25 hover:text-white'
+                            : 'border-white/10 bg-white/[0.025] text-white/55 hover:border-primary/25 hover:text-white'
                         }`}
                       >
                         <span className="flex items-center gap-2">
-                          <Icon className={`h-4 w-4 ${isActive ? 'text-primary' : 'text-white/35'}`} />
+                          <Icon className={`h-4 w-4 ${isActive ? 'text-primary' : 'text-white/30'}`} />
                           <span className="font-semibold">{surface.title}</span>
                         </span>
-                        <span className="font-mono text-xs text-white/35">{count}</span>
+                        <span className="font-mono text-xs text-white/32">{count}</span>
                       </button>
                     );
                   })}
                 </div>
-              </aside>
+              </div>
 
-              <div className="space-y-5">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                  <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
-                    {activeSurfaceCopy.eyebrow}
-                  </p>
-                  <h2 className="mt-2 text-xl font-semibold text-white">{activeSurfaceCopy.title}</h2>
-                  <p className="mt-2 max-w-3xl text-sm leading-6 text-white/55">
-                    {activeSurfaceCopy.description}
-                  </p>
-                </div>
-
-                <div className="grid gap-5 xl:grid-cols-[0.72fr_1.28fr]">
-                  <div className="space-y-2">
-                    {activeItems.map((item) => (
-                      <WorkButton
-                        key={item.slug}
-                        item={item}
-                        isActive={item.slug === activeItem.slug}
-                        onSelect={() => setActiveSlug(item.slug)}
-                      />
-                    ))}
-                  </div>
-
-                  <EditorialStage item={activeItem} />
+              <div className="border-t border-white/10 pt-5">
+                <p className="mb-3 font-mono text-xs uppercase tracking-[0.22em] text-white/35">Works</p>
+                <div className="space-y-2">
+                  {activeItems.map((item) => (
+                    <WorkButton
+                      key={item.slug}
+                      item={item}
+                      isActive={item.slug === activeItem.slug}
+                      onSelect={() => setActiveSlug(item.slug)}
+                    />
+                  ))}
                 </div>
               </div>
-            </div>
+            </aside>
+
+            <EditorialStage item={activeItem} />
           </div>
         </motion.div>
       </PublicSection>
