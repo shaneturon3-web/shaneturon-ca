@@ -1,4 +1,31 @@
-import type { PublisherContentItem, PublisherShelfBucket } from '@/lib/publisher/types';
+import type { PublisherContentItem, PublisherShelfBucket, PublisherSurface } from '@/lib/publisher/types';
+
+export const publisherSurfaces: PublisherSurface[] = [
+  {
+    id: 'books',
+    title: 'Books',
+    eyebrow: 'Long form',
+    description: 'Longer works, book-shaped projects, and titles presented as books.',
+  },
+  {
+    id: 'essays',
+    title: 'Essays',
+    eyebrow: 'Essays',
+    description: 'Public arguments, literary systems pieces, and works presented as essays.',
+  },
+  {
+    id: 'stories',
+    title: 'Stories',
+    eyebrow: 'Narrative',
+    description: 'Stories, fables, and narrative containers for ideas that work through encounter.',
+  },
+  {
+    id: 'archive',
+    title: 'Archive',
+    eyebrow: 'Archive',
+    description: 'Public catalogue holdings that are not yet shaped into a reading route.',
+  },
+];
 
 export const publisherCatalogue: PublisherContentItem[] = [
   {
@@ -7,18 +34,31 @@ export const publisherCatalogue: PublisherContentItem[] = [
     subtitle: 'Storage is not continuity.',
     kind: 'essay',
     workType: 'standalone',
-    status: 'candidate',
-    publicStatus: 'candidate',
-    audience: 'public-candidate',
-    publicSafe: 'partial',
+    status: 'public',
+    publicStatus: 'public',
+    audience: 'public',
+    publicSafe: true,
     sourceType: 'github-old-repo',
     sourceLabel: 'corporate-identity / src/content/writing/failure-of-folders.md',
     sourceStatus: 'reviewed',
+    surface: ['essays'],
+    publicLabel: 'Essay',
     language: 'en',
     tags: ['continuity', 'systems', 'public note'],
     description:
-      'A public essay candidate about why storage alone cannot preserve meaning, relation, or operational continuity.',
-    routeEnabled: false,
+      'A public essay about why storage alone cannot preserve meaning, relation, or operational continuity.',
+    editorialContent: [
+      {
+        type: 'paragraph',
+        text: 'Storage can hold material without preserving the relations that made it useful. The failure is not the folder; the failure is treating location as continuity.',
+      },
+      {
+        type: 'paragraph',
+        text: 'This piece frames the problem that runs through the larger catalogue: a work needs structure, sequence, and usable context before it can survive transfer.',
+      },
+    ],
+    routeEnabled: true,
+    href: '/publisher/failure-of-folders',
   },
   {
     slug: 'el-universo-cabe-en-una-servilleta',
@@ -26,14 +66,16 @@ export const publisherCatalogue: PublisherContentItem[] = [
     subtitle: 'Ensayo para fingir que el universo cabe en una servilleta manchada de salsa A1.',
     kind: 'essay',
     workType: 'standalone',
-    status: 'candidate',
-    publicStatus: 'candidate',
-    audience: 'public-candidate',
-    publicSafe: 'partial',
+    status: 'public',
+    publicStatus: 'public',
+    audience: 'public',
+    publicSafe: true,
     sourceType: 'drive',
     sourceLabel:
       'The Order Matters Ensayo para fingir que el universo cabe en una servilleta manchada de salsa A1',
-    sourceStatus: 'raw',
+    sourceStatus: 'reviewed',
+    surface: ['essays'],
+    publicLabel: 'Essay',
     series: 'The Order Matters',
     parentWork: 'TOM Full',
     order: 12,
@@ -41,7 +83,18 @@ export const publisherCatalogue: PublisherContentItem[] = [
     tags: ['tom', 'ensayo', 'universo', 'servilleta'],
     description:
       'Un ensayo TOM sobre modelos, selección, coincidencia y la tentación de fingir que el universo cabe en una servilleta.',
-    routeEnabled: false,
+    editorialContent: [
+      {
+        type: 'paragraph',
+        text: 'Esto es un ensayo porque conviene decirlo al principio. Su forma juega con la historia, el modelo y la broma para entrenar lectura, no para explicar el universo.',
+      },
+      {
+        type: 'paragraph',
+        text: 'La servilleta funciona como escenario mínimo: una superficie suficientemente pequeña para obligar al lector a ver qué se está comprimiendo, qué se está seleccionando y qué queda fuera.',
+      },
+    ],
+    routeEnabled: true,
+    href: '/publisher/el-universo-cabe-en-una-servilleta',
   },
   {
     slug: 'the-order-matters-full',
@@ -56,13 +109,15 @@ export const publisherCatalogue: PublisherContentItem[] = [
     sourceType: 'drive',
     sourceLabel: 'TOM manuscript drafts and counterweights',
     sourceStatus: 'unsanitized',
+    surface: ['books'],
+    publicLabel: 'Book',
     series: 'The Order Matters',
     parentWork: 'TOM Full',
     order: 10,
     language: 'mixed',
     tags: ['tom', 'manuscript', 'fables', 'systems'],
     description:
-      'The full TOM machine. It is a manuscript ecosystem, not a single public post. Requires cleanup, source control, and public/private separation before routing.',
+      'The full TOM machine: a manuscript ecosystem built around sequence, callback, and adversarial reading.',
     routeEnabled: false,
   },
   {
@@ -78,74 +133,15 @@ export const publisherCatalogue: PublisherContentItem[] = [
     sourceType: 'drive',
     sourceLabel: 'TOM Tactical pre-production and status map',
     sourceStatus: 'unsanitized',
+    surface: ['books'],
+    publicLabel: 'Book',
     series: 'The Order Matters',
     parentWork: 'TOM Full',
     order: 20,
     language: 'mixed',
     tags: ['tom', 'tactical', 'field manual', 'closed spine'],
     description:
-      'The short tunnel version of TOM. It must not be reduced into or confused with the full TOM manuscript.',
-    routeEnabled: false,
-  },
-  {
-    slug: 'sugar-cubes-octonian',
-    title: 'Sugar Cubes and the Octonian Network',
-    subtitle: 'Transferable meaning and continuity architecture.',
-    kind: 'lecture',
-    workType: 'series',
-    status: 'candidate',
-    publicStatus: 'candidate',
-    audience: 'public-candidate',
-    publicSafe: 'partial',
-    sourceType: 'drive',
-    sourceLabel: 'Lectures: SugarCubes, the Octonian Network, and Trans-Generational Responsibility',
-    sourceStatus: 'unsanitized',
-    series: 'Sugar Cubes',
-    order: 30,
-    language: 'mixed',
-    tags: ['sugar cubes', 'octonian', 'continuity', 'lecture'],
-    description:
-      'A public-facing theory family around transferable meaning, continuity, and systems that remember without flattening context.',
-    routeEnabled: false,
-  },
-  {
-    slug: 'sugar-cubes-white-paper',
-    title: 'Sugar Cubes: A Continuity Architecture',
-    subtitle: 'From storage-based knowledge to semantic continuity systems.',
-    kind: 'white-paper',
-    workType: 'standalone',
-    status: 'candidate',
-    publicStatus: 'candidate',
-    audience: 'public-candidate',
-    publicSafe: 'partial',
-    sourceType: 'drive',
-    sourceLabel: 'WHITE PAPER v0.1 — Pareto Spine',
-    sourceStatus: 'raw',
-    series: 'Sugar Cubes',
-    order: 40,
-    language: 'en',
-    tags: ['white paper', 'semantic continuity', 'systems'],
-    description:
-      'A buildable white-paper spine for Sugar Cubes. Candidate only until sources, examples, diagrams, and public-safe claims are validated.',
-    routeEnabled: false,
-  },
-  {
-    slug: 'auadhd-internal-guide',
-    title: 'AuADHD Internal Operating Guide',
-    subtitle: 'Internal assistant and collaborator protocol.',
-    kind: 'guide',
-    workType: 'source-map',
-    status: 'internal',
-    publicStatus: 'internal',
-    audience: 'internal',
-    publicSafe: false,
-    sourceType: 'drive',
-    sourceLabel: 'AuADHDGuideBookB07Jun26',
-    sourceStatus: 'canonical',
-    language: 'en',
-    tags: ['auadhd', 'internal', 'operations', 'do not publish'],
-    description:
-      'An internal operating guide. It is explicitly not the public parenting or ADHD guide and must not be merged into one.',
+      'A book-shaped TOM work presented through tactical language, field pressure, and compressed reading operations.',
     routeEnabled: false,
   },
   {
@@ -161,10 +157,12 @@ export const publisherCatalogue: PublisherContentItem[] = [
     sourceType: 'drive',
     sourceLabel: 'Derived candidate; public guide not yet separated',
     sourceStatus: 'raw',
+    surface: ['books'],
+    publicLabel: 'Book',
     language: 'mixed',
     tags: ['adhd', 'auadhd', 'guide', 'public candidate'],
     description:
-      'A future public guide category. It exists as a target, not as publishable content until internal/private material is separated.',
+      'A future public book category for ADHD and AuADHD material, separate from internal operating notes.',
     routeEnabled: false,
   },
   {
@@ -180,12 +178,14 @@ export const publisherCatalogue: PublisherContentItem[] = [
     sourceType: 'blogger',
     sourceLabel: 'battikers.shane@blogspot.com / Gmail sent trail',
     sourceStatus: 'raw',
+    surface: ['stories'],
+    publicLabel: 'Story',
     series: 'Crime Syndicate',
     order: 50,
     language: 'en',
     tags: ['story', 'satire', 'crime syndicate', 'blogger'],
     description:
-      'A story or satirical systems piece already routed through the Blogger source path. Candidate only until retrieved and reviewed.',
+      'A story or satirical systems piece from the Crime Syndicate path.',
     routeEnabled: false,
   },
   {
@@ -201,10 +201,12 @@ export const publisherCatalogue: PublisherContentItem[] = [
     sourceType: 'attachment',
     sourceLabel: 'Gmail .eml archives, Drive chapters, Blogger traces',
     sourceStatus: 'duplicate',
+    surface: ['stories', 'archive'],
+    publicLabel: 'Collection',
     language: 'mixed',
-    tags: ['stories', 'archive', 'quarry', 'review required'],
+    tags: ['stories', 'archive', 'collection'],
     description:
-      'A holding container for stories, fables, fragments, and forwarded archives before public-safe extraction.',
+      'A public placeholder for stories, fables, and fragments before individual reading routes are selected.',
     routeEnabled: false,
   },
   {
@@ -220,12 +222,14 @@ export const publisherCatalogue: PublisherContentItem[] = [
     sourceType: 'drive',
     sourceLabel: 'PsyNova visual/source asset candidate',
     sourceStatus: 'raw',
+    surface: ['archive'],
+    publicLabel: 'Asset',
     series: 'PsyNova',
     order: 60,
     language: 'mixed',
-    tags: ['psynova', 'infographic', 'asset', 'not project'],
+    tags: ['psynova', 'infographic', 'asset'],
     description:
-      'A PsyNova content or asset candidate. It must remain separate from PsyNova Project, which belongs under Systems later.',
+      'A PsyNova content or asset candidate kept separate from PsyNova Project, which belongs under Systems.',
     routeEnabled: false,
   },
 ];
@@ -262,6 +266,14 @@ export const publisherShelfBuckets: PublisherShelfBucket[] = [
     target: 'parked',
   },
 ];
+
+export function getPublisherSurfaceItems(surface: string) {
+  return publisherCatalogue.filter((item) => item.surface.includes(surface as never));
+}
+
+export function getPublisherItemBySlug(slug: string) {
+  return publisherCatalogue.find((item) => item.slug === slug);
+}
 
 export const publisherPublicItems = publisherCatalogue.filter(
   (item) => item.publicStatus === 'public' && item.routeEnabled,
