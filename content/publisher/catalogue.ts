@@ -1,4 +1,9 @@
-import type { PublisherContentItem, PublisherShelfBucket, PublisherSurface } from '@/lib/publisher/types';
+import type {
+  PublisherContentItem,
+  PublisherShelfBucket,
+  PublisherSurface,
+  PublisherSurfaceId,
+} from '@/lib/publisher/types';
 
 export const publisherSurfaces: PublisherSurface[] = [
   {
@@ -267,8 +272,8 @@ export const publisherShelfBuckets: PublisherShelfBucket[] = [
   },
 ];
 
-export function getPublisherSurfaceItems(surface: string) {
-  return publisherCatalogue.filter((item) => item.surface.includes(surface as never));
+export function getPublisherSurfaceItems(surface: PublisherSurfaceId) {
+  return publisherCatalogue.filter((item) => item.surface.includes(surface));
 }
 
 export function getPublisherItemBySlug(slug: string) {
