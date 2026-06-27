@@ -60,6 +60,13 @@ export type PublisherAudience =
   | 'restricted'
   | 'mixed';
 
+export type PublisherSurfaceId = 'books' | 'essays' | 'stories' | 'archive';
+
+export type PublisherContentBlock = {
+  type: 'paragraph' | 'note';
+  text: string;
+};
+
 export type PublisherContentItem = {
   slug: string;
   title: string;
@@ -73,14 +80,24 @@ export type PublisherContentItem = {
   sourceType: PublisherSourceType;
   sourceLabel: string;
   sourceStatus: PublisherSourceStatus;
+  surface: PublisherSurfaceId[];
+  publicLabel?: string;
   series?: string;
   parentWork?: string;
   order?: number;
   language: 'en' | 'es' | 'fr' | 'mixed';
   tags: string[];
   description: string;
+  editorialContent?: PublisherContentBlock[];
   routeEnabled: boolean;
   href?: string;
+};
+
+export type PublisherSurface = {
+  id: PublisherSurfaceId;
+  title: string;
+  eyebrow: string;
+  description: string;
 };
 
 export type PublisherShelfBucket = {
