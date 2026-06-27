@@ -48,6 +48,7 @@ export const publisherCatalogue: PublisherContentItem[] = [
     sourceStatus: 'reviewed',
     surface: ['essays'],
     publicLabel: 'Essay',
+    order: 10,
     language: 'en',
     tags: ['continuity', 'systems', 'public note'],
     description:
@@ -83,7 +84,7 @@ export const publisherCatalogue: PublisherContentItem[] = [
     publicLabel: 'Essay',
     series: 'The Order Matters',
     parentWork: 'TOM Full',
-    order: 12,
+    order: 20,
     language: 'es',
     tags: ['tom', 'ensayo', 'universo', 'servilleta'],
     description:
@@ -126,6 +127,41 @@ export const publisherCatalogue: PublisherContentItem[] = [
     routeEnabled: false,
   },
   {
+    slug: 'polish-ones-companion',
+    title: 'Polish Ones',
+    subtitle: 'Companion volume to The Order Matters.',
+    kind: 'book',
+    workType: 'collection',
+    status: 'public',
+    publicStatus: 'public',
+    audience: 'public',
+    publicSafe: true,
+    sourceType: 'drive',
+    sourceLabel: 'Polish Ones / stories 00–07 and companion project briefing',
+    sourceStatus: 'reviewed',
+    surface: ['books', 'stories'],
+    publicLabel: 'Companion book',
+    series: 'The Order Matters',
+    parentWork: 'TOM Full',
+    order: 15,
+    language: 'en',
+    tags: ['companion book', 'stories', 'polish ones', 'tom'],
+    description:
+      'A companion book built from the Polish Ones sequence: a parallel narrative machine for inheritance, gates, receipts, seed vaults, and terminal exits.',
+    editorialContent: [
+      {
+        type: 'paragraph',
+        text: 'Contents: 00 Before the Gate; 01 The Night the Gate Hung Crooked; 02 The Receipt Artifact; 03 The Seed Vault; 04 Planting the Seed; 05 Reduced Night Version; 06 Intense Pre Closing; 07 Plural Matrix Terminal Exit.',
+      },
+      {
+        type: 'paragraph',
+        text: 'This companion volume is not a prequel or glossary. It is a parallel processor for the same machine, presented through story sequence rather than explanation.',
+      },
+    ],
+    routeEnabled: true,
+    href: '/publisher/polish-ones-companion',
+  },
+  {
     slug: 'tom-tactical',
     title: 'TOM Tactical',
     subtitle: 'Tunnel edition / field operation.',
@@ -164,6 +200,7 @@ export const publisherCatalogue: PublisherContentItem[] = [
     sourceStatus: 'raw',
     surface: ['books'],
     publicLabel: 'Book',
+    order: 30,
     language: 'mixed',
     tags: ['adhd', 'auadhd', 'guide', 'public candidate'],
     description:
@@ -171,9 +208,43 @@ export const publisherCatalogue: PublisherContentItem[] = [
     routeEnabled: false,
   },
   {
+    slug: 'readerror-universe',
+    title: 'READERROR UNIVERSE',
+    subtitle: 'Reverse Sugar Cube / universe kernel.',
+    kind: 'story',
+    workType: 'standalone',
+    status: 'public',
+    publicStatus: 'public',
+    audience: 'public',
+    publicSafe: true,
+    sourceType: 'drive',
+    sourceLabel: 'SHANE / CHAT55 / READERROR UNIVERSE',
+    sourceStatus: 'reviewed',
+    surface: ['stories'],
+    publicLabel: 'Long story',
+    series: 'The Order Matters',
+    order: 10,
+    language: 'en',
+    tags: ['readerror', 'reverse sugar cube', 'story', 'universe kernel'],
+    description:
+      'A long compressed story: part fictional physics, part character registry, part machine-myth seed, and part broken operating-system joke.',
+    editorialContent: [
+      {
+        type: 'paragraph',
+        text: 'This is a Reverse Sugar Cube. It appears fragmented because it is not written as ordinary prose; the compression is part of the function.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The story should stay strange enough to carry the machine-myth logic while remaining readable as a single long narrative object.',
+      },
+    ],
+    routeEnabled: true,
+    href: '/publisher/readerror-universe',
+  },
+  {
     slug: 'inspector-truffle-crime-syndicate',
     title: 'Inspector Truffle at Crime Syndicate',
-    subtitle: 'A systems satire candidate from the Blogger path.',
+    subtitle: 'A systems satire candidate from the older story path.',
     kind: 'story',
     workType: 'standalone',
     status: 'candidate',
@@ -186,9 +257,9 @@ export const publisherCatalogue: PublisherContentItem[] = [
     surface: ['stories'],
     publicLabel: 'Story',
     series: 'Crime Syndicate',
-    order: 50,
+    order: 30,
     language: 'en',
-    tags: ['story', 'satire', 'crime syndicate', 'blogger'],
+    tags: ['story', 'satire', 'crime syndicate'],
     description:
       'A story or satirical systems piece from the Crime Syndicate path.',
     routeEnabled: false,
@@ -196,7 +267,7 @@ export const publisherCatalogue: PublisherContentItem[] = [
   {
     slug: 'stories-archive',
     title: 'Stories Archive',
-    subtitle: 'Narrative quarry before canonical routing.',
+    subtitle: 'Narrative holding before canonical routing.',
     kind: 'story',
     workType: 'collection',
     status: 'parked',
@@ -204,10 +275,11 @@ export const publisherCatalogue: PublisherContentItem[] = [
     audience: 'mixed',
     publicSafe: 'unknown',
     sourceType: 'attachment',
-    sourceLabel: 'Gmail .eml archives, Drive chapters, Blogger traces',
+    sourceLabel: 'Gmail .eml archives, Drive chapters, story traces',
     sourceStatus: 'duplicate',
     surface: ['stories', 'archive'],
     publicLabel: 'Collection',
+    order: 90,
     language: 'mixed',
     tags: ['stories', 'archive', 'collection'],
     description:
@@ -267,13 +339,15 @@ export const publisherShelfBuckets: PublisherShelfBucket[] = [
   {
     id: 'quarry',
     title: 'Quarry and duplicates',
-    description: 'Blogger, Drive, Gmail, old repo, and attachment sources that require classification first.',
+    description: 'Drive, Gmail, old repo, and attachment sources that require classification first.',
     target: 'parked',
   },
 ];
 
 export function getPublisherSurfaceItems(surface: PublisherSurfaceId) {
-  return publisherCatalogue.filter((item) => item.surface.includes(surface));
+  return publisherCatalogue
+    .filter((item) => item.surface.includes(surface))
+    .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
 }
 
 export function getPublisherItemBySlug(slug: string) {
