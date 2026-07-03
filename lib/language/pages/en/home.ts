@@ -1,9 +1,10 @@
 export const enHome = {
   hero: {
-    badge: 'Active Systems',
-    title: 'Operational architecture for complex work',
+    badge: 'Systems Operational',
+    title: 'Operational',
+    accent: 'Architecture',
     intro:
-      'Public interfaces, written frameworks, and working structures for making complex work easier to run.',
+      'Public interfaces, written frameworks, and working structures for complex work.',
     pattern: ['Systems', 'Writing', 'Architecture', 'Publications', 'Operations', 'Structure'],
     primaryCta: 'View Systems',
     secondaryCta: 'View Publications',
