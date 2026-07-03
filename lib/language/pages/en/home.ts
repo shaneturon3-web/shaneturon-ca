@@ -3,7 +3,8 @@ export const enHome = {
     badge: 'Active Systems',
     title: 'Operational architecture for complex work',
     intro:
-      'Shane Turon designs practical systems, public interfaces, and written frameworks that turn complex work into usable structure.',
+      'Public interfaces, written frameworks, and working structures for making complex work easier to run.',
+    pattern: ['Systems', 'Writing', 'Architecture', 'Publications', 'Operations', 'Structure'],
     primaryCta: 'View Systems',
     secondaryCta: 'View Publications',
   },
@@ -20,14 +21,15 @@ export const enHome = {
   branches: {
     title: 'Two public branches. One operating spine.',
     intro:
-      'The site separates applied systems from public writing so each branch can grow without consuming the whole identity.',
+      'Applied systems and public writing stay separated so each branch can grow without consuming the whole identity.',
     items: [
       {
         eyebrow: 'Systems',
         title: 'Operational infrastructure',
-        desc: 'Practice systems, intake paths, administrative flow, records, permissions, and modular implementation for complex work.',
+        desc: 'Practice infrastructure, intake paths, administrative flow, records, permissions, and modular implementation for complex work.',
         href: '/systems',
         action: 'View Systems',
+        points: ['mapped', 'working', 'modular'],
       },
       {
         eyebrow: 'Writing',
@@ -35,6 +37,7 @@ export const enHome = {
         desc: 'Books, essays, stories, guides, jokes, public notes, and long-form materials presented only when they are ready to be read.',
         href: '/#writing',
         action: 'View Publications',
+        points: ['selected', 'readable', 'public'],
       },
     ],
   },
