@@ -51,10 +51,17 @@ export function HomepageClient() {
           transition={{ duration: 0.65 }}
           className="relative"
         >
+          <div className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-border/50 bg-card/50 px-4 py-1.5 backdrop-blur">
+            <span className="h-2 w-2 rounded-full bg-primary status-pulse" />
+            <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              {copy.hero.badge}
+            </span>
+          </div>
+
           <PublicPageHero
             align="center"
-            eyebrow={copy.hero.badge}
             title={copy.hero.title}
+            accent={copy.hero.accent}
             description={copy.hero.intro}
             actions={
               <>
@@ -68,7 +75,7 @@ export function HomepageClient() {
             }
           />
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-full border border-border/40 bg-background/70 px-4 py-3 backdrop-blur">
+          <div className="mx-auto mt-8 max-w-4xl rounded-full border border-border/40 bg-background/70 px-4 py-3 backdrop-blur">
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
               <PublicStatusPill>{copy.status.label}</PublicStatusPill>
               {copy.status.items.map((item) => (
