@@ -2,69 +2,95 @@ export const esSystems = {
   metadata: {
     title: 'Sistemas — Shane Turon',
     description:
-      'Sistemas activos, pilotos e infraestructura interna organizados por función operativa.',
+      'Infraestructura operativa, sistemas de practica e implementacion modular de sitios publicos.',
   },
 
   hero: {
-    eyebrow: 'Infraestructura',
-    title: 'Sistemas activos',
+    eyebrow: 'Sistemas en operacion',
+    title: 'Arquitectura',
+    accent: 'de Sistemas',
     intro:
-      'Sistemas activos, pilotos e infraestructura interna organizados por función operativa.',
+      'Infraestructura operativa para recepcion, comunicacion, registros, superficies editoriales e implementacion modular.',
+    pattern: ['Recepcion', 'Registros', 'Rutas', 'Publicacion', 'Operaciones', 'Gobernanza'],
+    primaryCta: 'Mapear sistema',
+    secondaryCta: 'Ver publicaciones',
+  },
+
+  status: {
+    label: 'Sistemas activos',
+    items: [
+      { label: 'PsyNova', href: '#psynova' },
+      { label: 'Despliegue', href: '#deployment' },
+      { label: 'Ejecucion', href: '#execution' },
+    ],
   },
 
   psynova: {
-    title: 'PsyNova',
+    title: 'PsyNova como infraestructura de practica',
     intro:
-      'Infraestructura para prácticas profesionales: presencia pública, recepción de solicitudes, agenda, comunicación, registros y flujo administrativo.',
+      'PsyNova es una rama aplicada: un wrapper para practica profesional con presencia publica, recepcion, agenda, comunicacion, registros y flujo administrativo.',
     groups: [
       {
-        title: 'Recepción de solicitudes',
-        items: ['Presencia pública', 'Caminos de contacto', 'Captura de solicitudes', 'Enrutamiento'],
+        title: 'Entrada publica',
+        desc: 'Una superficie limpia para primer contacto y orientacion antes de cualquier flujo interno.',
+        items: ['Presencia', 'Contacto', 'Captura', 'Rutas'],
       },
       {
         title: 'Flujo administrativo',
+        desc: 'Movimiento operativo basico desde solicitud hasta seguimiento sin exponer maquinaria privada.',
         items: ['Agenda', 'Seguimiento', 'Estado', 'Tareas'],
       },
       {
         title: 'Registros y autoridad',
-        items: ['Privacidad', 'Registros', 'Permisos', 'Límites profesionales'],
+        desc: 'Limites, permisos y documentacion quedan visibles para el operador, no para la superficie publica.',
+        items: ['Privacidad', 'Registros', 'Permisos', 'Limites'],
       },
     ],
-    deployment: {
-      title: 'Caminos de implementación',
+  },
+
+  deployment: {
+    title: 'Implementacion sin reconstruir todo el sitio',
+    intro:
+      'Un sitio de cliente debe ensamblarse desde motor base, wrapper, postura de marca, contenido y modulos opcionales.',
+    paths: {
+      title: 'Caminos de implementacion',
       items: [
         {
-          title: 'Construcción mapeada',
-          desc: 'Mapear la operación actual, definir el primer sistema útil y construir alrededor de lo que ya existe.',
+          title: 'Construccion mapeada',
+          desc: 'Mapear la operacion actual, definir el primer sistema util y construir alrededor de lo que ya existe.',
         },
         {
-          title: 'Sistema bajo marca del cliente',
-          desc: 'El sistema funciona bajo la marca, cuentas y contexto operativo del cliente.',
+          title: 'Superficie del cliente',
+          desc: 'La superficie publica corre bajo marca, idioma, cuentas y contexto operativo del cliente.',
         },
         {
-          title: 'Soporte gestionado',
-          desc: 'Las mejoras, documentación y gobernanza del flujo pueden mantenerse como servicio.',
+          title: 'Wrapper white-label',
+          desc: 'La arquitectura reusable permanece estable mientras cambian presentacion, texto y exposicion de modulos.',
+        },
+        {
+          title: 'Extraccion a Shelf',
+          desc: 'Solo los patrones probados se vuelven piezas reutilizables despues de funcionar en un sitio real.',
         },
       ],
     },
-    scale: {
-      title: 'Formas de operación',
+    shapes: {
+      title: 'Formas operativas',
       items: [
-        { title: 'Profesional independiente', desc: 'Una persona experta con poca capacidad administrativa y necesidades claras de recepción.' },
-        { title: 'Oficina pequeña', desc: 'Un equipo compacto que comparte clientes, registros, agenda y comunicación.' },
-        { title: 'Equipo con varios roles', desc: 'Varios roles necesitan enrutamiento, permisos, registros y estado compartido.' },
-        { title: 'Operación en red', desc: 'Varias ubicaciones, marcas, socios o líneas de servicio necesitan un mismo mapa operativo.' },
+        { title: 'Solo', desc: 'Una persona profesional con poca capacidad administrativa y necesidades claras de recepcion.' },
+        { title: 'Oficina pequena', desc: 'Un equipo compacto que comparte clientes, registros, agenda y comunicacion.' },
+        { title: 'Multirol', desc: 'Varios roles necesitan rutas, permisos, registros y estado compartido.' },
+        { title: 'Red', desc: 'Varias ubicaciones, marcas, socios o lineas de servicio necesitan un mismo mapa operativo.' },
       ],
     },
   },
 
   execution: {
-    title: 'Sistemas de ejecución',
-    intro: 'Sistemas de apoyo para estructurar proyectos, prototipos, conocimiento y trabajo asistido por IA.',
+    title: 'Sistemas de ejecucion',
+    intro: 'Sistemas de apoyo estructuran proyectos, prototipos, conocimiento y trabajo asistido controlado sin convertir automatizacion en el titular publico.',
     items: [
       {
         title: 'Control Tower',
-        desc: 'Orquestación de proyectos y gobernanza de ejecución asistida por IA.',
+        desc: 'Orquestacion de proyectos, estado de tareas, puntos de revision y memoria operativa.',
       },
       {
         title: 'ShipYard',
@@ -72,11 +98,11 @@ export const esSystems = {
       },
       {
         title: 'Arquitectura de conocimiento',
-        desc: 'Sistemas de referencia para decisiones, registros, notas y activos de conocimiento reutilizables.',
+        desc: 'Sistemas de referencia para decisiones, registros, notas y activos reutilizables de conocimiento.',
       },
       {
-        title: 'Gobernanza de IA',
-        desc: 'Roles definidos, puntos de revisión, rutas de escalamiento y control de ejecución para trabajo asistido por IA.',
+        title: 'Puente editorial',
+        desc: 'Camino controlado entre material escrito, superficies publicas y patrones reutilizables de implementacion.',
       },
     ],
   },
@@ -84,7 +110,7 @@ export const esSystems = {
   cta: {
     title: 'Los sistemas deben aclarar el trabajo.',
     body:
-      'La meta no es más software. La meta es una forma más clara de operar la práctica, proteger tiempo y preservar autoridad profesional.',
+      'La meta no es mas software. La meta es una forma mas clara de operar, proteger tiempo y preservar autoridad.',
     action: 'Contacto',
   },
 };
