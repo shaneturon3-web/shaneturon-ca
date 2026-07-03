@@ -1,43 +1,44 @@
 export const frHome = {
   hero: {
-    badge: 'Systèmes actifs',
-    title: 'Architecture opérationnelle pour le travail complexe',
+    badge: 'Systemes en operation',
+    title: 'Architecture',
+    accent: 'Operationnelle',
     intro:
-      'Interfaces publiques, cadres écrits et structures fonctionnelles pour rendre le travail complexe plus opérable.',
-    pattern: ['Systèmes', 'Écriture', 'Architecture', 'Publications', 'Opérations', 'Structure'],
-    primaryCta: 'Voir les systèmes',
+      'Interfaces publiques, cadres ecrits et structures fonctionnelles pour le travail complexe.',
+    pattern: ['Systemes', 'Ecriture', 'Architecture', 'Publications', 'Operations', 'Structure'],
+    primaryCta: 'Voir les systemes',
     secondaryCta: 'Voir les publications',
   },
 
   status: {
     label: 'Domaines actifs',
     items: [
-      { label: 'Systèmes', href: '/systems' },
+      { label: 'Systemes', href: '/systems' },
       { label: 'Publications', href: '/#writing' },
       { label: 'Contact', href: '/contact' },
     ],
   },
 
   branches: {
-    title: 'Deux branches publiques. Une structure opérationnelle.',
+    title: 'Deux branches publiques. Une structure operationnelle.',
     intro:
-      'Les systèmes appliqués et l’écriture publique restent séparés afin que chaque branche puisse grandir sans absorber toute l’identité.',
+      'Les systemes appliques et l ecriture publique restent separes afin que chaque branche puisse grandir sans absorber toute l identite.',
     items: [
       {
-        eyebrow: 'Systèmes',
-        title: 'Infrastructure opérationnelle',
-        desc: 'Infrastructure de pratique, chemins d’accueil, flux administratif, dossiers, permissions et mise en œuvre modulaire pour le travail complexe.',
+        eyebrow: 'Systemes',
+        title: 'Infrastructure operationnelle',
+        desc: 'Infrastructure de pratique, chemins d accueil, flux administratif, dossiers, permissions et mise en oeuvre modulaire pour le travail complexe.',
         href: '/systems',
-        action: 'Voir les systèmes',
-        points: ['cartographiée', 'fonctionnelle', 'modulaire'],
+        action: 'Voir les systemes',
+        points: ['cartographiee', 'fonctionnelle', 'modulaire'],
       },
       {
-        eyebrow: 'Écriture',
+        eyebrow: 'Ecriture',
         title: 'Publications et textes en travail',
-        desc: 'Livres, essais, histoires, guides, blagues, notes publiques et textes longs présentés seulement lorsqu’ils sont prêts à être lus.',
+        desc: 'Livres, essais, histoires, guides, notes publiques et textes longs presentes seulement quand ils sont prets a etre lus.',
         href: '/#writing',
         action: 'Voir les publications',
-        points: ['sélectionnée', 'lisible', 'publique'],
+        points: ['selectionnee', 'lisible', 'publique'],
       },
     ],
   },
@@ -45,45 +46,45 @@ export const frHome = {
   method: {
     title: 'Comment le travail se construit',
     intro:
-      'La surface publique reste simple parce que le travail sous-jacent est cartographié, modulaire et vérifié contre ce qui existe réellement.',
+      'La surface publique reste simple parce que le travail sous-jacent est cartographie, modulaire et verifie contre ce qui existe reellement.',
     items: [
       {
-        title: 'Cartographier le véritable objet',
-        desc: 'Commencer par l’opération, la publication, le public, la route et la contrainte avant de choisir la mise en page ou les outils.',
+        title: 'Cartographier le veritable objet',
+        desc: 'Commencer par l operation, la publication, le public, la route et la contrainte avant de choisir la mise en page ou les outils.',
       },
       {
-        title: 'Bâtir la plus petite pièce utile',
-        desc: 'Une section, une route ou un module est ajouté seulement lorsque sa fonction est claire et que ses liens actifs peuvent être vérifiés.',
+        title: 'Batir la plus petite piece utile',
+        desc: 'Une section, une route ou un module est ajoute seulement lorsque sa fonction est claire et que ses liens actifs peuvent etre verifies.',
       },
       {
-        title: 'Conserver ce qui peut être réutilisé',
-        desc: 'Les modèles réussis deviennent candidats pour Shelf seulement après avoir fonctionné dans le site public sans hypothèses propres à un client.',
+        title: 'Conserver ce qui peut etre reutilise',
+        desc: 'Les modeles reussis deviennent candidats pour Shelf seulement apres avoir fonctionne dans le site public sans hypotheses propres a un client.',
       },
     ],
   },
 
   publications: {
-    title: 'Écriture et publications',
+    title: 'Ecriture et publications',
     intro:
-      'Cette branche contient le travail écrit destiné au public sans transformer la page d’accueil en catalogue ni exposer la machinerie privée des sources.',
+      'Cette branche contient le travail ecrit destine au public sans transformer la page d accueil en catalogue ni exposer la machinerie privee des sources.',
     feature: {
       eyebrow: 'Publications',
-      title: 'Livres, essais, histoires, blagues, guides et notes',
-      desc: 'L’écriture est traitée comme une branche principale du site public. Les éléments apparaissent lorsqu’ils sont sélectionnés, lisibles et présentés proprement.',
-      items: ['Livres', 'Essais', 'Histoires', 'Guides', 'Blagues', 'Notes publiques'],
+      title: 'Livres, essais, histoires, guides et notes',
+      desc: 'L ecriture est traitee comme une branche principale du site public. Les elements apparaissent quand ils sont selectionnes, lisibles et presentes proprement.',
+      items: ['Livres', 'Essais', 'Histoires', 'Guides', 'Notes publiques'],
     },
     details: [
       {
         title: 'Aucun catalogue mort',
-        desc: 'Les œuvres illisibles ou non sélectionnées ne sont pas annoncées comme publications actives.',
+        desc: 'Les textes non selectionnes ne sont pas annonces comme publications actives.',
       },
       {
         title: 'Surface publique propre',
-        desc: 'Les systèmes source, états internes et mécanismes éditoriaux privés restent hors de l’expérience du lecteur.',
+        desc: 'Les systemes source, etats internes et mecanismes editoriaux prives restent hors de l experience du lecteur.',
       },
       {
-        title: 'Prête à s’étendre',
-        desc: 'La structure peut devenir une route Écriture complète lorsque le catalogue et les œuvres sélectionnées seront prêts.',
+        title: 'Prete a s etendre',
+        desc: 'La structure peut devenir une route Ecriture complete lorsque le catalogue et les textes selectionnes seront prets.',
       },
     ],
   },
@@ -91,7 +92,7 @@ export const frHome = {
   cta: {
     title: 'Commencer par la vraie structure.',
     body:
-      'La prochaine étape utile consiste à identifier la branche active, la route dont elle a besoin et la plus petite surface fonctionnelle fiable.',
+      'La prochaine etape utile consiste a identifier la branche active, la route dont elle a besoin et la plus petite surface fonctionnelle fiable.',
     action: 'Contact',
   },
 };
