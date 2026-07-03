@@ -33,11 +33,23 @@ export function HomepageClient() {
 
   return (
     <PublicPageShell>
-      <PublicSection tone="grid" className="min-h-[82vh] flex items-center">
+      <PublicSection tone="grid" className="min-h-[82vh] flex items-center overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-24 hidden justify-center px-6 sm:flex"
+        >
+          <div className="flex max-w-5xl flex-wrap justify-center gap-x-8 gap-y-3 text-[10px] font-mono uppercase tracking-[0.36em] text-primary/15">
+            {copy.hero.pattern.map((word) => (
+              <span key={word}>{word}</span>
+            ))}
+          </div>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65 }}
+          className="relative"
         >
           <PublicPageHero
             align="center"
@@ -56,14 +68,14 @@ export function HomepageClient() {
             }
           />
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-border/40 bg-background/70 p-4 backdrop-blur">
+          <div className="mx-auto mt-10 max-w-4xl rounded-full border border-border/40 bg-background/70 px-4 py-3 backdrop-blur">
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
               <PublicStatusPill>{copy.status.label}</PublicStatusPill>
               {copy.status.items.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="group inline-flex items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                  className="group inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))] transition-transform group-hover:scale-125" />
                   <span>{item.label}</span>
@@ -100,7 +112,18 @@ export function HomepageClient() {
                   description={item.desc}
                   className="p-8 sm:p-10"
                 >
-                  <div className="flex items-center gap-2 text-sm font-medium text-primary">
+                  <div className="flex flex-wrap items-center gap-3">
+                    {item.points.map((point) => (
+                      <span
+                        key={point}
+                        className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-3 py-1.5 text-xs font-mono uppercase tracking-[0.16em] text-primary/80"
+                      >
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
+                        {point}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-5 flex items-center gap-2 text-sm font-medium text-primary">
                     {item.action}
                     <ArrowRight className="h-4 w-4" />
                   </div>
