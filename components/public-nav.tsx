@@ -9,6 +9,13 @@ import { Menu, X, Hexagon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageSelector } from '@/components/language-selector';
 
+function isActivePath(pathname: string, href: string) {
+  if (href === '/') return pathname === '/';
+  if (href.startsWith('/#')) return false;
+
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export function PublicNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname() ?? '/';
@@ -17,35 +24,45 @@ export function PublicNav() {
   const contactLink = language.nav.contact;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2 group">
-            <Hexagon className="h-6 w-6 text-primary transition-transform group-hover:rotate-90 duration-500" />
-            <span className="font-display font-bold text-lg tracking-tight">{language.brand.name}</span>
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-border/40 bg-background/85 backdrop-blur-xl">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <Link href="/" className="group flex items-center gap-2.5">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
+              <Hexagon className="h-4 w-4 transition-transform duration-500 group-hover:rotate-90" />
+            </span>
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-foreground">
+              {language.brand.name}
+            </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                prefetch={false}
-                className={cn(
-                  'px-3 py-2 text-sm font-medium rounded-md transition-colors',
-                  pathname === link.href
-                    ? 'text-primary bg-primary/10'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-accent'
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <LanguageSelector className="ml-2" />
+          <nav className="hidden items-center gap-2 md:flex">
+            <div className="flex items-center gap-1 rounded-full border border-border/35 bg-card/35 px-1.5 py-1 backdrop-blur">
+              {navLinks.map((link) => {
+                const isActive = isActivePath(pathname, link.href);
+
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    prefetch={false}
+                    className={cn(
+                      'rounded-full px-3 py-1.5 text-xs font-mono uppercase tracking-[0.14em] transition-colors',
+                      isActive
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-muted-foreground hover:bg-background/70 hover:text-foreground'
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
+            <LanguageSelector className="ml-1" />
             <Link
               href={contactLink.href}
               prefetch={false}
-              className="ml-1 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+              className="rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-mono uppercase tracking-[0.14em] text-primary transition-colors hover:bg-primary/10"
             >
               {contactLink.label}
             </Link>
@@ -53,7 +70,7 @@ export function PublicNav() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-muted-foreground hover:text-foreground"
+            className="rounded-full border border-border/40 p-2 text-muted-foreground transition-colors hover:text-foreground md:hidden"
             aria-label={language.nav.menuToggle}
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -67,24 +84,28 @@ export function PublicNav() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
+            className="overflow-hidden border-b border-border bg-background md:hidden"
           >
-            <nav className="px-4 py-4 space-y-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className={cn(
-                    'block px-3 py-2 text-sm font-medium rounded-md transition-colors',
-                    pathname === link.href
-                      ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-accent'
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <nav className="space-y-1 px-4 py-4">
+              {navLinks.map((link) => {
+                const isActive = isActivePath(pathname, link.href);
+
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      'block rounded-full px-3 py-2 text-xs font-mono uppercase tracking-[0.14em] transition-colors',
+                      isActive
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <div className="px-3 py-2">
                 <LanguageSelector />
               </div>
@@ -92,7 +113,7 @@ export function PublicNav() {
                 href={contactLink.href}
                 prefetch={false}
                 onClick={() => setMobileOpen(false)}
-                className="block px-3 py-2 text-sm font-medium text-primary"
+                className="block rounded-full border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-mono uppercase tracking-[0.14em] text-primary"
               >
                 {contactLink.label}
               </Link>
