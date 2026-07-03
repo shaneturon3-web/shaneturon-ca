@@ -14,7 +14,7 @@ export const esHome = {
     label: 'Areas activas',
     items: [
       { label: 'Sistemas', href: '/systems' },
-      { label: 'Publicaciones', href: '/#writing' },
+      { label: 'Publicaciones', href: '/publisher' },
       { label: 'Contacto', href: '/contact' },
     ],
   },
@@ -36,7 +36,7 @@ export const esHome = {
         eyebrow: 'Escritura',
         title: 'Publicaciones y textos en trabajo',
         desc: 'Libros, ensayos, historias, guias, chistes, notas publicas y materiales largos presentados solo cuando estan listos para leerse.',
-        href: '/#writing',
+        href: '/publisher',
         action: 'Ver publicaciones',
         points: ['seleccionada', 'legible', 'publica'],
       },
@@ -84,7 +84,7 @@ export const esHome = {
       },
       {
         title: 'Lista para expandirse',
-        desc: 'La estructura puede convertirse en una ruta completa de Escritura cuando el catalogo y las obras seleccionadas esten listos.',
+        desc: 'La estructura ya tiene una ruta real de publicaciones y puede agregar paginas de obra una por una.',
       },
     ],
   },
