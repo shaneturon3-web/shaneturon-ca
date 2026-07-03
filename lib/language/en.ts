@@ -3,7 +3,7 @@ import { enPages } from './pages/en';
 export const en = {
   brand: {
     name: 'SHANE TURON',
-    footerLine: 'Operational Systems Architecture',
+    footerLine: 'Operational architecture, systems, and writing.',
   },
 
   nav: {
@@ -12,10 +12,7 @@ export const en = {
       { href: '/', label: 'Home' },
       { href: '/about', label: 'About' },
       { href: '/systems', label: 'Systems' },
-      { href: '/case-files', label: 'Case Files' },
-      { href: '/architecture', label: 'Architecture' },
-      { href: '/lab', label: 'Lab' },
-      { href: '/now', label: 'Now' },
+      { href: '/#writing', label: 'Writing' },
     ],
     contact: {
       href: '/contact',
@@ -25,22 +22,20 @@ export const en = {
 
   footer: {
     links: [
+      { href: '/about', label: 'About' },
       { href: '/systems', label: 'Systems' },
-      { href: '/case-files', label: 'Case Files' },
-      { href: '/now', label: 'Now' },
+      { href: '/#writing', label: 'Writing' },
       { href: '/contact', label: 'Contact' },
     ],
   },
 
   statusStrip: {
-    label: 'Systems Online',
+    label: 'Active Systems',
     defaultStatus: 'ACTIVE',
     items: [
-      { name: 'PsyNova', status: 'ACTIVE' },
-      { name: 'Control Tower', status: 'ACTIVE' },
-      { name: 'ShipYard', status: 'ACTIVE' },
-      { name: 'Knowledge Systems', status: 'ACTIVE' },
-      { name: 'AI Orchestration', status: 'ACTIVE' },
+      { name: 'Systems', status: 'ACTIVE' },
+      { name: 'Writing', status: 'ACTIVE' },
+      { name: 'Contact', status: 'ACTIVE' },
     ],
   },
 
