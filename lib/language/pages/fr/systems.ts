@@ -1,90 +1,116 @@
 export const frSystems = {
   metadata: {
-    title: 'Systèmes — Shane Turon',
+    title: 'Systemes — Shane Turon',
     description:
-      'Systèmes actifs, pilotes et infrastructure interne organisés par fonction opérationnelle.',
+      'Infrastructure operationnelle, systemes de pratique et mise en oeuvre modulaire de sites publics.',
   },
 
   hero: {
-    eyebrow: 'Infrastructure',
-    title: 'Systèmes actifs',
+    eyebrow: 'Systemes en operation',
+    title: 'Architecture',
+    accent: 'de Systemes',
     intro:
-      'Systèmes actifs, pilotes et infrastructure interne organisés par fonction opérationnelle.',
+      'Infrastructure operationnelle pour accueil, communication, dossiers, surfaces editoriales et mise en oeuvre modulaire.',
+    pattern: ['Accueil', 'Dossiers', 'Routage', 'Publication', 'Operations', 'Gouvernance'],
+    primaryCta: 'Cartographier',
+    secondaryCta: 'Voir les publications',
+  },
+
+  status: {
+    label: 'Systemes actifs',
+    items: [
+      { label: 'PsyNova', href: '#psynova' },
+      { label: 'Deploiement', href: '#deployment' },
+      { label: 'Execution', href: '#execution' },
+    ],
   },
 
   psynova: {
-    title: 'PsyNova',
+    title: 'PsyNova comme infrastructure de pratique',
     intro:
-      'Infrastructure pour pratiques professionnelles : présence publique, accueil des demandes, horaire, communication, dossiers et flux administratif.',
+      'PsyNova est une branche appliquee: un wrapper de pratique professionnelle avec presence publique, accueil, horaire, communication, dossiers et flux administratif.',
     groups: [
       {
-        title: 'Accueil des demandes',
-        items: ['Présence publique', 'Chemins de contact', 'Capture des demandes', 'Orientation'],
+        title: 'Entree publique',
+        desc: 'Une surface propre pour le premier contact et l orientation avant tout flux interne.',
+        items: ['Presence', 'Contact', 'Capture', 'Routage'],
       },
       {
         title: 'Flux administratif',
-        items: ['Horaire', 'Suivi', 'Statut', 'Tâches'],
+        desc: 'Mouvement operationnel de base depuis la demande jusqu au suivi sans exposer la machinerie privee.',
+        items: ['Horaire', 'Suivi', 'Statut', 'Taches'],
       },
       {
-        title: 'Dossiers et autorité',
-        items: ['Confidentialité', 'Dossiers', 'Permissions', 'Limites professionnelles'],
+        title: 'Dossiers et autorite',
+        desc: 'Limites, permissions et documentation restent visibles pour l operateur, pas pour la surface publique.',
+        items: ['Confidentialite', 'Dossiers', 'Permissions', 'Limites'],
       },
     ],
-    deployment: {
-      title: 'Chemins d’implantation',
+  },
+
+  deployment: {
+    title: 'Mise en oeuvre sans reconstruire tout le site',
+    intro:
+      'Un site client doit etre assemble depuis moteur de base, wrapper, posture de marque, contenu et modules optionnels.',
+    paths: {
+      title: 'Chemins de mise en oeuvre',
       items: [
         {
-          title: 'Construction cartographiée',
-          desc: 'Cartographier l’opération actuelle, définir le premier système utile et bâtir autour de ce qui existe déjà.',
+          title: 'Construction cartographiee',
+          desc: 'Cartographier l operation actuelle, definir le premier systeme utile et batir autour de ce qui existe deja.',
         },
         {
-          title: 'Système sous marque client',
-          desc: 'Le système fonctionne sous la marque, les comptes et le contexte opérationnel du client.',
+          title: 'Surface client',
+          desc: 'La surface publique fonctionne sous marque, langue, comptes et contexte operationnel du client.',
         },
         {
-          title: 'Soutien géré',
-          desc: 'Les améliorations, la documentation et la gouvernance du flux peuvent être maintenues comme service.',
+          title: 'Wrapper white-label',
+          desc: 'L architecture reusable reste stable pendant que presentation, texte et exposition des modules changent.',
+        },
+        {
+          title: 'Extraction vers Shelf',
+          desc: 'Seuls les modeles prouves deviennent des pieces reutilisables apres avoir fonctionne dans un site reel.',
         },
       ],
     },
-    scale: {
-      title: 'Formes d’opération',
+    shapes: {
+      title: 'Formes operationnelles',
       items: [
-        { title: 'Professionnel autonome', desc: 'Une personne experte avec peu de capacité administrative et des besoins d’accueil clairs.' },
-        { title: 'Petit bureau', desc: 'Une équipe compacte qui partage clients, dossiers, horaire et communication.' },
-        { title: 'Équipe à plusieurs rôles', desc: 'Plusieurs rôles ont besoin d’orientation, de permissions, de dossiers et d’un statut partagé.' },
-        { title: 'Opération en réseau', desc: 'Plusieurs lieux, marques, partenaires ou lignes de service ont besoin d’une même carte opérationnelle.' },
+        { title: 'Solo', desc: 'Une personne professionnelle avec peu de capacite administrative et des besoins d accueil clairs.' },
+        { title: 'Petit bureau', desc: 'Une equipe compacte qui partage clients, dossiers, horaire et communication.' },
+        { title: 'Multirole', desc: 'Plusieurs roles ont besoin de routage, permissions, dossiers et statut partage.' },
+        { title: 'Reseau', desc: 'Plusieurs lieux, marques, partenaires ou lignes de service ont besoin d une meme carte operationnelle.' },
       ],
     },
   },
 
   execution: {
-    title: 'Systèmes d’exécution',
-    intro: 'Systèmes de soutien pour structurer projets, prototypes, connaissance et travail assisté par IA.',
+    title: 'Systemes d execution',
+    intro: 'Des systemes de soutien structurent projets, prototypes, connaissance et travail assiste controle sans faire de l automatisation le titre public.',
     items: [
       {
         title: 'Control Tower',
-        desc: 'Orchestration de projets et gouvernance d’exécution assistée par IA.',
+        desc: 'Orchestration de projets, etat des taches, points de revision et memoire operationnelle.',
       },
       {
         title: 'ShipYard',
-        desc: 'Environnement de prototypes et de tests pour outils, flux de travail et expériences de déploiement.',
+        desc: 'Environnement de prototypes et de tests pour outils, flux de travail et experiences de deploiement.',
       },
       {
         title: 'Architecture de connaissance',
-        desc: 'Systèmes de référence pour décisions, dossiers, notes et actifs de connaissance réutilisables.',
+        desc: 'Systemes de reference pour decisions, dossiers, notes et actifs de connaissance reutilisables.',
       },
       {
-        title: 'Gouvernance IA',
-        desc: 'Rôles définis, points de révision, chemins d’escalade et contrôle d’exécution pour le travail assisté par IA.',
+        title: 'Pont editorial',
+        desc: 'Chemin controle entre materiel ecrit, surfaces publiques et modeles reutilisables de mise en oeuvre.',
       },
     ],
   },
 
   cta: {
-    title: 'Les systèmes doivent clarifier le travail.',
+    title: 'Les systemes doivent clarifier le travail.',
     body:
-      'Le but n’est pas plus de logiciel. Le but est une façon plus claire d’opérer la pratique, de protéger le temps et de préserver l’autorité professionnelle.',
+      'Le but n est pas plus de logiciel. Le but est une facon plus claire d operer, de proteger le temps et de preserver l autorite.',
     action: 'Contact',
   },
 };
