@@ -1,86 +1,94 @@
 export const enHome = {
   hero: {
-    badge: 'Systems online',
-    title: 'Operational Systems Architect',
+    badge: 'Active Systems',
+    title: 'Operational architecture for complex work',
     intro:
-      'I design AI-assisted workflows, execution systems, and operational infrastructure for complex work.',
-    primaryCta: 'View systems',
-    secondaryCta: 'View case files',
+      'Shane Turon designs practical systems, public interfaces, and written frameworks that turn complex work into usable structure.',
+    primaryCta: 'View Systems',
+    secondaryCta: 'View Publications',
   },
 
   status: {
-    label: 'Active areas',
-    items: ['PsyNova', 'Control Tower', 'ShipYard', 'Knowledge Architecture', 'AI Governance'],
+    label: 'Active Areas',
+    items: [
+      { label: 'Systems', href: '/systems' },
+      { label: 'Publications', href: '/#writing' },
+      { label: 'Contact', href: '/contact' },
+    ],
   },
 
-  map: {
-    title: 'From scattered tools to clear work',
+  branches: {
+    title: 'Two public branches. One operating spine.',
     intro:
-      'The work starts by mapping what exists today: tools, roles, decisions, records, and where the process breaks.',
+      'The site separates applied systems from public writing so each branch can grow without consuming the whole identity.',
     items: [
       {
-        title: 'What exists today',
-        desc: 'Current tools, documents, systems, habits, and unofficial workarounds.',
+        eyebrow: 'Systems',
+        title: 'Operational infrastructure',
+        desc: 'Practice systems, intake paths, administrative flow, records, permissions, and modular implementation for complex work.',
+        href: '/systems',
+        action: 'View Systems',
       },
       {
-        title: 'Who carries the work',
-        desc: 'The people, roles, handoffs, and decisions that keep the operation moving.',
-      },
-      {
-        title: 'What should be built first',
-        desc: 'The smallest useful system that improves flow without overloading the operator.',
+        eyebrow: 'Writing',
+        title: 'Publications and working texts',
+        desc: 'Books, essays, stories, guides, jokes, public notes, and long-form materials presented only when they are ready to be read.',
+        href: '/#writing',
+        action: 'View Publications',
       },
     ],
   },
 
-  organize: {
-    title: 'What I organize',
-    intro: 'Practical areas where complex work becomes easier to run.',
+  method: {
+    title: 'How the work is built',
+    intro:
+      'The public surface stays simple because the work underneath is mapped, modular, and checked against what actually exists.',
     items: [
       {
-        title: 'Public presence',
-        desc: 'Clear external pages, offers, contact paths, and credibility structure.',
+        title: 'Map the real object',
+        desc: 'Start with the operation, publication, audience, route, and constraint before choosing layout or tools.',
       },
       {
-        title: 'Intake and routing',
-        desc: 'Simple ways to receive requests, qualify needs, and send work to the right place.',
+        title: 'Build the smallest working piece',
+        desc: 'A section, route, or module is added only when its job is clear and its active links can be verified.',
       },
       {
-        title: 'Communication flow',
-        desc: 'Messages, follow-ups, records, and handoffs that do not depend on memory.',
-      },
-      {
-        title: 'Administrative work',
-        desc: 'Scheduling, documents, status, records, and repeatable operational steps.',
-      },
-      {
-        title: 'AI-assisted execution',
-        desc: 'Defined roles, review points, handoffs, and accountability for AI-supported work.',
-      },
-      {
-        title: 'Professional boundaries',
-        desc: 'Systems that support privacy, records, permissions, and professional authority.',
+        title: 'Keep what can be reused',
+        desc: 'Successful patterns become shelf candidates only after they work in the public site without client-specific assumptions.',
       },
     ],
   },
 
-  proof: {
-    title: 'Structured case work',
+  publications: {
+    title: 'Writing and publications',
     intro:
-      'Case files show the same path each time: problem, constraints, analysis, design, results, and lessons.',
-    defaultCategory: 'Case File',
-    viewAll: 'View all',
-    emptyTitle: 'Virtual Clinic Pilot',
-    emptySubtitle: 'Virtual practice infrastructure under healthcare constraints.',
-    emptyDesc:
-      'A Quebec-based healthcare practice needed clearer intake, scheduling, communication, and professional workflow while maintaining privacy and regulatory boundaries.',
-    tags: ['healthcare', 'compliance', 'law-25', 'pipeda', 'bilingual', 'virtual-clinic'],
+      'This branch holds public-facing written work without turning the homepage into a catalogue or exposing private source machinery.',
+    feature: {
+      eyebrow: 'Publications',
+      title: 'Books, essays, stories, jokes, guides, and notes',
+      desc: 'Writing is treated as a primary branch of the public site. Items are surfaced when they are selected, readable, and cleanly presented.',
+      items: ['Books', 'Essays', 'Stories', 'Guides', 'Jokes', 'Public notes'],
+    },
+    details: [
+      {
+        title: 'No dead catalogue',
+        desc: 'Unreadable or unselected works are not advertised as active publications.',
+      },
+      {
+        title: 'Clean public surface',
+        desc: 'Source systems, internal status, and private editorial machinery stay out of the reader experience.',
+      },
+      {
+        title: 'Ready to expand',
+        desc: 'The structure can become a full Writing route once the catalogue and selected works are ready.',
+      },
+    ],
   },
 
   cta: {
-    title: 'Before building, map the practice.',
+    title: 'Start from the real structure.',
     body:
-      'We identify what exists today, what breaks, who carries the work, and what should be built first.',
+      'The next useful step is to identify the active branch, the route it needs, and the smallest working surface that can be trusted.',
     action: 'Contact',
   },
 };
