@@ -1,86 +1,94 @@
 export const esHome = {
   hero: {
     badge: 'Sistemas activos',
-    title: 'Arquitecto de sistemas operativos',
+    title: 'Arquitectura operativa para trabajo complejo',
     intro:
-      'Diseño flujos de trabajo asistidos por IA, sistemas de ejecución e infraestructura operativa para trabajo complejo.',
+      'Shane Turon diseña sistemas prácticos, interfaces públicas y marcos escritos que convierten trabajo complejo en estructura utilizable.',
     primaryCta: 'Ver sistemas',
-    secondaryCta: 'Ver casos',
+    secondaryCta: 'Ver publicaciones',
   },
 
   status: {
     label: 'Áreas activas',
-    items: ['PsyNova', 'Control Tower', 'ShipYard', 'Arquitectura de conocimiento', 'Gobernanza de IA'],
+    items: [
+      { label: 'Sistemas', href: '/systems' },
+      { label: 'Publicaciones', href: '/#writing' },
+      { label: 'Contacto', href: '/contact' },
+    ],
   },
 
-  map: {
-    title: 'De herramientas dispersas a trabajo claro',
+  branches: {
+    title: 'Dos ramas públicas. Una estructura operativa.',
     intro:
-      'El trabajo empieza mapeando lo que existe hoy: herramientas, roles, decisiones, registros y dónde se rompe el proceso.',
+      'El sitio separa los sistemas aplicados de la escritura pública para que cada rama pueda crecer sin consumir toda la identidad.',
     items: [
       {
-        title: 'Qué existe hoy',
-        desc: 'Herramientas, documentos, sistemas, hábitos y soluciones informales actuales.',
+        eyebrow: 'Sistemas',
+        title: 'Infraestructura operativa',
+        desc: 'Sistemas de práctica, rutas de recepción, flujo administrativo, registros, permisos e implementación modular para trabajo complejo.',
+        href: '/systems',
+        action: 'Ver sistemas',
       },
       {
-        title: 'Quién carga el trabajo',
-        desc: 'Las personas, roles, entregas y decisiones que mantienen la operación en movimiento.',
-      },
-      {
-        title: 'Qué se debe construir primero',
-        desc: 'El sistema útil más pequeño que mejora el flujo sin sobrecargar al operador.',
+        eyebrow: 'Escritura',
+        title: 'Publicaciones y textos en trabajo',
+        desc: 'Libros, ensayos, historias, guías, chistes, notas públicas y materiales largos presentados sólo cuando están listos para leerse.',
+        href: '/#writing',
+        action: 'Ver publicaciones',
       },
     ],
   },
 
-  organize: {
-    title: 'Qué organizo',
-    intro: 'Áreas prácticas donde el trabajo complejo se vuelve más fácil de operar.',
+  method: {
+    title: 'Cómo se construye el trabajo',
+    intro:
+      'La superficie pública se mantiene simple porque el trabajo debajo está mapeado, modularizado y revisado contra lo que realmente existe.',
     items: [
       {
-        title: 'Presencia pública',
-        desc: 'Páginas externas, ofertas, caminos de contacto y estructura de credibilidad.',
+        title: 'Mapear el objeto real',
+        desc: 'Empezar con la operación, publicación, audiencia, ruta y restricción antes de elegir diseño o herramientas.',
       },
       {
-        title: 'Recepción y enrutamiento',
-        desc: 'Formas simples de recibir solicitudes, calificar necesidades y enviar trabajo al lugar correcto.',
+        title: 'Construir la pieza útil más pequeña',
+        desc: 'Una sección, ruta o módulo se agrega sólo cuando su función es clara y sus enlaces activos pueden verificarse.',
       },
       {
-        title: 'Flujo de comunicación',
-        desc: 'Mensajes, seguimientos, registros y entregas que no dependen de la memoria.',
-      },
-      {
-        title: 'Trabajo administrativo',
-        desc: 'Agenda, documentos, estado, registros y pasos operativos repetibles.',
-      },
-      {
-        title: 'Ejecución asistida por IA',
-        desc: 'Roles definidos, puntos de revisión, entregas y responsabilidad para trabajo apoyado por IA.',
-      },
-      {
-        title: 'Límites profesionales',
-        desc: 'Sistemas que apoyan privacidad, registros, permisos y autoridad profesional.',
+        title: 'Conservar lo reutilizable',
+        desc: 'Los patrones exitosos se vuelven candidatos de Shelf sólo después de funcionar en el sitio público sin supuestos específicos de cliente.',
       },
     ],
   },
 
-  proof: {
-    title: 'Trabajo de casos estructurado',
+  publications: {
+    title: 'Escritura y publicaciones',
     intro:
-      'Los casos muestran el mismo recorrido cada vez: problema, restricciones, análisis, diseño, resultados y lecciones.',
-    defaultCategory: 'Caso',
-    viewAll: 'Ver todo',
-    emptyTitle: 'Piloto de clínica virtual',
-    emptySubtitle: 'Infraestructura para práctica virtual bajo restricciones de salud.',
-    emptyDesc:
-      'Una práctica de salud en Quebec necesitaba recepción, agenda, comunicación y flujo profesional más claros, manteniendo límites de privacidad y regulación.',
-    tags: ['salud', 'cumplimiento', 'ley-25', 'pipeda', 'bilingüe', 'clínica-virtual'],
+      'Esta rama contiene trabajo escrito orientado al público sin convertir la página principal en catálogo ni exponer maquinaria privada de origen.',
+    feature: {
+      eyebrow: 'Publicaciones',
+      title: 'Libros, ensayos, historias, chistes, guías y notas',
+      desc: 'La escritura se trata como una rama principal del sitio público. Los elementos aparecen cuando están seleccionados, legibles y presentados limpiamente.',
+      items: ['Libros', 'Ensayos', 'Historias', 'Guías', 'Chistes', 'Notas públicas'],
+    },
+    details: [
+      {
+        title: 'Sin catálogo muerto',
+        desc: 'Las obras ilegibles o no seleccionadas no se anuncian como publicaciones activas.',
+      },
+      {
+        title: 'Superficie pública limpia',
+        desc: 'Los sistemas de origen, estados internos y maquinaria editorial privada quedan fuera de la experiencia del lector.',
+      },
+      {
+        title: 'Lista para expandirse',
+        desc: 'La estructura puede convertirse en una ruta completa de Escritura cuando el catálogo y las obras seleccionadas estén listos.',
+      },
+    ],
   },
 
   cta: {
-    title: 'Antes de construir, se mapea la práctica.',
+    title: 'Empezar desde la estructura real.',
     body:
-      'Identificamos qué existe hoy, qué se rompe, quién carga el trabajo y qué se debe construir primero.',
+      'El siguiente paso útil es identificar la rama activa, la ruta que necesita y la superficie funcional más pequeña en la que se pueda confiar.',
     action: 'Contacto',
   },
 };
