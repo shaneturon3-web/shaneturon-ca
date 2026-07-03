@@ -4,7 +4,7 @@ import { frPages } from './pages/fr';
 export const fr: EnglishLanguage = {
   brand: {
     name: 'SHANE TURON',
-    footerLine: 'Architecture de Systèmes Opérationnels',
+    footerLine: 'Architecture opérationnelle, systèmes et écriture.',
   },
 
   nav: {
@@ -13,10 +13,7 @@ export const fr: EnglishLanguage = {
       { href: '/', label: 'Accueil' },
       { href: '/about', label: 'À propos' },
       { href: '/systems', label: 'Systèmes' },
-      { href: '/case-files', label: 'Cas' },
-      { href: '/architecture', label: 'Architecture' },
-      { href: '/lab', label: 'Lab' },
-      { href: '/now', label: 'Now' },
+      { href: '/#writing', label: 'Écriture' },
     ],
     contact: {
       href: '/contact',
@@ -26,22 +23,20 @@ export const fr: EnglishLanguage = {
 
   footer: {
     links: [
+      { href: '/about', label: 'À propos' },
       { href: '/systems', label: 'Systèmes' },
-      { href: '/case-files', label: 'Cas' },
-      { href: '/now', label: 'Now' },
+      { href: '/#writing', label: 'Écriture' },
       { href: '/contact', label: 'Contact' },
     ],
   },
 
   statusStrip: {
-    label: 'Systèmes en ligne',
+    label: 'Systèmes actifs',
     defaultStatus: 'ACTIF',
     items: [
-      { name: 'PsyNova', status: 'ACTIF' },
-      { name: 'Control Tower', status: 'ACTIF' },
-      { name: 'ShipYard', status: 'ACTIF' },
-      { name: 'Knowledge Systems', status: 'ACTIF' },
-      { name: 'AI Orchestration', status: 'ACTIF' },
+      { name: 'Systèmes', status: 'ACTIF' },
+      { name: 'Écriture', status: 'ACTIF' },
+      { name: 'Contact', status: 'ACTIF' },
     ],
   },
 
