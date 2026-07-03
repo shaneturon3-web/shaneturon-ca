@@ -9,7 +9,6 @@ import {
   Database,
   FileText,
   Layers,
-  MessageSquare,
   Route,
   ShieldCheck,
   Users,
@@ -69,7 +68,7 @@ export function SystemsClient() {
                 <PublicButton href="/contact">
                   {copy.hero.primaryCta} <ArrowRight className="ml-2 h-4 w-4" />
                 </PublicButton>
-                <PublicButton href="/#writing" variant="secondary">
+                <PublicButton href="/publisher" variant="secondary">
                   {copy.hero.secondaryCta}
                 </PublicButton>
               </>
@@ -128,6 +127,7 @@ export function SystemsClient() {
 
       <PublicSection>
         <motion.div
+          id="deployment"
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -179,6 +179,7 @@ export function SystemsClient() {
 
       <PublicSection tone="muted">
         <motion.div
+          id="execution"
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
