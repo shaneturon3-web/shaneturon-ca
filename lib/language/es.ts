@@ -8,12 +8,12 @@ export const es: EnglishLanguage = {
   },
 
   nav: {
-    menuToggle: 'Abrir menú',
+    menuToggle: 'Abrir menu',
     links: [
       { href: '/', label: 'Inicio' },
       { href: '/about', label: 'Acerca de' },
       { href: '/systems', label: 'Sistemas' },
-      { href: '/#writing', label: 'Escritura' },
+      { href: '/publisher', label: 'Escritura' },
     ],
     contact: {
       href: '/contact',
@@ -25,7 +25,7 @@ export const es: EnglishLanguage = {
     links: [
       { href: '/about', label: 'Acerca de' },
       { href: '/systems', label: 'Sistemas' },
-      { href: '/#writing', label: 'Escritura' },
+      { href: '/publisher', label: 'Escritura' },
       { href: '/contact', label: 'Contacto' },
     ],
   },
