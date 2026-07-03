@@ -3,7 +3,8 @@ export const esHome = {
     badge: 'Sistemas activos',
     title: 'Arquitectura operativa para trabajo complejo',
     intro:
-      'Shane Turon diseña sistemas prácticos, interfaces públicas y marcos escritos que convierten trabajo complejo en estructura utilizable.',
+      'Interfaces públicas, marcos escritos y estructuras funcionales para hacer más operable el trabajo complejo.',
+    pattern: ['Sistemas', 'Escritura', 'Arquitectura', 'Publicaciones', 'Operaciones', 'Estructura'],
     primaryCta: 'Ver sistemas',
     secondaryCta: 'Ver publicaciones',
   },
@@ -20,14 +21,15 @@ export const esHome = {
   branches: {
     title: 'Dos ramas públicas. Una estructura operativa.',
     intro:
-      'El sitio separa los sistemas aplicados de la escritura pública para que cada rama pueda crecer sin consumir toda la identidad.',
+      'Los sistemas aplicados y la escritura pública se mantienen separados para que cada rama pueda crecer sin consumir toda la identidad.',
     items: [
       {
         eyebrow: 'Sistemas',
         title: 'Infraestructura operativa',
-        desc: 'Sistemas de práctica, rutas de recepción, flujo administrativo, registros, permisos e implementación modular para trabajo complejo.',
+        desc: 'Infraestructura de práctica, rutas de recepción, flujo administrativo, registros, permisos e implementación modular para trabajo complejo.',
         href: '/systems',
         action: 'Ver sistemas',
+        points: ['mapeada', 'funcional', 'modular'],
       },
       {
         eyebrow: 'Escritura',
@@ -35,6 +37,7 @@ export const esHome = {
         desc: 'Libros, ensayos, historias, guías, chistes, notas públicas y materiales largos presentados sólo cuando están listos para leerse.',
         href: '/#writing',
         action: 'Ver publicaciones',
+        points: ['seleccionada', 'legible', 'pública'],
       },
     ],
   },
