@@ -4,16 +4,16 @@ import { frPages } from './pages/fr';
 export const fr: EnglishLanguage = {
   brand: {
     name: 'SHANE TURON',
-    footerLine: 'Architecture opérationnelle, systèmes et écriture.',
+    footerLine: 'Architecture operationnelle, systemes et ecriture.',
   },
 
   nav: {
     menuToggle: 'Ouvrir le menu',
     links: [
       { href: '/', label: 'Accueil' },
-      { href: '/about', label: 'À propos' },
-      { href: '/systems', label: 'Systèmes' },
-      { href: '/#writing', label: 'Écriture' },
+      { href: '/about', label: 'A propos' },
+      { href: '/systems', label: 'Systemes' },
+      { href: '/publisher', label: 'Ecriture' },
     ],
     contact: {
       href: '/contact',
@@ -23,19 +23,19 @@ export const fr: EnglishLanguage = {
 
   footer: {
     links: [
-      { href: '/about', label: 'À propos' },
-      { href: '/systems', label: 'Systèmes' },
-      { href: '/#writing', label: 'Écriture' },
+      { href: '/about', label: 'A propos' },
+      { href: '/systems', label: 'Systemes' },
+      { href: '/publisher', label: 'Ecriture' },
       { href: '/contact', label: 'Contact' },
     ],
   },
 
   statusStrip: {
-    label: 'Systèmes actifs',
+    label: 'Systemes actifs',
     defaultStatus: 'ACTIF',
     items: [
-      { name: 'Systèmes', status: 'ACTIF' },
-      { name: 'Écriture', status: 'ACTIF' },
+      { name: 'Systemes', status: 'ACTIF' },
+      { name: 'Ecriture', status: 'ACTIF' },
       { name: 'Contact', status: 'ACTIF' },
     ],
   },
