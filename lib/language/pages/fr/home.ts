@@ -3,7 +3,8 @@ export const frHome = {
     badge: 'Systèmes actifs',
     title: 'Architecture opérationnelle pour le travail complexe',
     intro:
-      'Shane Turon conçoit des systèmes pratiques, des interfaces publiques et des cadres écrits qui transforment le travail complexe en structure utilisable.',
+      'Interfaces publiques, cadres écrits et structures fonctionnelles pour rendre le travail complexe plus opérable.',
+    pattern: ['Systèmes', 'Écriture', 'Architecture', 'Publications', 'Opérations', 'Structure'],
     primaryCta: 'Voir les systèmes',
     secondaryCta: 'Voir les publications',
   },
@@ -20,14 +21,15 @@ export const frHome = {
   branches: {
     title: 'Deux branches publiques. Une structure opérationnelle.',
     intro:
-      'Le site sépare les systèmes appliqués de l’écriture publique afin que chaque branche puisse grandir sans absorber toute l’identité.',
+      'Les systèmes appliqués et l’écriture publique restent séparés afin que chaque branche puisse grandir sans absorber toute l’identité.',
     items: [
       {
         eyebrow: 'Systèmes',
         title: 'Infrastructure opérationnelle',
-        desc: 'Systèmes de pratique, chemins d’accueil, flux administratif, dossiers, permissions et mise en œuvre modulaire pour le travail complexe.',
+        desc: 'Infrastructure de pratique, chemins d’accueil, flux administratif, dossiers, permissions et mise en œuvre modulaire pour le travail complexe.',
         href: '/systems',
         action: 'Voir les systèmes',
+        points: ['cartographiée', 'fonctionnelle', 'modulaire'],
       },
       {
         eyebrow: 'Écriture',
@@ -35,6 +37,7 @@ export const frHome = {
         desc: 'Livres, essais, histoires, guides, blagues, notes publiques et textes longs présentés seulement lorsqu’ils sont prêts à être lus.',
         href: '/#writing',
         action: 'Voir les publications',
+        points: ['sélectionnée', 'lisible', 'publique'],
       },
     ],
   },
