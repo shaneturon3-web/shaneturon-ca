@@ -2,35 +2,57 @@ export const enSystems = {
   metadata: {
     title: 'Systems — Shane Turon',
     description:
-      'Active systems, pilots, and internal infrastructure organized by operational function.',
+      'Operational infrastructure, practice systems, and modular public-site implementation.',
   },
 
   hero: {
-    eyebrow: 'Infrastructure',
-    title: 'Active Systems',
+    eyebrow: 'Systems Operational',
+    title: 'Systems',
+    accent: 'Architecture',
     intro:
-      'Active systems, pilots, and internal infrastructure organized by operational function.',
+      'Operational infrastructure for intake, communication, records, publishing surfaces, and modular implementation.',
+    pattern: ['Intake', 'Records', 'Routing', 'Publishing', 'Operations', 'Governance'],
+    primaryCta: 'Start a system map',
+    secondaryCta: 'View Publications',
+  },
+
+  status: {
+    label: 'Active Systems',
+    items: [
+      { label: 'PsyNova', href: '#psynova' },
+      { label: 'Deployment', href: '#deployment' },
+      { label: 'Execution', href: '#execution' },
+    ],
   },
 
   psynova: {
-    title: 'PsyNova',
+    title: 'PsyNova as practice infrastructure',
     intro:
-      'Professional practice infrastructure for public presence, intake, scheduling, communication, records, and administrative flow.',
+      'PsyNova is one applied branch: a professional-practice wrapper for public presence, intake, scheduling, communication, records, and administrative flow.',
     groups: [
       {
-        title: 'Practice intake',
-        items: ['Public presence', 'Contact paths', 'Request capture', 'Routing'],
+        title: 'Public entry',
+        desc: 'A clean surface for first contact and orientation before any internal workflow begins.',
+        items: ['Presence', 'Contact paths', 'Request capture', 'Routing'],
       },
       {
         title: 'Administrative flow',
+        desc: 'Basic operational movement from request to follow-up without exposing private machinery.',
         items: ['Scheduling', 'Follow-up', 'Status', 'Tasks'],
       },
       {
         title: 'Records and authority',
-        items: ['Privacy', 'Records', 'Permissions', 'Professional boundaries'],
+        desc: 'Boundaries, permissions, and documentation stay visible to the operator, not to the public surface.',
+        items: ['Privacy', 'Records', 'Permissions', 'Boundaries'],
       },
     ],
-    deployment: {
+  },
+
+  deployment: {
+    title: 'Implementation without rebuilding the whole site',
+    intro:
+      'A client site should be assembled from a core engine, wrapper, brand posture, content, and optional modules.',
+    paths: {
       title: 'Implementation paths',
       items: [
         {
@@ -38,45 +60,49 @@ export const enSystems = {
           desc: 'Map the current operation, define the first useful system, and build around what already exists.',
         },
         {
-          title: 'Client-owned system',
-          desc: 'The system runs under the client’s brand, accounts, and operating context.',
+          title: 'Client-owned surface',
+          desc: 'The public surface runs under the client brand, language, accounts, and operating context.',
         },
         {
-          title: 'Managed support',
-          desc: 'Ongoing improvements, documentation, and workflow governance can be maintained as a service.',
+          title: 'White-label wrapper',
+          desc: 'The reusable architecture stays stable while presentation, copy, and module exposure change.',
+        },
+        {
+          title: 'Shelf extraction',
+          desc: 'Only proven patterns become reusable pieces after they work in a real site.',
         },
       ],
     },
-    scale: {
+    shapes: {
       title: 'Operating shapes',
       items: [
-        { title: 'Independent professional', desc: 'One expert with limited admin capacity and clear intake needs.' },
+        { title: 'Solo', desc: 'One professional with limited admin capacity and clear intake needs.' },
         { title: 'Small office', desc: 'A compact team sharing clients, records, scheduling, and communication.' },
-        { title: 'Multi-role team', desc: 'Several roles need routing, permissions, records, and shared status.' },
-        { title: 'Networked operation', desc: 'Multiple locations, brands, partners, or service lines need one operating map.' },
+        { title: 'Multi-role', desc: 'Several roles need routing, permissions, records, and shared status.' },
+        { title: 'Networked', desc: 'Multiple locations, brands, partners, or service lines need one operating map.' },
       ],
     },
   },
 
   execution: {
-    title: 'Execution Systems',
-    intro: 'Supporting systems used to structure projects, prototypes, knowledge, and AI-assisted work.',
+    title: 'Execution systems',
+    intro: 'Supporting systems structure projects, prototypes, knowledge, and controlled assisted work without making automation the public headline.',
     items: [
       {
         title: 'Control Tower',
-        desc: 'Project orchestration and AI-assisted execution governance.',
+        desc: 'Project orchestration, task state, review gates, and operating memory.',
       },
       {
         title: 'ShipYard',
         desc: 'Prototype and testing environment for tools, workflows, and deployment experiments.',
       },
       {
-        title: 'Knowledge Architecture',
+        title: 'Knowledge architecture',
         desc: 'Reference systems for decisions, records, notes, and reusable knowledge assets.',
       },
       {
-        title: 'AI Governance',
-        desc: 'Defined roles, review gates, escalation paths, and execution control for AI-assisted work.',
+        title: 'Publishing bridge',
+        desc: 'A controlled path between written material, public surfaces, and reusable implementation patterns.',
       },
     ],
   },
@@ -84,7 +110,7 @@ export const enSystems = {
   cta: {
     title: 'Systems should clarify the work.',
     body:
-      'The goal is not more software. The goal is a clearer way to run the practice, protect time, and preserve professional authority.',
+      'The goal is not more software. The goal is a clearer way to run the operation, protect time, and preserve authority.',
     action: 'Contact',
   },
 };
