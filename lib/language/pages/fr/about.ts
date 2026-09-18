@@ -2,28 +2,28 @@ export const frAbout = {
   metadata: {
     title: 'À propos — Shane Turon',
     description:
-      'Architecte de systèmes opérationnels. Flux de travail assistés par IA, systèmes d’exécution et infrastructure opérationnelle pour le travail complexe.',
+      'Auteur, bâtisseur et architecte de systèmes, entre idées, matériaux, projets et vie réelle.',
   },
 
   hero: {
     eyebrow: 'À propos',
-    title: 'Architecte de systèmes opérationnels',
+    title: 'Auteur, bâtisseur et architecte de systèmes',
     intro:
-      'Je construis la couche de systèmes entre des outils dispersés et un travail qui fonctionne clairement.',
+      'Je rends les choses complexes plus claires, plus utiles et plus vivantes.',
   },
 
   how: {
     title: 'Comment je travaille',
     paragraphs: [
-      'Chaque projet est cartographié par couches, phases, autorités et limites : ce qui va où, ce qui se passe quand, qui décide et ce qui ne doit pas être franchi.',
-      'Ce n’est pas « j’utilise l’IA ». C’est une exécution structurée avec des rôles définis, des points de révision et une responsabilité opérationnelle.',
-      'Les affirmations sont séparées par maturité : MAINTENANT, PILOTE ou FUTUR. Le système doit montrer ce qui existe, ce qui est testé et ce qui reste prévu.',
+      'J’aime démonter les choses complexes, comprendre comment elles fonctionnent et les reconstruire mieux.',
+      'Cela peut être un livre, un espace, une entreprise, un matériau, un repas ou un système technique. La surface change; l’attention à la structure, à l’usage et aux conséquences demeure.',
+      'Une partie du travail est publique maintenant. Une autre est encore en train de se faire. Le site garde cette différence claire.',
     ],
   },
 
   build: {
     title: 'Ce que je construis',
-    intro: 'Domaines pratiques où le travail devient structuré.',
+    intro: 'Des matériaux différents, la même attention : rendre les choses plus claires, utiles et bien faites.',
     items: [
       {
         title: 'Architecture opérationnelle',

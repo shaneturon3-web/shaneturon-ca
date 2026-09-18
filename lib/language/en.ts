@@ -3,7 +3,7 @@ import { enPages } from './pages/en';
 export const en = {
   brand: {
     name: 'SHANE TURON',
-    footerLine: 'Operational architecture, systems, and writing.',
+    footerLine: 'Writing, making, and the systems that hold real work together.',
   },
 
   nav: {

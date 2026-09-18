@@ -4,7 +4,7 @@ import { frPages } from './pages/fr';
 export const fr: EnglishLanguage = {
   brand: {
     name: 'SHANE TURON',
-    footerLine: 'Architecture operationnelle, systemes et ecriture.',
+    footerLine: 'Écriture, savoir-faire et systèmes qui soutiennent le travail réel.',
   },
 
   nav: {

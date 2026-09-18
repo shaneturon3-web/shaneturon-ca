@@ -2,28 +2,28 @@ export const esAbout = {
   metadata: {
     title: 'Acerca de — Shane Turon',
     description:
-      'Arquitecto de sistemas operativos. Flujos de trabajo asistidos por IA, sistemas de ejecución e infraestructura operativa para trabajo complejo.',
+      'Escritor, constructor y arquitecto de sistemas que trabaja entre ideas, materiales, proyectos y vida real.',
   },
 
   hero: {
     eyebrow: 'Acerca de',
-    title: 'Arquitecto de sistemas operativos',
+    title: 'Escritor, constructor y arquitecto de sistemas',
     intro:
-      'Construyo la capa de sistemas entre herramientas dispersas y trabajo que corre con claridad.',
+      'Hago que las cosas complicadas sean más claras, útiles y vivas.',
   },
 
   how: {
     title: 'Cómo trabajo',
     paragraphs: [
-      'Cada proyecto se mapea por capas, fases, autoridades y límites: qué va dónde, qué ocurre cuándo, quién decide y qué no debe cruzarse.',
-      'Esto no es “uso IA”. Es ejecución estructurada con roles definidos, puntos de revisión y responsabilidad operativa.',
-      'Las afirmaciones se separan por madurez: AHORA, PILOTO o FUTURO. El sistema debe mostrar qué existe, qué se está probando y qué sigue planeado.',
+      'Me gusta desarmar las cosas complicadas, entender cómo funcionan y volverlas a armar mejor.',
+      'Puede ser un libro, un espacio, un negocio, un material, una comida o un sistema técnico. Cambia la superficie; permanece la atención a la estructura, el uso y las consecuencias.',
+      'Parte del trabajo es pública ahora. Otra parte todavía se está haciendo. El sitio mantiene clara esa diferencia.',
     ],
   },
 
   build: {
     title: 'Qué construyo',
-    intro: 'Dominios prácticos donde el trabajo se vuelve estructurado.',
+    intro: 'Materiales distintos, la misma atención: hacerlo más claro, útil y bien hecho.',
     items: [
       {
         title: 'Arquitectura operativa',

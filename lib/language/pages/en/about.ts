@@ -2,75 +2,75 @@ export const enAbout = {
   metadata: {
     title: 'About — Shane Turon',
     description:
-      'Operational Systems Architect. AI-assisted workflows, execution systems, and operational infrastructure for complex work.',
+      'Writer, builder, and systems architect working across ideas, materials, projects, and real life.',
   },
 
   hero: {
     eyebrow: 'About',
-    title: 'Operational Systems Architect',
+    title: 'Writer, builder, and systems architect',
     intro:
-      'I build the systems layer between scattered tools and work that runs clearly.',
+      'I make complicated things clearer, more useful, and more alive.',
   },
 
   how: {
     title: 'How I work',
     paragraphs: [
-      'Every project is mapped by layers, phases, authorities, and boundaries: what goes where, what happens when, who decides, and what must not be crossed.',
-      'This is not “I use AI.” It is structured execution with defined roles, review gates, and operational accountability.',
-      'Claims are separated by maturity: NOW, PILOT, or FUTURE. The system must show what exists, what is being tested, and what remains planned.',
+      'I like taking complicated things apart, understanding how they work, and putting them back together better.',
+      'That can mean a book, a room, a business, a material, a meal, or a technical system. The surface changes; attention to structure, use, and consequence remains.',
+      'Some work is public now. Some is still being made. The site keeps that distinction clear.',
     ],
   },
 
   build: {
     title: 'What I build',
-    intro: 'Practical domains where the work becomes structured.',
+    intro: 'Different materials, same attention: make it clearer, more useful, and better made.',
     items: [
       {
-        title: 'Operational Architecture',
-        desc: 'Layered systems that connect tools, roles, data, and execution.',
+        title: 'Projects and places',
+        desc: 'Work that brings ideas, people, materials, and practical needs into the same picture.',
       },
       {
-        title: 'AI Governance',
-        desc: 'Multi-agent workflows with defined roles, handoffs, review points, and accountability.',
+        title: 'Tools with a purpose',
+        desc: 'Technology is useful when it helps people think, make, communicate, or keep promises.',
       },
       {
-        title: 'Compliance-Aware Design',
-        desc: 'Systems designed around privacy, records, permissions, and professional boundaries.',
+        title: 'Careful boundaries',
+        desc: 'Good work respects materials, people, privacy, money, time, and the limits of what is known.',
       },
       {
-        title: 'Execution Engineering',
-        desc: 'Project structures, control points, and delivery paths that make work easier to run.',
+        title: 'Making things happen',
+        desc: 'Projects need sequence, attention, follow-through, and a person willing to carry the work.',
       },
       {
-        title: 'Knowledge Architecture',
-        desc: 'Capturing decisions, records, and reusable references without losing context.',
+        title: 'Memory and meaning',
+        desc: 'Writing and records matter when they preserve what happened and why it matters.',
       },
       {
-        title: 'Multilingual Systems',
-        desc: 'English, French, and Spanish operational surfaces adapted to the user, not mechanically translated.',
+        title: 'Across languages',
+        desc: 'English, French, and Spanish surfaces shaped for people, not translated as an afterthought.',
       },
     ],
   },
 
 
   differentiators: {
-    title: 'What makes this different',
+    title: 'What I pay attention to',
     items: [
       {
-        title: 'Systems-first, not feature-first',
-        desc: 'Solves structural problems before adding tools.',
+        title: 'The thing itself',
+        desc: 'Start with what is actually happening before reaching for a solution.',
       },
       {
-        title: 'Built-in governance',
-        desc: 'Designs for boundaries, records, and accountability from the start.',
+        title: 'The details that matter',
+        desc: 'Materials, timing, people, maintenance, and consequences are part of the work.',
       },
       {
-        title: 'AI as architecture',
-        desc: 'Uses AI through defined roles, review gates, and handoff rules.',
+        title: 'Tools stay tools',
+        desc: 'AI, Linux, networks, and other tools serve the work; they are not the identity.',
       },
       {
-        title: 'Operational realism',
-        desc: 'Separates what exists, what is being tested, and what is planned.',
+        title: 'What is real',
+        desc: 'The site separates finished work, current experiments, and future ideas.',
       },
     ],
   },
