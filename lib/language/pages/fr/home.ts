@@ -1,11 +1,11 @@
 export const frHome = {
   hero: {
-    badge: 'Systemes en operation',
-    title: 'Architecture',
-    accent: 'Operationnelle',
+    badge: 'Polymathe en pratique',
+    title: 'Auteur, bâtisseur',
+    accent: 'et architecte de systèmes.',
     intro:
-      'Interfaces publiques, cadres ecrits et structures fonctionnelles pour le travail complexe.',
-    pattern: ['Systemes', 'Ecriture', 'Architecture', 'Publications', 'Operations', 'Structure'],
+      'Je transforme des idées, des projets et des systèmes de travail complexes en quelque chose de clair, constructible et vivant.',
+    pattern: ['Idées', 'Projets', 'Systèmes', 'Écriture'],
     primaryCta: 'Voir les systemes',
     secondaryCta: 'Voir les publications',
   },

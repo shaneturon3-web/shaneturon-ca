@@ -1,11 +1,11 @@
 export const esHome = {
   hero: {
-    badge: 'Sistemas en operacion',
-    title: 'Arquitectura',
-    accent: 'Operativa',
+    badge: 'Polímata en práctica',
+    title: 'Escritor, constructor',
+    accent: 'y arquitecto de sistemas.',
     intro:
-      'Interfaces publicas, marcos escritos y estructuras funcionales para trabajo complejo.',
-    pattern: ['Sistemas', 'Escritura', 'Arquitectura', 'Publicaciones', 'Operaciones', 'Estructura'],
+      'Convierto ideas, proyectos y sistemas de trabajo complejos en algo claro, construible y vivo.',
+    pattern: ['Ideas', 'Proyectos', 'Sistemas', 'Escritura'],
     primaryCta: 'Ver sistemas',
     secondaryCta: 'Ver publicaciones',
   },

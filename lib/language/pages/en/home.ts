@@ -1,11 +1,11 @@
 export const enHome = {
   hero: {
-    badge: 'Shane Turon',
-    title: 'Systems,',
-    accent: 'writing, and practice.',
+    badge: 'Polymath in practice',
+    title: 'Writer, builder,',
+    accent: 'and systems architect.',
     intro:
-      'Public interfaces, written frameworks, and working structures for complex work.',
-    pattern: ['Systems', 'Publishing', 'Practice', 'Writing'],
+      'I turn complex ideas, projects, and working systems into something clear, buildable, and alive.',
+    pattern: ['Ideas', 'Projects', 'Systems', 'Writing'],
     primaryCta: 'View Systems',
     secondaryCta: 'View Publications',
   },
