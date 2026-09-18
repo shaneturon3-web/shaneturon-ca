@@ -144,3 +144,21 @@ Approved publication queue:
 Operational status: authorization recorded; Blogger write operation remains
 pending because the current connected Blogger surface has not provided a safe
 long-form create/edit control.
+
+## Mail2Blogger publication pass — 2026-09-18
+
+Mail2Blogger was enabled with **Publish email immediately**. The secret
+recipient is intentionally not recorded here.
+
+Verified public results after sending the authorized source texts:
+
+- **Sugar Cube – System Essay** — published:
+  `https://shaneturon.blogspot.com/2026/09/sugar-cube-system-essay.html`
+- **TCSQ: The Uncompromised Return Path** — published:
+  `https://shaneturon.blogspot.com/2026/09/tcsq-uncompromised-return-path.html`
+- **TCSQ: The Crown in the Quarry** — email accepted by Gmail, but not yet
+  visible in the public Blogger search/archive at verification time. Do not
+  resend until Blogger's post list or sent-mail status confirms whether it was
+  delayed, rejected, or created under a different slug.
+
+No drafts were published by this pass and no duplicate resend was made.
