@@ -1,35 +1,30 @@
 export const enArchitecture = {
       metadata: {
         title: 'Architecture — Shane Turon',
-        description: 'System maps, technical infrastructure overview, and deployment topology.',
+        description: 'A concise map of how the public branches relate to one another.',
       },
       hero: {
-        eyebrow: 'Infrastructure',
-        titlePrefix: 'System',
-        titleAccent: 'Architecture',
+        eyebrow: 'Map',
+        titlePrefix: 'How the public',
+        titleAccent: 'branches connect',
         intro:
-          'How the systems connect. Visual-first, layered architecture with explicit boundaries and governance.',
+          'Systems, publishing, and practice have different jobs. This map shows their relationship without exposing private implementation detail.',
       },
       layers: {
-        title: 'Layered Architecture',
+        title: 'Public structure',
         items: [
-          { id: 'institutional', label: 'Institutional Layer', desc: 'Public identity, portfolio surface, credibility architecture. Progressive disclosure from Trust → Capability → Depth → Doctrine.', systems: ['shaneturon.ca', 'Portfolio OS', 'Analytics'] },
-          { id: 'operational', label: 'Operational Systems Layer', desc: 'Flagship products and execution infrastructure. PsyNova, Control Tower, and AI Orchestration running in production.', systems: ['PsyNova CoreSpine', 'Control Tower (10 subsystems)', 'AI Orchestration Stack'] },
-          { id: 'orchestration', label: 'Orchestration Layer', desc: 'Multi-AI coordination, agent pipeline sequencing, context handshake protocols. Architect → TechnicalSpecialist → Closer → TacticalTranslator.', systems: ['Agent Registry', 'Escaleta Engine', 'Handoff Protocols', 'State-Sync'] },
-          { id: 'knowledge', label: 'Knowledge Architecture Layer', desc: 'Semantic compression pipeline. Raw sessions → Grains → Cubes → Promoted Doctrine. Versioned, never-destructive, evidence-gated.', systems: ['Canon', 'Source of Truth', 'Grains Engine', 'Promotion Pipeline'] },
-          { id: 'infrastructure', label: 'Infrastructure Layer', desc: 'Cloud-native deployment, edge distribution, asset storage, database systems. Multi-machine operations with zero-alternation guarantees.', systems: ['Edge Runtime', 'Object Storage', 'Database', 'Sync Engine'] },
+          { id: 'identity', label: 'Public identity', desc: 'The visible home: who the work is for and where a visitor begins.', systems: ['Home', 'About', 'Contact'] },
+          { id: 'systems', label: 'Systems', desc: 'The operational branch: how work is mapped, supported, and made clearer.', systems: ['PsyNova', 'Implementation', 'Operations'] },
+          { id: 'publishing', label: 'Publishing', desc: 'The editorial branch: selected work presented with a clear route into reading.', systems: ['Publisher', 'Writing', 'Media'] },
         ],
       },
       governance: {
-        title: 'Authority Hierarchy',
-        intro: '6-level institutional governance with formal delegation and scope boundaries.',
+        title: 'Boundaries',
+        intro: 'Public pages describe outcomes and relationships, not private operating machinery.',
         items: [
-          { level: '01', name: 'Shane', role: 'Executive authority. All strategic decisions.' },
-          { level: '02', name: 'SuperNova', role: 'AI coordination layer. Operational delegation.' },
-          { level: '03', name: 'Control Tower', role: 'Execution orchestration. 10-subsystem framework.' },
-          { level: '04', name: 'ShipYard', role: 'Build zone. Experimental runtime environment.' },
-          { level: '05', name: 'PsyNova', role: 'Flagship product. Professional operational infrastructure.' },
-          { level: '06', name: 'Institute', role: 'Knowledge systems. Doctrine and research.' },
+          { level: '01', name: 'Public', role: 'Clear routes, readable work, and claims a visitor can inspect.' },
+          { level: '02', name: 'Operational', role: 'Systems and workflows that support real work.' },
+          { level: '03', name: 'Private', role: 'Internal tools and handoffs stay outside the public surface.' },
         ],
       },
       psynova: {

@@ -6,13 +6,13 @@ export const enSystems = {
   },
 
   hero: {
-    eyebrow: 'Systems Operational',
-    title: 'Systems',
-    accent: 'Architecture',
+    eyebrow: 'Systems',
+    title: 'Systems for',
+    accent: 'work that runs clearly.',
     intro:
-      'Operational infrastructure for intake, communication, records, publishing surfaces, and modular implementation.',
-    pattern: ['Intake', 'Records', 'Routing', 'Publishing', 'Operations', 'Governance'],
-    primaryCta: 'Start a system map',
+      'Public-facing systems for intake, communication, records, publishing surfaces, and modular implementation.',
+    pattern: ['Intake', 'Records', 'Routing', 'Publishing'],
+    primaryCta: 'Discuss a system',
     secondaryCta: 'View Publications',
   },
 
@@ -68,10 +68,6 @@ export const enSystems = {
           desc: 'The reusable architecture stays stable while presentation, copy, and module exposure change.',
         },
         {
-          title: 'Shelf extraction',
-          desc: 'Only proven patterns become reusable pieces after they work in a real site.',
-        },
-        {
           title: 'Modular expansion',
           desc: 'Add only the next useful capability while keeping the operating structure clear and reusable.',
         },
@@ -89,24 +85,24 @@ export const enSystems = {
   },
 
   execution: {
-    title: 'Execution systems',
-    intro: 'Supporting systems structure projects, prototypes, knowledge, and controlled assisted work without making automation the public headline.',
+    title: 'Supporting systems',
+    intro: 'Supporting tools help keep projects, knowledge, and delivery clear without becoming the public headline.',
     items: [
       {
-        title: 'Control Tower',
-        desc: 'Project orchestration, task state, review gates, and operating memory.',
+        title: 'Project operations',
+        desc: 'Task state, review gates, handoffs, and operating memory.',
       },
       {
-        title: 'ShipYard',
-        desc: 'Prototype and testing environment for tools, workflows, and deployment experiments.',
+        title: 'Prototyping',
+        desc: 'A bounded environment for testing tools, workflows, and deployments.',
       },
       {
-        title: 'Knowledge architecture',
-        desc: 'Reference systems for decisions, records, notes, and reusable knowledge assets.',
+        title: 'Knowledge systems',
+        desc: 'Reference systems for decisions, records, notes, and reusable assets.',
       },
       {
-        title: 'Publishing bridge',
-        desc: 'A controlled path between written material, public surfaces, and reusable implementation patterns.',
+        title: 'Publishing support',
+        desc: 'A controlled path between written material and public presentation.',
       },
     ],
   },
