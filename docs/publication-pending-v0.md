@@ -89,3 +89,38 @@ were:
 
 These are advisory findings, not publication authorization. Any item still
 requires source inspection and a public-read decision before Blogger changes.
+
+## External review — Meta AI, 2026-09-18
+
+Meta reviewed the inventory in read-only mode, with GitHub access incomplete.
+Its findings refine the queue rather than authorize publication:
+
+- No retrieved TOM file was judged final reader-facing. `TOM_Engine`,
+  `TOM_Spine`, `TOM_Roadmap_Handoff`, `EditorialMasterSUGARCUBES+TOM`, and
+  the FieldTools remain core, derivative, or operational material. The public
+  TOM layer still needs a deliberate extraction from the fable/reader layer.
+- `SugarCubeTEDxConceptual07Jun26.docx` was identified as the strongest essay
+  candidate, but it still has a public-safe gate and requires an editorial
+  filter pass, including verification of marked citations.
+- `TCSQ: The Crown in the Quarry` and `The Uncompromised Return Path` are
+  reader-facing by form, but their current metadata says `Public-Safe: No`.
+  They must not be published until that gate is resolved and their derivative
+  class is recorded.
+- `TCSQ: la traición de la reina del cantero` was not found by Meta's Drive
+  search; its source location remains unresolved.
+- The TCSQ Crown pair appears to be an export duplicate: same size,
+  `10,059` bytes, with timestamps about 27 minutes apart.
+- The Uncompromised Return Path pair differs by 26 bytes and is therefore a
+  version family, not an exact duplicate.
+- The Dossier `.docx` pair is an exact-size duplicate at `236,288` bytes;
+  the Markdown file is a related condensed version, not necessarily the same
+  content.
+- `TOMClosedSpine` and `TOMDerivativesMap` have same-title Google Doc/DOCX
+  families with materially different sizes; they require content diffing, not
+  deletion by timestamp alone.
+
+### Reconciled publication gate
+
+Where Gemini classified an item as reader-facing but Meta found
+`Public-Safe: No`, the stricter gate wins. The item remains queued and
+unpublished until the public-safe metadata and editorial review agree.
