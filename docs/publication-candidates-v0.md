@@ -49,3 +49,22 @@ created.
 - Drafts remain drafts until their content and authorship are checked.
 - Drive source families are not publications until an individual title and text are selected.
 - Internal prompts, roadmaps, spines, maps, handoffs, and agent dialogue stay private.
+
+## Editorial decision — Essays pass
+
+The following approved public Blogger posts are assigned to the Essays
+catalogue for the next labeling pass:
+
+- 1. **The Original Chapter**
+- 2. **Dust in the Face of a Mirror**
+- 4. **Beams of Light and Wetness**
+- 5. **At Edge of Dark Waters**
+
+Also include source material from Drive only when the source family or title is
+clearly identified as **Essays** or **Ensayos**. The classification is
+conservative: hybrid, doubtful, or merely essay-like pieces stay outside the
+Essays catalogue until the text establishes that form. A possible false
+negative is preferable to presenting a weak or misclassified essay. A strong
+essay may still be routed to Stories when its narrative life is more useful
+than its formal classification. Drive selections remain unpublished until an
+individual title and text are reviewed.
