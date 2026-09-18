@@ -21,6 +21,8 @@ export { fr } from './fr';
 export {
   LANGUAGE_MODULE_CONTRACT,
   PORTABLE_LOCALE_ALIASES,
+  createLanguageModule,
+  resolvePortableLocale,
   type LanguageDictionary,
   type LanguageModule,
   type PortableLocale,

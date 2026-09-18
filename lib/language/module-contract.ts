@@ -1,5 +1,11 @@
 import type { EnglishLanguage } from './en';
-import type { SupportedLocale } from './runtime';
+import {
+  DEFAULT_LOCALE,
+  getLanguage,
+  getLanguageSlot,
+  SUPPORTED_LOCALES,
+  type SupportedLocale,
+} from './runtime';
 
 /**
  * Portable language-module contract.
@@ -34,3 +40,27 @@ export const PORTABLE_LOCALE_ALIASES: Readonly<Record<PortableLocale, SupportedL
   'es-MX': 'es',
 };
 
+export function resolvePortableLocale(value: unknown): SupportedLocale {
+  if (typeof value === 'string') {
+    const normalized = value.trim().toLowerCase();
+
+    if (normalized === 'fr-ca') return 'fr';
+    if (normalized === 'es-mx') return 'es';
+  }
+
+  const normalized = typeof value === 'string' ? value.trim().toLowerCase().split('-')[0] : '';
+
+  return SUPPORTED_LOCALES.includes(normalized as SupportedLocale)
+    ? (normalized as SupportedLocale)
+    : DEFAULT_LOCALE;
+}
+
+export function createLanguageModule(): LanguageModule {
+  return {
+    contract: LANGUAGE_MODULE_CONTRACT,
+    defaultLocale: DEFAULT_LOCALE,
+    supportedLocales: SUPPORTED_LOCALES,
+    getDictionary: (locale) => getLanguage(resolvePortableLocale(locale)),
+    getSlot: (path, locale) => getLanguageSlot(path, resolvePortableLocale(locale)),
+  };
+}
