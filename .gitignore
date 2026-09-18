@@ -1,11 +1,13 @@
 node_modules/
 .next/
+.open-next/
 out/
 dist/
 .cache/
 *.log
 .env
 .env.*
+.dev.vars
 tsconfig.tsbuildinfo
 prisma/schema.prisma.before-local-output-fix
 .local-backups/
