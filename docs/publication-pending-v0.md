@@ -162,3 +162,21 @@ Verified public results after sending the authorized source texts:
   delayed, rejected, or created under a different slug.
 
 No drafts were published by this pass and no duplicate resend was made.
+
+## The Order Matters — Mail2Blogger pass — 2026-09-18
+
+The title was initially missed because Drive contains a leading-space title
+variant and several manuscript families. The selected source was the newest
+reader-facing file:
+
+- `The_Order_Matters_EDITADO_SIGLO_XX.docx`
+- Drive id: `1RTL_elV2mCiO9ibZ9tNf6fH6wqaSHIl3`
+- Modified: `2026-07-18T19:22:02Z`
+- Size: `29,748` bytes
+
+The file was sent through Mail2Blogger with the title:
+`The Order Matters — Ensayo para fingir que el universo cabe en una servilleta manchada de salsa A1`.
+
+Gmail accepted the message, but the public Blogger search did not yet expose
+the post at verification time. No resend was made. Older manuscript drafts,
+counterweights files, and working copies were not used.
