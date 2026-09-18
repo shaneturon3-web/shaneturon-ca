@@ -19,6 +19,10 @@ by this document.
 11. **Carta para los hijos que no fueron UPDATED 2026** — Spanish literary piece
 12. **Unicorn Dreams — Archivo no enviado / verano de 2020** — story/archive piece
 
+**Decision:** approved for the public catalogue. These items were already
+visible as published Blogger posts when reviewed; no duplicate publication was
+created.
+
 ## B. Existing Blogger drafts requiring editorial review
 
 13. **Canvas — C05 · La primera máscara** — appears to be editorial working material; do not publish without removing process language
@@ -27,6 +31,8 @@ by this document.
 16. **texts** — draft; title and scope need editorial cleanup
 17. **Salto al vacío** — draft; inspect before assigning to Essays or Stories
 18. **Señales reveladoras** — draft; inspect before publication
+
+**Decision:** keep as Blogger drafts. Do not publish in this pass.
 
 ## C. Drive source families to review and turn into Blogger drafts
 

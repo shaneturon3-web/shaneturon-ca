@@ -64,3 +64,11 @@ Public naming clarification:
 
 - `TOM` is presented as **The Order Matters**.
 - `TCSQ` is presented as **The Crime Syndicate Quarry**.
+
+## 2026-09-18 — V0 candidate decision
+
+- Candidates `1–12` approved for the public catalogue.
+- Candidates `13–18` remain Blogger drafts and are not published.
+- Candidates `1–12` were already visibly published in Blogger; no duplicate
+  posts were created.
+- The decision is recorded in `docs/publication-candidates-v0.md`.
