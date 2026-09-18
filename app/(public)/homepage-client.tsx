@@ -68,7 +68,7 @@ export function HomepageClient() {
                 <PublicButton href="/systems">
                   {copy.hero.primaryCta} <ArrowRight className="ml-2 h-4 w-4" />
                 </PublicButton>
-                <PublicButton href="/#writing" variant="secondary">
+                <PublicButton href="/writing" variant="secondary">
                   {copy.hero.secondaryCta}
                 </PublicButton>
               </>
@@ -81,7 +81,7 @@ export function HomepageClient() {
               {copy.status.items.map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={item.href === '/#writing' ? '/writing' : item.href}
                   className="group inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))] transition-transform group-hover:scale-125" />

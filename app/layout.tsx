@@ -14,6 +14,14 @@ export const metadata = {
   metadataBase: new URL(process.env.NEXTAUTH_URL || 'http://localhost:3000'),
   title: 'Shane Turon — Operational Systems Architect',
   description: 'Designing AI-assisted execution environments, workflow intelligence systems, and operational architectures for complex organizations.',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
