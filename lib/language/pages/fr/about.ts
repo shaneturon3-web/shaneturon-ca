@@ -26,58 +26,58 @@ export const frAbout = {
     intro: 'Des matériaux différents, la même attention : rendre les choses plus claires, utiles et bien faites.',
     items: [
       {
-        title: 'Architecture opérationnelle',
-        desc: 'Systèmes en couches qui relient les outils, les rôles, les données et l’exécution.',
+        title: 'Projets et lieux',
+        desc: 'Un travail qui réunit les idées, les personnes, les matériaux et les besoins concrets dans un même tableau.',
       },
       {
-        title: 'Gouvernance IA',
-        desc: 'Flux multiagents avec rôles définis, transferts, points de révision et responsabilité.',
+        title: 'Des outils avec un but',
+        desc: 'La technologie est utile lorsqu’elle aide à réfléchir, fabriquer, communiquer ou tenir parole.',
       },
       {
-        title: 'Conception sensible à la conformité',
-        desc: 'Systèmes conçus autour de la confidentialité, des dossiers, des permissions et des limites professionnelles.',
+        title: 'Des limites attentives',
+        desc: 'Le bon travail respecte les matériaux, les personnes, la vie privée, l’argent, le temps et les limites de ce qui est connu.',
       },
       {
-        title: 'Ingénierie d’exécution',
-        desc: 'Structures de projet, points de contrôle et chemins de livraison qui rendent le travail plus facile à opérer.',
+        title: 'Faire avancer les choses',
+        desc: 'Les projets demandent une séquence, de l’attention, un suivi et une personne prête à porter le travail.',
       },
       {
-        title: 'Architecture de connaissance',
-        desc: 'Capture des décisions, dossiers et références réutilisables sans perdre le contexte.',
+        title: 'Mémoire et sens',
+        desc: 'L’écriture et les traces comptent lorsqu’elles préservent ce qui s’est passé et pourquoi cela compte.',
       },
       {
-        title: 'Systèmes multilingues',
-        desc: 'Interfaces opérationnelles en anglais, français et espagnol adaptées à l’utilisateur, non traduites mécaniquement.',
+        title: 'Entre les langues',
+        desc: 'Des surfaces en anglais, français et espagnol conçues pour les personnes, pas traduites après coup.',
       },
     ],
   },
 
 
   differentiators: {
-    title: 'Ce qui rend cela différent',
+    title: 'Ce à quoi je prête attention',
     items: [
       {
-        title: 'Systèmes d’abord, pas fonctionnalités d’abord',
-        desc: 'Résout les problèmes structurels avant d’ajouter des outils.',
+        title: 'La chose elle-même',
+        desc: 'Commencer par ce qui se passe réellement avant de chercher une solution.',
       },
       {
-        title: 'Gouvernance intégrée',
-        desc: 'Conçoit les limites, les dossiers et la responsabilité dès le départ.',
+        title: 'Les détails qui comptent',
+        desc: 'Les matériaux, le moment, les personnes, l’entretien et les conséquences font partie du travail.',
       },
       {
-        title: 'IA comme architecture',
-        desc: 'Utilise l’IA avec des rôles définis, des points de révision et des règles de transfert.',
+        title: 'Les outils restent des outils',
+        desc: 'L’IA, Linux, les réseaux et les autres outils servent le travail; ils ne sont pas l’identité.',
       },
       {
-        title: 'Réalisme opérationnel',
-        desc: 'Sépare ce qui existe, ce qui est testé et ce qui est prévu.',
+        title: 'Ce qui est réel',
+        desc: 'Le site sépare le travail terminé, les expériences en cours et les idées à venir.',
       },
     ],
   },
 
   cta: {
-    title: 'Le portfolio montre le standard opérationnel.',
-    body: 'La même structure utilisée dans le travail public est utilisée dans le travail client.',
+    title: 'Le portfolio montre le standard de travail.',
+    body: 'La même attention présente dans le travail public accompagne le travail client.',
     action: 'Voir les systèmes',
   },
 };

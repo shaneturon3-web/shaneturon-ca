@@ -26,58 +26,58 @@ export const esAbout = {
     intro: 'Materiales distintos, la misma atención: hacerlo más claro, útil y bien hecho.',
     items: [
       {
-        title: 'Arquitectura operativa',
-        desc: 'Sistemas por capas que conectan herramientas, roles, datos y ejecución.',
+        title: 'Proyectos y lugares',
+        desc: 'Trabajo que reúne ideas, personas, materiales y necesidades prácticas en una misma imagen.',
       },
       {
-        title: 'Gobernanza de IA',
-        desc: 'Flujos multiagente con roles definidos, entregas, puntos de revisión y responsabilidad.',
+        title: 'Herramientas con un propósito',
+        desc: 'La tecnología sirve cuando ayuda a pensar, hacer, comunicarse o cumplir lo prometido.',
       },
       {
-        title: 'Diseño consciente del cumplimiento',
-        desc: 'Sistemas diseñados alrededor de privacidad, registros, permisos y límites profesionales.',
+        title: 'Límites cuidadosos',
+        desc: 'El buen trabajo respeta los materiales, las personas, la privacidad, el dinero, el tiempo y lo que aún no se sabe.',
       },
       {
-        title: 'Ingeniería de ejecución',
-        desc: 'Estructuras de proyecto, puntos de control y rutas de entrega que hacen el trabajo más fácil de operar.',
+        title: 'Hacer que suceda',
+        desc: 'Los proyectos necesitan secuencia, atención, seguimiento y alguien dispuesto a llevarlos adelante.',
       },
       {
-        title: 'Arquitectura de conocimiento',
-        desc: 'Captura de decisiones, registros y referencias reutilizables sin perder contexto.',
+        title: 'Memoria y significado',
+        desc: 'La escritura y los registros importan cuando conservan lo que ocurrió y por qué importa.',
       },
       {
-        title: 'Sistemas multilingües',
-        desc: 'Superficies operativas en inglés, francés y español adaptadas al usuario, no traducidas mecánicamente.',
+        title: 'Entre lenguas',
+        desc: 'Superficies en inglés, francés y español pensadas para las personas, no traducidas como una ocurrencia tardía.',
       },
     ],
   },
 
 
   differentiators: {
-    title: 'Qué hace esto diferente',
+    title: 'En qué pongo atención',
     items: [
       {
-        title: 'Sistemas primero, no funciones primero',
-        desc: 'Resuelve problemas estructurales antes de agregar herramientas.',
+        title: 'La cosa misma',
+        desc: 'Empieza por lo que realmente está ocurriendo antes de buscar una solución.',
       },
       {
-        title: 'Gobernanza integrada',
-        desc: 'Diseña límites, registros y responsabilidad desde el inicio.',
+        title: 'Los detalles que importan',
+        desc: 'Los materiales, el tiempo, las personas, el mantenimiento y las consecuencias son parte del trabajo.',
       },
       {
-        title: 'IA como arquitectura',
-        desc: 'Usa IA mediante roles definidos, puntos de revisión y reglas de entrega.',
+        title: 'Las herramientas siguen siendo herramientas',
+        desc: 'La IA, Linux, las redes y otras herramientas sirven al trabajo; no son la identidad.',
       },
       {
-        title: 'Realismo operativo',
-        desc: 'Separa lo que existe, lo que se está probando y lo que está planeado.',
+        title: 'Lo que es real',
+        desc: 'El sitio separa el trabajo terminado, los experimentos actuales y las ideas futuras.',
       },
     ],
   },
 
   cta: {
-    title: 'El portafolio muestra el estándar operativo.',
-    body: 'La misma estructura usada en el trabajo público se usa en el trabajo para clientes.',
+    title: 'El portafolio muestra el estándar de trabajo.',
+    body: 'La misma atención que aparece en el trabajo público acompaña el trabajo para clientes.',
     action: 'Ver sistemas',
   },
 };
