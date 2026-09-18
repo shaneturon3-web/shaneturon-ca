@@ -68,6 +68,14 @@ export const esHome = {
       desc: 'Los ensayos y las historias aparecen aquí cuando encuentran una superficie pública de lectura. Las primeras rutas llevan al archivo vivo en Blogger.',
       items: ['Ensayos', 'Historias', 'TOM', 'Crime Syndicate', 'TCSQ'],
       labels: ['Essays', 'Stories', 'TOM', 'Crime%20Syndicate', 'TCSQ'],
+      descriptions: [
+        'Los ensayos son la mesa abierta: observaciones, argumentos, memorias y preguntas que se sostienen por sí mismas.',
+        'Las historias son trabajo narrativo, desde piezas breves hasta mundos más largos, publicado cuando existe una versión para lectores.',
+        'TOM — The Order Matters — reúne trabajo narrativo y reflexivo sobre la secuencia, las consecuencias y lo que llevamos adelante.',
+        'Crime Syndicate reúne ficción criminal, noir y las personas que se mueven entre sus sombras.',
+        'TCSQ — The Crime Syndicate Quarry — es la cantera más profunda de personajes, fragmentos y materiales conectados de ese mundo.',
+      ],
+      readLabel: 'Abrir colección en Blogger',
     },
     details: [
       {

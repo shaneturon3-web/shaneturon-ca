@@ -9,6 +9,7 @@ export function PublicCard({
   children,
   className,
   href,
+  target,
 }: {
   icon?: ElementType;
   eyebrow?: string;
@@ -17,6 +18,7 @@ export function PublicCard({
   children?: ReactNode;
   className?: string;
   href?: string;
+  target?: string;
 }) {
   const body = (
     <div
@@ -60,7 +62,7 @@ export function PublicCard({
   if (!href) return body;
 
   return (
-    <a href={href} className="block">
+    <a href={href} target={target} rel={target === '_blank' ? 'noreferrer' : undefined} className="block">
       {body}
     </a>
   );

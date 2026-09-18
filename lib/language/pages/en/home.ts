@@ -48,6 +48,14 @@ export const enHome = {
       desc: 'Essays and stories appear here as they find a public reading surface. The first routes lead to the living archive on Blogger.',
       items: ['Essays', 'Stories', 'TOM', 'Crime Syndicate', 'TCSQ'],
       labels: ['Essays', 'Stories', 'TOM', 'Crime%20Syndicate', 'TCSQ'],
+      descriptions: [
+        'Essays are the open table: observations, arguments, memories, and questions that stand on their own.',
+        'Stories are narrative work, from short pieces to longer worlds, published when there is a reader-facing version.',
+        'TOM — The Order Matters — is a body of narrative and reflective work about sequence, consequence, and what we carry forward.',
+        'Crime Syndicate gathers crime fiction, noir, and the people who move through its shadows.',
+        'TCSQ — The Crime Syndicate Quarry — is the deeper quarry of characters, fragments, and connected material behind that world.',
+      ],
+      readLabel: 'Open collection on Blogger',
     },
     details: [
       {

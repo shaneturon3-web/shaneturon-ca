@@ -36,11 +36,12 @@ export function WritingClient() {
                 key={item}
                 icon={Icon}
                 title={item}
-                description={copy.details[index % copy.details.length].desc}
+                description={copy.feature.descriptions[index]}
                 href={`https://shaneturon.blogspot.com/search/label/${copy.feature.labels[index]}`}
+                target="_blank"
               >
                 <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.16em] text-primary/80">
-                  <CheckCircle2 className="h-4 w-4" /> {copy.details[index % copy.details.length].title}
+                  <CheckCircle2 className="h-4 w-4" /> {copy.feature.readLabel}
                 </span>
               </PublicCard>
             );
@@ -48,9 +49,6 @@ export function WritingClient() {
         </div>
       </PublicSection>
 
-      <PublicSection tone="muted">
-        <PublicSectionHeader title={copy.details[2].title} description={copy.details[2].desc} />
-      </PublicSection>
     </PublicPageShell>
   );
 }

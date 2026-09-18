@@ -59,3 +59,8 @@ The website Writing surface now exposes provisional Blogger label routes for:
 These are V0 archive routes, not claims that every label already has content.
 They are intentionally reversible and may lead to an empty result or 404 until
 the corresponding Blogger version exists.
+
+Public naming clarification:
+
+- `TOM` is presented as **The Order Matters**.
+- `TCSQ` is presented as **The Crime Syndicate Quarry**.

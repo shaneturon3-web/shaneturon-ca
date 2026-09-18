@@ -68,6 +68,14 @@ export const frHome = {
       desc: 'Les essais et les histoires apparaissent ici lorsqu’ils trouvent une surface publique de lecture. Les premières routes mènent vers l’archive vivante sur Blogger.',
       items: ['Essais', 'Histoires', 'TOM', 'Crime Syndicate', 'TCSQ'],
       labels: ['Essays', 'Stories', 'TOM', 'Crime%20Syndicate', 'TCSQ'],
+      descriptions: [
+        'Les essais sont une table ouverte : observations, arguments, souvenirs et questions qui tiennent seuls.',
+        'Les histoires sont un travail narratif, des pièces brèves aux mondes plus vastes, publiées lorsqu’une version existe pour les lecteurs.',
+        'TOM — The Order Matters — rassemble un travail narratif et réflexif sur la séquence, les conséquences et ce que nous portons.',
+        'Crime Syndicate rassemble la fiction criminelle, le noir et les personnes qui avancent dans ses ombres.',
+        'TCSQ — The Crime Syndicate Quarry — est la carrière profonde de personnages, fragments et matériaux liés à cet univers.',
+      ],
+      readLabel: 'Ouvrir la collection sur Blogger',
     },
     details: [
       {
