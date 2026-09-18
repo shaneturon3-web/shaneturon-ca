@@ -17,3 +17,11 @@ export { LanguageProvider, useLanguage } from './language-provider';
 export { en, type EnglishLanguage } from './en';
 export { es } from './es';
 export { fr } from './fr';
+
+export {
+  LANGUAGE_MODULE_CONTRACT,
+  PORTABLE_LOCALE_ALIASES,
+  type LanguageDictionary,
+  type LanguageModule,
+  type PortableLocale,
+} from './module-contract';
