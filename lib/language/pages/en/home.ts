@@ -5,18 +5,8 @@ export const enHome = {
     accent: 'and systems architect.',
     intro:
       'I make complicated things clearer, more useful, and more alive.',
-    pattern: ['Ideas', 'Projects', 'Systems', 'Writing'],
-    primaryCta: 'View Systems',
-    secondaryCta: 'View Publications',
-  },
-
-  status: {
-    label: 'Active Areas',
-    items: [
-      { label: 'Systems', href: '/systems' },
-      { label: 'Publications', href: '/publisher' },
-      { label: 'Contact', href: '/contact' },
-    ],
+    primaryCta: 'Read the work',
+    secondaryCta: 'See what I build',
   },
 
   worldview: {

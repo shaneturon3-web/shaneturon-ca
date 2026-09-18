@@ -5,18 +5,8 @@ export const esHome = {
     accent: 'y arquitecto de sistemas.',
     intro:
       'Hago que las cosas complicadas sean más claras, útiles y vivas.',
-    pattern: ['Ideas', 'Proyectos', 'Sistemas', 'Escritura'],
-    primaryCta: 'Ver sistemas',
-    secondaryCta: 'Ver publicaciones',
-  },
-
-  status: {
-    label: 'Areas activas',
-    items: [
-      { label: 'Sistemas', href: '/systems' },
-      { label: 'Publicaciones', href: '/publisher' },
-      { label: 'Contacto', href: '/contact' },
-    ],
+    primaryCta: 'Leer el trabajo',
+    secondaryCta: 'Ver lo que construyo',
   },
 
   worldview: {

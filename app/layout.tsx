@@ -12,8 +12,8 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mon
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXTAUTH_URL || 'http://localhost:3000'),
-  title: 'Shane Turon — Operational Systems Architect',
-  description: 'Designing AI-assisted execution environments, workflow intelligence systems, and operational architectures for complex organizations.',
+  title: 'Shane Turon — Writer, builder, and systems architect',
+  description: 'Writing, making, and the systems that hold real work together.',
   robots: {
     index: true,
     follow: true,
@@ -27,7 +27,7 @@ export const metadata = {
     shortcut: '/favicon.svg',
   },
   openGraph: {
-    title: 'Shane Turon — Operational Systems Architect',
+    title: 'Shane Turon — Writer, builder, and systems architect',
     description: 'Execution infrastructure for professionals, clinics, and complex organizations.',
     images: ['/og-image.png'],
   },

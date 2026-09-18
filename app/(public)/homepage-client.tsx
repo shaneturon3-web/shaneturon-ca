@@ -18,7 +18,6 @@ import {
   PublicPageShell,
   PublicSection,
   PublicSectionHeader,
-  PublicStatusPill,
 } from '@/components/public';
 
 const branchIcons = [Layers, BookOpen];
@@ -31,17 +30,6 @@ export function HomepageClient() {
   return (
     <PublicPageShell>
       <PublicSection tone="grid" className="min-h-[82vh] flex items-center overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-24 hidden justify-center px-6 sm:flex"
-        >
-          <div className="flex max-w-5xl flex-wrap justify-center gap-x-8 gap-y-3 text-[10px] font-mono uppercase tracking-[0.36em] text-primary/15">
-            {copy.hero.pattern.map((word) => (
-              <span key={word}>{word}</span>
-            ))}
-          </div>
-        </div>
-
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,31 +50,15 @@ export function HomepageClient() {
             description={copy.hero.intro}
             actions={
               <>
-                <PublicButton href="/systems">
+                <PublicButton href="/writing">
                   {copy.hero.primaryCta} <ArrowRight className="ml-2 h-4 w-4" />
                 </PublicButton>
-                <PublicButton href="/writing" variant="secondary">
+                <PublicButton href="/systems" variant="secondary">
                   {copy.hero.secondaryCta}
                 </PublicButton>
               </>
             }
           />
-
-          <div className="mx-auto mt-8 max-w-4xl rounded-full border border-border/40 bg-background/70 px-4 py-3 backdrop-blur">
-            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
-              <PublicStatusPill>{copy.status.label}</PublicStatusPill>
-              {copy.status.items.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href === '/#writing' ? '/writing' : item.href}
-                  className="group inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))] transition-transform group-hover:scale-125" />
-                  <span>{item.label}</span>
-                </a>
-              ))}
-            </div>
-          </div>
         </motion.div>
       </PublicSection>
 
