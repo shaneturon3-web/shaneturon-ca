@@ -45,6 +45,10 @@ export const esSystems = {
           title: 'Soporte gestionado',
           desc: 'Las mejoras, documentación y gobernanza del flujo pueden mantenerse como servicio.',
         },
+        {
+          title: 'Expansión modular',
+          desc: 'Añadir solo la siguiente capacidad útil, manteniendo clara y reutilizable la estructura operativa.',
+        },
       ],
     },
     scale: {

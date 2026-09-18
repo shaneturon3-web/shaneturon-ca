@@ -45,6 +45,10 @@ export const enSystems = {
           title: 'Managed support',
           desc: 'Ongoing improvements, documentation, and workflow governance can be maintained as a service.',
         },
+        {
+          title: 'Modular expansion',
+          desc: 'Add only the next useful capability while keeping the operating structure clear and reusable.',
+        },
       ],
     },
     scale: {

@@ -45,6 +45,10 @@ export const frSystems = {
           title: 'Soutien géré',
           desc: 'Les améliorations, la documentation et la gouvernance du flux peuvent être maintenues comme service.',
         },
+        {
+          title: 'Expansion modulaire',
+          desc: 'Ajouter seulement la prochaine capacité utile tout en gardant une structure opérationnelle claire et réutilisable.',
+        },
       ],
     },
     scale: {
