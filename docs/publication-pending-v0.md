@@ -62,3 +62,30 @@ Do not publish system architecture, prompts, roadmaps, recovery packets,
 classification reports, maps, or internal agent dialogue as essays or stories.
 If a blocker appears, leave the item queued, record it here, and continue with
 non-destructive reconciliation work.
+
+## External review — Gemini, 2026-09-18
+
+Gemini reviewed the supplied inventory in read-only mode. Its useful findings
+were:
+
+- Add **The Failure of Folders** and **Sugar Cube – Conceptual Continuity** to
+  the essay candidate review, alongside **Sugar Cube – System Essay**.
+- Treat **Lectures: SugarCubes, the Octonian Network, and Trans-Generational
+  Responsibility** as a possible public lecture/essay, not automatically as
+  an essay until its public framing is checked.
+- Treat TOM's fable/`Cream` layer and reader-facing FieldTools as possible
+  public interfaces; keep the mathematical, octonion, engine, and deep
+  routing material in appendices or private documentation.
+- Confirm **TCSQ: The Crown in the Quarry**, **The Uncompromised Return Path**,
+  and **la traición de la reina del cantero** as reader-facing TCSQ candidates.
+- Confirm `CreatorContextMemoirs07Jun26.docx` as a duplicate family by equal
+  size (`233,573` bytes) and separate timestamps. Do not delete either copy;
+  mark one obsolete only after content comparison.
+- Keep dossiers, the AuADHD internal guide, PsyNova containment records,
+  recovery packets, development logs, maps, spines, and protocol documents
+  private.
+- Gemini identified a TCSQ Drive-to-GitHub sync gap: the newer Drive material
+  is not yet represented in the local `tcsq-quarry` checkout/package.
+
+These are advisory findings, not publication authorization. Any item still
+requires source inspection and a public-read decision before Blogger changes.
