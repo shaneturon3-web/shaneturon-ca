@@ -1,23 +1,23 @@
 export const enPublisher = {
   metadata: {
-    title: 'Writing — Shane Turon',
+    title: 'Publishing — Shane Turon',
     description:
-      'Public writing, publications, books, essays, stories, guides, jokes, and working texts.',
+      'The publishing house for selected books, essays, stories, guides, jokes, and working texts.',
   },
 
   hero: {
-    eyebrow: 'Publications Operational',
-    title: 'Writing',
-    accent: 'Surface',
+    eyebrow: 'Publishing',
+    title: 'A house for',
+    accent: 'selected work.',
     intro:
-      'Books, essays, stories, guides, jokes, notes, and working texts presented as public material when they are ready.',
-    pattern: ['Books', 'Essays', 'Stories', 'Guides', 'Notes', 'Jokes'],
-    primaryCta: 'Discuss a work',
+      'Books, essays, stories, guides, jokes, notes, and other works become public here when they are ready to be read.',
+    pattern: ['Books', 'Essays', 'Stories', 'Guides'],
+    primaryCta: 'Discuss the work',
     secondaryCta: 'View Systems',
   },
 
   status: {
-    label: 'Publication Areas',
+    label: 'Publishing House',
     items: [
       { label: 'Categories', href: '#categories' },
       { label: 'Lanes', href: '#lanes' },
@@ -54,9 +54,9 @@ export const enPublisher = {
   },
 
   lanes: {
-    title: 'How publication moves',
+    title: 'A readable catalogue',
     intro:
-      'The surface stays honest: no dead read buttons, no invisible articles, no source machinery presented as reader experience.',
+      'The public catalogue shows stable works, not an inventory of unfinished material.',
     items: [
       {
         title: 'Selected works',
@@ -69,9 +69,9 @@ export const enPublisher = {
         tags: ['catalogue', 'curated', 'controlled'],
       },
       {
-        title: 'Future routes',
-        desc: 'Individual work routes are added one by one when the work has clean copy, route ownership, and a real reading action.',
-        tags: ['route-ready', 'one work', 'one page'],
+        title: 'Works with a route',
+        desc: 'A work appears when it has clean copy, a clear home, and a real reading action.',
+        tags: ['readable', 'owned', 'public'],
       },
     ],
   },

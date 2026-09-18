@@ -1,11 +1,11 @@
 export const enHome = {
   hero: {
-    badge: 'Systems Operational',
-    title: 'Operational',
-    accent: 'Architecture',
+    badge: 'Shane Turon',
+    title: 'Systems,',
+    accent: 'writing, and practice.',
     intro:
       'Public interfaces, written frameworks, and working structures for complex work.',
-    pattern: ['Systems', 'Writing', 'Architecture', 'Publications', 'Operations', 'Structure'],
+    pattern: ['Systems', 'Publishing', 'Practice', 'Writing'],
     primaryCta: 'View Systems',
     secondaryCta: 'View Publications',
   },
@@ -20,9 +20,9 @@ export const enHome = {
   },
 
   branches: {
-    title: 'Two public branches. One operating spine.',
+    title: 'Two public branches.',
     intro:
-      'Applied systems and public writing stay separated so each branch can grow without consuming the whole identity.',
+      'A clear route into operational work and a clear route into the writing.',
     items: [
       {
         eyebrow: 'Systems',
@@ -34,8 +34,8 @@ export const enHome = {
       },
       {
         eyebrow: 'Writing',
-        title: 'Publications and working texts',
-        desc: 'Books, essays, stories, guides, jokes, public notes, and long-form materials presented only when they are ready to be read.',
+        title: 'Publishing and writing',
+        desc: 'Selected books, essays, stories, guides, and other works presented when they are ready to be read.',
         href: '/publisher',
         action: 'View Publications',
         points: ['selected', 'readable', 'public'],
@@ -43,34 +43,14 @@ export const enHome = {
     ],
   },
 
-  method: {
-    title: 'How the work is built',
-    intro:
-      'The public surface stays simple because the work underneath is mapped, modular, and checked against what actually exists.',
-    items: [
-      {
-        title: 'Map the real object',
-        desc: 'Start with the operation, publication, audience, route, and constraint before choosing layout or tools.',
-      },
-      {
-        title: 'Build the smallest working piece',
-        desc: 'A section, route, or module is added only when its job is clear and its active links can be verified.',
-      },
-      {
-        title: 'Keep what can be reused',
-        desc: 'Successful patterns become shelf candidates only after they work in the public site without client-specific assumptions.',
-      },
-    ],
-  },
-
   publications: {
-    title: 'Writing and publications',
+    title: 'From the publishing house',
     intro:
-      'This branch holds public-facing written work without turning the homepage into a catalogue or exposing private source machinery.',
+      'The homepage points to the editorial house; it does not try to become the catalogue.',
     feature: {
       eyebrow: 'Publications',
-      title: 'Books, essays, stories, jokes, guides, and notes',
-      desc: 'Writing is treated as a primary branch of the public site. Items are surfaced when they are selected, readable, and cleanly presented.',
+      title: 'Selected works',
+      desc: 'Books, essays, stories, guides, jokes, and notes appear here only when they have a real reading surface.',
       items: ['Books', 'Essays', 'Stories', 'Guides', 'Jokes', 'Public notes'],
     },
     details: [
@@ -83,8 +63,8 @@ export const enHome = {
         desc: 'Source systems, internal status, and private editorial machinery stay out of the reader experience.',
       },
       {
-        title: 'Ready to expand',
-        desc: 'The structure now has a real publications route and can add individual work pages one by one.',
+        title: 'One work at a time',
+        desc: 'The publishing house can grow by adding readable works without enlarging the homepage.',
       },
     ],
   },

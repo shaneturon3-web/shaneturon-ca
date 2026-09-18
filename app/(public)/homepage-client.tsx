@@ -5,10 +5,8 @@ import {
   ArrowRight,
   BookOpen,
   CheckCircle2,
-  Compass,
   Layers,
   MessageSquare,
-  Route,
   Sparkles,
 } from 'lucide-react';
 import { useLanguage } from '@/lib/language';
@@ -24,7 +22,6 @@ import {
 } from '@/components/public';
 
 const branchIcons = [Layers, BookOpen];
-const methodIcons = [Compass, Route, CheckCircle2];
 const detailIcons = [Sparkles, MessageSquare, CheckCircle2];
 
 export function HomepageClient() {
@@ -135,34 +132,6 @@ export function HomepageClient() {
                     <ArrowRight className="h-4 w-4" />
                   </div>
                 </PublicCard>
-              );
-            })}
-          </div>
-        </motion.div>
-      </PublicSection>
-
-      <PublicSection tone="muted">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <PublicSectionHeader
-            title={copy.method.title}
-            description={copy.method.intro}
-          />
-
-          <div className="grid gap-5 md:grid-cols-3">
-            {copy.method.items.map((item, index) => {
-              const Icon = methodIcons[index] ?? Compass;
-
-              return (
-                <PublicCard
-                  key={item.title}
-                  icon={Icon}
-                  title={item.title}
-                  description={item.desc}
-                />
               );
             })}
           </div>
