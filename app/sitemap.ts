@@ -5,6 +5,7 @@ const publicRoutes = [
   '/about',
   '/systems',
   '/writing',
+  '/publisher',
   '/contact',
   '/case-files',
   '/architecture',

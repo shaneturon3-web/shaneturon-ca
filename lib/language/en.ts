@@ -13,6 +13,7 @@ export const en = {
       { href: '/about', label: 'About' },
       { href: '/systems', label: 'Systems' },
       { href: '/writing', label: 'Writing' },
+      { href: '/publisher', label: 'Publisher' },
     ],
     contact: {
       href: '/contact',
@@ -25,6 +26,7 @@ export const en = {
       { href: '/about', label: 'About' },
       { href: '/systems', label: 'Systems' },
       { href: '/writing', label: 'Writing' },
+      { href: '/publisher', label: 'Publisher' },
       { href: '/contact', label: 'Contact' },
     ],
   },

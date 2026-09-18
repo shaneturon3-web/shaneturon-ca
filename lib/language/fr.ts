@@ -14,6 +14,7 @@ export const fr: EnglishLanguage = {
       { href: '/about', label: 'À propos' },
       { href: '/systems', label: 'Systèmes' },
       { href: '/writing', label: 'Écriture' },
+      { href: '/publisher', label: 'Publications' },
     ],
     contact: {
       href: '/contact',
@@ -26,6 +27,7 @@ export const fr: EnglishLanguage = {
       { href: '/about', label: 'À propos' },
       { href: '/systems', label: 'Systèmes' },
       { href: '/writing', label: 'Écriture' },
+      { href: '/publisher', label: 'Publications' },
       { href: '/contact', label: 'Contact' },
     ],
   },
