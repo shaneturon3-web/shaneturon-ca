@@ -9,6 +9,8 @@ import {
   Database,
   FileText,
   Layers,
+  Phone,
+  Hammer,
   Route,
   ShieldCheck,
   Users,
@@ -27,6 +29,7 @@ import {
 
 const groupIcons = [ClipboardList, ShieldCheck, Users];
 const executionIcons = [Route, BriefcaseBusiness, Database, BookOpen];
+const moduleIcons = [Phone, Hammer, Layers];
 
 export function SystemsClient() {
   const { language } = useLanguage();
@@ -201,6 +204,23 @@ export function SystemsClient() {
                   description={item.desc}
                 />
               );
+            })}
+          </div>
+        </motion.div>
+      </PublicSection>
+
+      <PublicSection tone="muted">
+        <motion.div
+          id="modules"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <PublicSectionHeader title={copy.modules.title} description={copy.modules.intro} />
+          <div className="grid gap-5 md:grid-cols-3">
+            {copy.modules.items.map((item, index) => {
+              const Icon = moduleIcons[index] ?? Layers;
+              return <PublicCard key={item.title} icon={Icon} title={item.title} description={item.desc} />;
             })}
           </div>
         </motion.div>

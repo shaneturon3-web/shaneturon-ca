@@ -111,6 +111,16 @@ export const frSystems = {
     ],
   },
 
+  modules: {
+    title: 'Modules appliqués',
+    intro: 'Les modules sont ajoutés lorsqu’ils résolvent un problème réel et ont un responsable clair.',
+    items: [
+      { title: 'Communications', desc: 'Des chemins de communication publics pouvant inclure VoIP.ms et Telnyx. Les identifiants, la configuration SIP et les opérations des fournisseurs restent privés.' },
+      { title: 'Projets de construction', desc: 'Des surfaces pour la réhabilitation, les matériaux, les systèmes de plaster et de board, les phases et les améliorations locatives. Les décisions structurelles exigent une ingénierie locale et des permis.' },
+      { title: 'Expansion modulaire', desc: 'Une façon de faire évoluer un système ou un projet par étapes sans présenter le futur comme déjà construit.' },
+    ],
+  },
+
   cta: {
     title: 'Les systemes doivent clarifier le travail.',
     body:

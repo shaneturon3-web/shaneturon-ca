@@ -107,6 +107,16 @@ export const enSystems = {
     ],
   },
 
+  modules: {
+    title: 'Applied modules',
+    intro: 'Focused modules can be added when they solve a real operating problem and have a clear owner.',
+    items: [
+      { title: 'Communications', desc: 'Public-facing communication paths that may include VoIP.ms and Telnyx. Credentials, SIP configuration, and carrier operations remain private.' },
+      { title: 'Construction projects', desc: 'Project surfaces for rehabilitation, materials, plaster and board systems, phasing, and rental-ready improvements. Structural decisions require local engineering and permits.' },
+      { title: 'Modular expansion', desc: 'A way to grow a working system or project in stages without pretending that future capacity is already built.' },
+    ],
+  },
+
   cta: {
     title: 'Systems should clarify the work.',
     body:
