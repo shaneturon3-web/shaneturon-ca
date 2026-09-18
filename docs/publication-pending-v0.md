@@ -124,3 +124,23 @@ Its findings refine the queue rather than authorize publication:
 Where Gemini classified an item as reader-facing but Meta found
 `Public-Safe: No`, the stricter gate wins. The item remains queued and
 unpublished until the public-safe metadata and editorial review agree.
+
+## User publication authorization — 2026-09-18
+
+The user authorizes publication of the reader-facing TCSQ stories and the
+essays, in whichever source language is available. This supersedes the
+previous editorial hold for those literary items, but does not authorize
+publication of engines, prompts, spines, maps, recovery packets, dossiers,
+internal dialogue, or operational documentation.
+
+Approved publication queue:
+
+- **Sugar Cube – System Essay**
+- **SugarCubeTEDxConceptual07Jun26** after the editorial filter pass
+- **TCSQ: The Crown in the Quarry**
+- **TCSQ: The Uncompromised Return Path**
+- **TCSQ: la traición de la reina del cantero**, if its source is recovered
+
+Operational status: authorization recorded; Blogger write operation remains
+pending because the current connected Blogger surface has not provided a safe
+long-form create/edit control.
