@@ -1,13 +1,11 @@
 import type { MetadataRoute } from 'next';
 
-const publicRoutes = ['/', '/about', '/systems', '/contact'];
-
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
         userAgent: '*',
-        allow: publicRoutes,
+        allow: '/',
         disallow: ['/admin', '/api', '/login'],
       },
     ],
