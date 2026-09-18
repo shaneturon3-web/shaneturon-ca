@@ -14,7 +14,7 @@ export const enHome = {
     label: 'Active Areas',
     items: [
       { label: 'Systems', href: '/systems' },
-      { label: 'Publications', href: '/#writing' },
+      { label: 'Publications', href: '/publisher' },
       { label: 'Contact', href: '/contact' },
     ],
   },
@@ -36,7 +36,7 @@ export const enHome = {
         eyebrow: 'Writing',
         title: 'Publications and working texts',
         desc: 'Books, essays, stories, guides, jokes, public notes, and long-form materials presented only when they are ready to be read.',
-        href: '/#writing',
+        href: '/publisher',
         action: 'View Publications',
         points: ['selected', 'readable', 'public'],
       },
@@ -84,7 +84,7 @@ export const enHome = {
       },
       {
         title: 'Ready to expand',
-        desc: 'The structure can become a full Writing route once the catalogue and selected works are ready.',
+        desc: 'The structure now has a real publications route and can add individual work pages one by one.',
       },
     ],
   },

@@ -8,7 +8,7 @@ export const es: EnglishLanguage = {
   },
 
   nav: {
-    menuToggle: 'Abrir menú',
+    menuToggle: 'Abrir menu',
     links: [
       { href: '/', label: 'Inicio' },
       { href: '/about', label: 'Acerca de' },

@@ -188,6 +188,7 @@ export function HomepageClient() {
               title={copy.publications.feature.title}
               description={copy.publications.feature.desc}
               className="p-8 sm:p-10"
+              href="/publisher"
             >
               <div className="grid gap-3 sm:grid-cols-2">
                 {copy.publications.feature.items.map((item) => (

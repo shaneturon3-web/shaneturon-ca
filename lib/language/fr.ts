@@ -4,7 +4,7 @@ import { frPages } from './pages/fr';
 export const fr: EnglishLanguage = {
   brand: {
     name: 'SHANE TURON',
-    footerLine: 'Architecture opérationnelle, systèmes et écriture.',
+    footerLine: 'Architecture operationnelle, systemes et ecriture.',
   },
 
   nav: {
@@ -31,11 +31,11 @@ export const fr: EnglishLanguage = {
   },
 
   statusStrip: {
-    label: 'Systèmes actifs',
+    label: 'Systemes actifs',
     defaultStatus: 'ACTIF',
     items: [
-      { name: 'Systèmes', status: 'ACTIF' },
-      { name: 'Écriture', status: 'ACTIF' },
+      { name: 'Systemes', status: 'ACTIF' },
+      { name: 'Ecriture', status: 'ACTIF' },
       { name: 'Contact', status: 'ACTIF' },
     ],
   },

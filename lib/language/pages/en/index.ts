@@ -6,6 +6,7 @@ import { enArchitecture } from './architecture';
 import { enHome } from './home';
 import { enAbout } from './about';
 import { enSystems } from './systems';
+import { enPublisher } from './publisher';
 
 export const enPages = {
   caseFiles: enCaseFiles,
@@ -16,4 +17,5 @@ export const enPages = {
   home: enHome,
   about: enAbout,
   systems: enSystems,
+  publisher: enPublisher,
 };

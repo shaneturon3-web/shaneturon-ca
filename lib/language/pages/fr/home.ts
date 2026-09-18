@@ -14,7 +14,7 @@ export const frHome = {
     label: 'Domaines actifs',
     items: [
       { label: 'Systemes', href: '/systems' },
-      { label: 'Publications', href: '/#writing' },
+      { label: 'Publications', href: '/publisher' },
       { label: 'Contact', href: '/contact' },
     ],
   },
@@ -36,7 +36,7 @@ export const frHome = {
         eyebrow: 'Ecriture',
         title: 'Publications et textes en travail',
         desc: 'Livres, essais, histoires, guides, notes publiques et textes longs presentes seulement quand ils sont prets a etre lus.',
-        href: '/#writing',
+        href: '/publisher',
         action: 'Voir les publications',
         points: ['selectionnee', 'lisible', 'publique'],
       },
@@ -84,7 +84,7 @@ export const frHome = {
       },
       {
         title: 'Prete a s etendre',
-        desc: 'La structure peut devenir une route Ecriture complete lorsque le catalogue et les textes selectionnes seront prets.',
+        desc: 'La structure a maintenant une route reelle de publications et peut ajouter les pages de texte une par une.',
       },
     ],
   },

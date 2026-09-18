@@ -1,18 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  ArrowRight,
-  BookOpen,
-  BriefcaseBusiness,
-  ClipboardList,
-  Database,
-  FileText,
-  Layers,
-  Route,
-  ShieldCheck,
-  Users,
-} from 'lucide-react';
+import { ArrowRight, BookOpen, FileText, Library, MessageSquare, PenLine, ScrollText } from 'lucide-react';
 import { useLanguage } from '@/lib/language';
 import {
   PublicButton,
@@ -25,12 +14,12 @@ import {
   PublicStatusPill,
 } from '@/components/public';
 
-const groupIcons = [ClipboardList, ShieldCheck, Users];
-const executionIcons = [Route, BriefcaseBusiness, Database, BookOpen];
+const categoryIcons = [BookOpen, FileText, ScrollText, MessageSquare];
+const laneIcons = [Library, PenLine, FileText];
 
-export function SystemsClient() {
+export function PublisherClient() {
   const { language } = useLanguage();
-  const copy = language.pages.systems;
+  const copy = language.pages.publisher;
 
   return (
     <PublicPageShell>
@@ -68,7 +57,7 @@ export function SystemsClient() {
                 <PublicButton href="/contact">
                   {copy.hero.primaryCta} <ArrowRight className="ml-2 h-4 w-4" />
                 </PublicButton>
-                <PublicButton href="/publisher" variant="secondary">
+                <PublicButton href="/systems" variant="secondary">
                   {copy.hero.secondaryCta}
                 </PublicButton>
               </>
@@ -93,28 +82,58 @@ export function SystemsClient() {
         </motion.div>
       </PublicSection>
 
-      <PublicSection tone="muted">
+      <PublicSection>
         <motion.div
-          id="psynova"
+          id="categories"
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <PublicSectionHeader
-            title={copy.psynova.title}
-            description={copy.psynova.intro}
+            title={copy.categories.title}
+            description={copy.categories.intro}
+          />
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {copy.categories.items.map((item, index) => {
+              const Icon = categoryIcons[index] ?? BookOpen;
+
+              return (
+                <PublicCard
+                  key={item.title}
+                  icon={Icon}
+                  eyebrow={item.eyebrow}
+                  title={item.title}
+                  description={item.desc}
+                />
+              );
+            })}
+          </div>
+        </motion.div>
+      </PublicSection>
+
+      <PublicSection tone="muted">
+        <motion.div
+          id="lanes"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <PublicSectionHeader
+            title={copy.lanes.title}
+            description={copy.lanes.intro}
           />
 
           <div className="grid gap-5 lg:grid-cols-3">
-            {copy.psynova.groups.map((group, index) => {
-              const Icon = groupIcons[index] ?? Layers;
+            {copy.lanes.items.map((item, index) => {
+              const Icon = laneIcons[index] ?? Library;
 
               return (
-                <PublicCard key={group.title} icon={Icon} title={group.title} description={group.desc}>
+                <PublicCard key={item.title} icon={Icon} title={item.title} description={item.desc}>
                   <div className="flex flex-wrap gap-2">
-                    {group.items.map((item) => (
-                      <PublicStatusPill key={item} tone="muted">
-                        {item}
+                    {item.tags.map((tag) => (
+                      <PublicStatusPill key={tag} tone="muted">
+                        {tag}
                       </PublicStatusPill>
                     ))}
                   </div>
@@ -127,97 +146,17 @@ export function SystemsClient() {
 
       <PublicSection>
         <motion.div
-          id="deployment"
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <PublicSectionHeader
-            title={copy.deployment.title}
-            description={copy.deployment.intro}
-          />
-
-          <div className="grid gap-5 lg:grid-cols-2">
-            <PublicCard icon={Database} title={copy.deployment.paths.title}>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {copy.deployment.paths.items.map((item) => (
-                  <div
-                    key={item.title}
-                    className="rounded-lg border border-border/40 bg-background/50 p-4"
-                  >
-                    <h3 className="font-display text-sm font-semibold">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </PublicCard>
-
-            <PublicCard icon={FileText} title={copy.deployment.shapes.title}>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {copy.deployment.shapes.items.map((item) => (
-                  <div
-                    key={item.title}
-                    className="rounded-lg border border-border/40 bg-background/50 p-4"
-                  >
-                    <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-primary">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </PublicCard>
-          </div>
-        </motion.div>
-      </PublicSection>
-
-      <PublicSection tone="muted">
-        <motion.div
-          id="execution"
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <PublicSectionHeader
-            title={copy.execution.title}
-            description={copy.execution.intro}
-          />
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            {copy.execution.items.map((item, index) => {
-              const Icon = executionIcons[index] ?? Layers;
-
-              return (
-                <PublicCard
-                  key={item.title}
-                  icon={Icon}
-                  title={item.title}
-                  description={item.desc}
-                />
-              );
-            })}
-          </div>
-        </motion.div>
-      </PublicSection>
-
-      <PublicSection container="default">
-        <motion.div
+          id="rule"
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <PublicCtaBand
-            title={copy.cta.title}
-            description={copy.cta.body}
+            title={copy.rule.title}
+            description={copy.rule.body}
             action={
               <PublicButton href="/contact">
-                {copy.cta.action} <ArrowRight className="ml-2 h-4 w-4" />
+                {copy.rule.action} <ArrowRight className="ml-2 h-4 w-4" />
               </PublicButton>
             }
           />
