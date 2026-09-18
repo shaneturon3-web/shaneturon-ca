@@ -72,3 +72,25 @@ Public naming clarification:
 - Candidates `1–12` were already visibly published in Blogger; no duplicate
   posts were created.
 - The decision is recorded in `docs/publication-candidates-v0.md`.
+
+## 2026-09-18 — publishing architecture decision
+
+The public writing pipeline will evolve in stages:
+
+1. **V0:** the website catalogue links directly to Blogger label and article
+   URLs while the editorial inventory is being assembled.
+2. **V1:** an Atom/RSS importer will normalize Blogger entries into a
+   versioned website content registry and generate static article pages.
+3. **V2:** the generated website pages will own the share buttons, Open Graph
+   metadata, and social landing experience while preserving Blogger as the
+   editorial source and canonical reference.
+4. **V3:** a database may replace the registry if the catalogue grows enough
+   to justify editorial administration at that scale.
+
+The importer must be feed-based rather than visual scraping. It must preserve
+stable Blogger IDs and URLs, detect additions and edits, record sync history,
+and never delete a website page automatically merely because an item disappears
+from a feed.
+
+The current V0 website catalogue and its documentation are published on the
+feature branch. Production deployment remains a separate approval step.
