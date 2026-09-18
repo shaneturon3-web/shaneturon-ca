@@ -44,9 +44,10 @@ export const enHome = {
       'The homepage points to the editorial house; it does not try to become the catalogue.',
     feature: {
       eyebrow: 'Publications',
-      title: 'Selected works',
-      desc: 'Books, essays, stories, guides, jokes, and notes appear here only when they have a real reading surface.',
-      items: ['Books', 'Essays', 'Stories', 'Guides', 'Jokes', 'Public notes'],
+      title: 'Selected work',
+      desc: 'Essays and stories appear here as they find a public reading surface. The first routes lead to the living archive on Blogger.',
+      items: ['Essays', 'Stories', 'TOM', 'Crime Syndicate', 'TCSQ'],
+      labels: ['Essays', 'Stories', 'TOM', 'Crime%20Syndicate', 'TCSQ'],
     },
     details: [
       {

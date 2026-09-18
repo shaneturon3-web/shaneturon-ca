@@ -45,3 +45,17 @@ tools, spines, derivative maps, agent dialogue, and editorial working notes.
 
 Every future entry should include the title, category, Blogger URL, status,
 date, and a short note about the source and editorial action.
+
+## 2026-09-18 — V0 Writing routes
+
+The website Writing surface now exposes provisional Blogger label routes for:
+
+- Essays: `https://shaneturon.blogspot.com/search/label/Essays`
+- Stories: `https://shaneturon.blogspot.com/search/label/Stories`
+- TOM: `https://shaneturon.blogspot.com/search/label/TOM`
+- Crime Syndicate: `https://shaneturon.blogspot.com/search/label/Crime%20Syndicate`
+- TCSQ: `https://shaneturon.blogspot.com/search/label/TCSQ`
+
+These are V0 archive routes, not claims that every label already has content.
+They are intentionally reversible and may lead to an empty result or 404 until
+the corresponding Blogger version exists.

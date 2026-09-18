@@ -64,9 +64,10 @@ export const frHome = {
       'Cette branche contient le travail ecrit destine au public sans transformer la page d accueil en catalogue ni exposer la machinerie privee des sources.',
     feature: {
       eyebrow: 'Publications',
-      title: 'Livres, essais, histoires, guides et notes',
-      desc: 'L ecriture est traitee comme une branche principale du site public. Les elements apparaissent quand ils sont selectionnes, lisibles et presentes proprement.',
-      items: ['Livres', 'Essais', 'Histoires', 'Guides', 'Notes publiques'],
+      title: 'Travail sélectionné',
+      desc: 'Les essais et les histoires apparaissent ici lorsqu’ils trouvent une surface publique de lecture. Les premières routes mènent vers l’archive vivante sur Blogger.',
+      items: ['Essais', 'Histoires', 'TOM', 'Crime Syndicate', 'TCSQ'],
+      labels: ['Essays', 'Stories', 'TOM', 'Crime%20Syndicate', 'TCSQ'],
     },
     details: [
       {

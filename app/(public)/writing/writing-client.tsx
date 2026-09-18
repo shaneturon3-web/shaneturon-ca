@@ -32,7 +32,13 @@ export function WritingClient() {
           {copy.feature.items.map((item, index) => {
             const Icon = [BookOpen, FileText, Library][index % 3];
             return (
-              <PublicCard key={item} icon={Icon} title={item} description={copy.details[index % copy.details.length].desc}>
+              <PublicCard
+                key={item}
+                icon={Icon}
+                title={item}
+                description={copy.details[index % copy.details.length].desc}
+                href={`https://shaneturon.blogspot.com/search/label/${copy.feature.labels[index]}`}
+              >
                 <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.16em] text-primary/80">
                   <CheckCircle2 className="h-4 w-4" /> {copy.details[index % copy.details.length].title}
                 </span>

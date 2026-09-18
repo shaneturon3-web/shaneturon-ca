@@ -64,9 +64,10 @@ export const esHome = {
       'Esta rama contiene trabajo escrito orientado al publico sin convertir la pagina principal en catalogo ni exponer maquinaria privada de origen.',
     feature: {
       eyebrow: 'Publicaciones',
-      title: 'Libros, ensayos, historias, chistes, guias y notas',
-      desc: 'La escritura se trata como una rama principal del sitio publico. Los elementos aparecen cuando estan seleccionados, legibles y presentados limpiamente.',
-      items: ['Libros', 'Ensayos', 'Historias', 'Guias', 'Chistes', 'Notas publicas'],
+      title: 'Trabajo seleccionado',
+      desc: 'Los ensayos y las historias aparecen aquí cuando encuentran una superficie pública de lectura. Las primeras rutas llevan al archivo vivo en Blogger.',
+      items: ['Ensayos', 'Historias', 'TOM', 'Crime Syndicate', 'TCSQ'],
+      labels: ['Essays', 'Stories', 'TOM', 'Crime%20Syndicate', 'TCSQ'],
     },
     details: [
       {
