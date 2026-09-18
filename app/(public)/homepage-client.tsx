@@ -90,6 +90,17 @@ export function HomepageClient() {
         </motion.div>
       </PublicSection>
 
+      <PublicSection tone="muted">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <PublicSectionHeader title={copy.worldview.title} description={copy.worldview.intro} align="center" />
+        </motion.div>
+      </PublicSection>
+
       <PublicSection>
         <motion.div
           initial={{ opacity: 0, y: 18 }}

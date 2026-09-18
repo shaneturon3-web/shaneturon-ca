@@ -4,7 +4,7 @@ export const enHome = {
     title: 'Writer, builder,',
     accent: 'and systems architect.',
     intro:
-      'I turn complex ideas, projects, and working systems into something clear, buildable, and alive.',
+      'I make complicated things clearer, more useful, and more alive.',
     pattern: ['Ideas', 'Projects', 'Systems', 'Writing'],
     primaryCta: 'View Systems',
     secondaryCta: 'View Publications',
@@ -17,6 +17,11 @@ export const enHome = {
       { label: 'Publications', href: '/publisher' },
       { label: 'Contact', href: '/contact' },
     ],
+  },
+
+  worldview: {
+    title: 'A curious way of working',
+    intro: 'I like taking complicated things apart, understanding how they work, and putting them back together better.',
   },
 
   branches: {
